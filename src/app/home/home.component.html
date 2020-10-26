@@ -1,13 +1,27 @@
 <ActionBar>
-    <Label text="Home"></Label>
+    <Label text="Mondly"></Label>
 </ActionBar>
 
-<GridLayout>
+<!-- <GridLayout>
     <ListView [items]="items">
         <ng-template let-item="item">
             <StackLayout>
                 <Label [nsRouterLink]="['../item', item.id]" [text]="item.name"></Label>
+                <Label (tap)="routerExtensions.navigate(['/auth', 'default'])" [text]="item.name"></Label>
+            </StackLayout>
+            <StackLayout class="list-group-item">
+                <ScrollView height="300" orientation="horizontal" >
+                    <Label [nsRouterLink]="['../item', item.id]" [text]="item.name"></Label>
+                </ScrollView>
             </StackLayout>
         </ng-template>
     </ListView>
+</GridLayout> -->
+
+<GridLayout>
+    <ScrollView id="myScroller" orientation="horizontal" >
+       <StackLayout id="contentContainer" orientation="horizontal">
+
+       </StackLayout>
+    </ScrollView>
 </GridLayout>

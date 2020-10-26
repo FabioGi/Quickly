@@ -16,6 +16,10 @@
             <Label text="Search"></Label>
             <Image src="font://&#xf002;" class="fas t-36"></Image>
         </TabStripItem>
+        <TabStripItem class="navigation__item">
+            <Label text="Auth"></Label>
+            <Image src="font://&#xf002;" class="fas t-36"></Image>
+        </TabStripItem>
     </TabStrip>
 
     <TabContentItem>
@@ -28,5 +32,8 @@
 
     <TabContentItem>
         <page-router-outlet name="searchTab"></page-router-outlet>
+    </TabContentItem>
+    <TabContentItem>
+        <page-router-outlet name="authTab"></page-router-outlet>
     </TabContentItem>
 </BottomNavigation>
