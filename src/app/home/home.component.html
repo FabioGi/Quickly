@@ -18,10 +18,133 @@
     </ListView>
 </GridLayout> -->
 
-<GridLayout>
+<GridLayout id="main" >
     <ScrollView id="myScroller" orientation="horizontal" >
-       <StackLayout id="contentContainer" orientation="horizontal">
+       <StackLayout id="container" orientation="horizontal">
+        <!-- <AbsoluteLayout width="400" height="100%" backgroundColor="lightgray"> -->
+            <!-- <Label text="10, 10" left="10" top="10" width="90" height="90" backgroundColor="red"></Label>
+            <Label text="110, 10" left="110" top="10" width="90" height="90" backgroundColor="green"></Label>
+            <Label text="110, 110" left="110" top="110" width="90" height="90" backgroundColor="blue"></Label>
+            <Label text="10, 110" left="10" top="110" width="90" height="90" backgroundColor="yellow"></Label> -->
 
+            <!-- <Label *ngFor="let item of items"
+            class="my-lbl"
+            [text]="item.name">
+            </Label> -->
+        <!-- </AbsoluteLayout> -->
+          <FlexboxLayout flexDirection="column" width="400" height="100%">
+            <StackLayout width="133" height="33%"  class="my-lbl">
+                <Label text= "Bonjour" ></Label>
+                <FlexboxLayout justifyContent="space-between">
+                    <Label text=""></Label>
+                    <Label text="" ></Label>
+                    <Label text="0/9"  class="eval" ></Label>
+                </FlexboxLayout>
+             </StackLayout>
+
+             <StackLayout width="133" height="33%"  class="my-lbl">
+                <Label text= "Amour" ></Label>
+                <FlexboxLayout justifyContent="space-between">
+                    <Label text=""></Label>
+                    <Label text="" ></Label>
+                    <Label text="0/9" class="eval" ></Label>
+                </FlexboxLayout>
+             </StackLayout>
+
+             <StackLayout width="133" height="33%"  class="my-lbl">
+                <Label text= "Les saisons et le temps" ></Label>
+                <FlexboxLayout justifyContent="space-between">
+                    <Label text=""></Label>
+                    <Label text="" ></Label>
+                    <Label text="0/9" class="eval" ></Label>
+                </FlexboxLayout>
+             </StackLayout>
+            <!-- <Label text="Label 4" width="100" height="25%" backgroundColor="yellow" class="my-lbl"></Label> -->
+          </FlexboxLayout>
+
+          <FlexboxLayout flexDirection="column" width="400" height="100%">
+              <StackLayout width="133" height="33%"  class="my-lbl">
+                <Label text="Label x" ></Label>
+                <FlexboxLayout justifyContent="space-between">
+                    <Label text=""></Label>
+                    <Label text="" ></Label>
+                    <Label text="9/9" class="eval" ></Label>
+                </FlexboxLayout>
+             </StackLayout>
+
+             <StackLayout width="133" height="33%"  class="my-lbl">
+                <Label text="Label x" ></Label>
+                <FlexboxLayout justifyContent="space-between">
+                    <Label text=""></Label>
+                    <Label text="" ></Label>
+                    <Label text="0/9"  class="eval" ></Label>
+                </FlexboxLayout>
+             </StackLayout>
+             <StackLayout width="133" height="33%"  class="my-lbl">
+                <Label text="Label x" ></Label>
+                <FlexboxLayout justifyContent="space-between">
+                    <Label text=""></Label>
+                    <Label text="" ></Label>
+                    <Label text="0/9"  class="eval" ></Label>
+                </FlexboxLayout>
+             </StackLayout>
+
+            <!-- <Label text="Label 4" width="100" height="25%" backgroundColor="yellow" class="my-lbl"></Label> -->
+          </FlexboxLayout>
+
+          <FlexboxLayout flexDirection="column" width="400" height="100%">
+            <StackLayout width="133" height="33%"  class="my-lbl">
+                <Label text="Label x" ></Label>
+                <FlexboxLayout justifyContent="space-between">
+                    <Label text=""></Label>
+                    <Label text="" ></Label>
+                    <Label text="0/9"  class="eval" ></Label>
+                </FlexboxLayout>
+             </StackLayout>
+             <StackLayout width="133" height="33%"  class="my-lbl">
+                <Label text="Label x" ></Label>
+                <FlexboxLayout justifyContent="space-between">
+                    <Label text=""></Label>
+                    <Label text="" ></Label>
+                    <Label text="0/9"  class="eval" ></Label>
+                </FlexboxLayout>
+             </StackLayout>
+             <StackLayout width="133" height="33%"  class="my-lbl">
+                <Label text="Label x" ></Label>
+                <FlexboxLayout justifyContent="space-between">
+                    <Label text=""></Label>
+                    <Label text="" ></Label>
+                    <Label text="0/9"  class="eval" ></Label>
+                </FlexboxLayout>
+             </StackLayout>
+          </FlexboxLayout>
        </StackLayout>
     </ScrollView>
 </GridLayout>
+
+<!-- <GridLayout class="wrapper" rows="auto, *" loaded="onWrapperLoaded">
+
+    <ScrollView id="scrollView" class="inner" row="1">
+        <StackLayout>
+            <Image src="~/images/tweet.png"></Image>>
+            <Image src="~/images/tweet.png"></Image>>
+            <Image src="~/images/tweet.png" ></Image>>
+            <Image src="~/images/tweet.png" ></Image>>
+            <Image src="~/images/tweet.png" ></Image>>
+            <Image src="~/images/tweet.png"></Image>
+
+            <Button text="TAP" tap="{{ onTap }}" class="btn btn-primary btn-active"></Button>
+            <Label text="boss" class="h2 text-center" textWrap="true"></Label>
+
+        </StackLayout>
+    </ScrollView>
+
+    <GridLayout id="bar" class="bar" row="0">
+        <GridLayout columns="60, *, 60">
+            <Image src="~/images/twitter-avatar.png" class="img-twitter-avatar" col="0"></Image>>
+            <Label col="1" text="Home" style="font-weight: bold;text-align:center;"></Label>
+            <Image src="~/images/twitter-star.png" class="img-twitter-star" col="2" ></Image>>
+        </GridLayout>
+    </GridLayout>
+
+</GridLayout> -->

@@ -4,6 +4,8 @@ import {Page} from "tns-core-modules/ui/page"
 import {ScrollView} from "tns-core-modules/ui/scroll-view"
 import {StackLayout} from "tns-core-modules/ui/layouts/stack-layout"
 import {Label} from "tns-core-modules/ui/label"
+import { TabView } from "tns-core-modules/ui/tab-view";
+
 
 // import { StackLayout } from "@nativescript/core/ui/layouts/stack-layout";
 // import { Page } from "@nativescript/core/ui/page";
@@ -34,13 +36,13 @@ export class HomeComponent implements OnInit {
 
     ngOnInit(): void {
         this.items = this._itemService.getItems();
-        this.scrollLayout = this.page.getViewById("myScroller") as ScrollView;
-        this.contentContainer = this.page.getViewById("contentContainer") as StackLayout;
-        for (let index = 0; index <= numLabel; index++) {
-            const lbl = new Label();
-            lbl.className = 'my-lbl';
-            lbl.text = index.toString();
-            this.contentContainer.addChild(lbl);
-        }
+        // this.scrollLayout = this.page.getViewById("myScroller") as ScrollView;
+        // this.contentContainer = this.page.getViewById("contentContainer") as StackLayout;
+        // for (let index = 0; index <= numLabel; index++) {
+        //     const lbl = new Label();
+        //     lbl.className = 'my-lbl';
+        //     lbl.text = index.toString();
+        //     this.contentContainer.addChild(lbl);
+        // }
     }
 }
