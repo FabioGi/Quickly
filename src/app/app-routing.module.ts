@@ -2,37 +2,41 @@ import { NgModule } from "@angular/core";
 import { Routes } from "@angular/router";
 import { NativeScriptRouterModule, NSEmptyOutletComponent } from "@nativescript/angular";
 import { AuthenticationComponent } from "./authentication/authentication.component";
+import { BrowseComponent } from "./browse/browse.component";
+import { HomeComponent } from "./home/home.component";
+import { SearchComponent } from "./search/search.component";
 
 const routes: Routes = [
     {
         path: "",
-        redirectTo: "/(homeTab:home/default//browseTab:browse/default//searchTab:search/default//authTab:auth/default)",
+        // redirectTo: "/(homeTab:home/default//browseTab:browse/default//searchTab:search/default//authTab:auth)",
+        redirectTo: "home",
         pathMatch: "full"
     },
 
     {
         path: "home",
-        component: NSEmptyOutletComponent,
+        component: HomeComponent,
         loadChildren: () => import("~/app/home/home.module").then((m) => m.HomeModule),
-        outlet: "homeTab"
+        // outlet: "homeTab"
     },
     {
         path: "browse",
-        component: NSEmptyOutletComponent,
+        component: BrowseComponent,
         loadChildren: () => import("~/app/browse/browse.module").then((m) => m.BrowseModule),
-        outlet: "browseTab"
+        // outlet: "browseTab"
     },
     {
         path: "search",
-        component: NSEmptyOutletComponent,
+        component: SearchComponent,
         loadChildren: () => import("~/app/search/search.module").then((m) => m.SearchModule),
-        outlet: "searchTab"
+        // outlet: "searchTab"
     },
     {
         path: "auth",
         component: AuthenticationComponent,
         loadChildren: () => import("~/app/authentication/authentication.module").then((m) => m.AuthenticationModule),
-        outlet: "authTab"
+        // outlet: "authTab"
     }
 ];
 

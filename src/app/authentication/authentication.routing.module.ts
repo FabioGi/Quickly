@@ -4,7 +4,7 @@ import { NativeScriptRouterModule } from "@nativescript/angular";
 import {AuthenticationComponent  } from "./authentication.component";
 
 const routes: Routes = [
-    { path: "default", component: AuthenticationComponent }
+    { path: "", component: AuthenticationComponent }
 ];
 
 @NgModule({
