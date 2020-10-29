@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterExtensions } from '@nativescript/angular';
 //import { RouterExtensions } from 'nativescript-angular';
 //import { TextField } from 'ui/text-field';
 //import { EventData } from 'data/observable';
@@ -12,7 +13,7 @@ import { Component, OnInit } from '@angular/core';
 
 export class AuthenticationComponent implements OnInit {
 
-	constructor() { }
+	constructor(public routerExtensions: RouterExtensions) { }
 
 	ngOnInit() { }
 }

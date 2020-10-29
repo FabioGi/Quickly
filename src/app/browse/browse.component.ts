@@ -1,11 +1,13 @@
 import { Component, OnInit } from "@angular/core";
+import { RouterExtensions } from '@nativescript/angular';
 
 @Component({
     selector: "Browse",
     templateUrl: "./browse.component.html"
 })
 export class BrowseComponent implements OnInit {
-    constructor() {
+
+    constructor(public routerExtensions: RouterExtensions) {
         // Use the component constructor to inject providers.
     }
 

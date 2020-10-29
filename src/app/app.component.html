@@ -1,4 +1,4 @@
-<BottomNavigation>
+<BottomNavigation class="bottom-nav">
     <TabStrip>
         <TabStripItem class="navigation__item" [nsRouterLink]="['home']">
             <!--
@@ -12,10 +12,10 @@
             <Label text="Browse"></Label>
             <Image src="font://&#xf1ea;" class="far t-36"></Image>
         </TabStripItem>
-        <TabStripItem class="navigation__item" [nsRouterLink]="['search']">
-            <Label text="Search"></Label>
+        <!-- <TabStripItem class="navigation__item" [nsRouterLink]="['auth/register']">
+            <Label text="register"></Label>
             <Image src="font://&#xf002;" class="fas t-36"></Image>
-        </TabStripItem>
+        </TabStripItem> -->
         <TabStripItem class="navigation__item" [nsRouterLink]="['auth']">
             <Label text="Auth"></Label>
             <Image src="font://&#xf002;" class="fas t-36"></Image>

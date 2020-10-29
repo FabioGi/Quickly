@@ -34,7 +34,7 @@
         <!-- </AbsoluteLayout> -->
           <FlexboxLayout flexDirection="column" width="400" height="100%">
             <StackLayout width="133" height="33%"  class="my-lbl">
-                <Label text= "Bonjour" [nsRouterLink]="['../auth']" ></Label>
+                <Label text= "Bonjour" (tap)="routerExtensions.navigate(['auth','register'])" ></Label>
                 <FlexboxLayout justifyContent="space-between">
                     <Label text=""></Label>
                     <Label text="" ></Label>
@@ -43,7 +43,7 @@
              </StackLayout>
 
              <StackLayout width="133" height="33%"  class="my-lbl">
-                <Label text= "Amour" ></Label>
+                <Label text= "Amour"  ></Label>
                 <FlexboxLayout justifyContent="space-between">
                     <Label text=""></Label>
                     <Label text="" ></Label>

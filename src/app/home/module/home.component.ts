@@ -5,6 +5,7 @@ import {ScrollView} from "tns-core-modules/ui/scroll-view"
 import {StackLayout} from "tns-core-modules/ui/layouts/stack-layout"
 import {Label} from "tns-core-modules/ui/label"
 import { TabView } from "tns-core-modules/ui/tab-view";
+import { DataItem, DataService } from "~/app/shared/data.service";
 
 
 // import { StackLayout } from "@nativescript/core/ui/layouts/stack-layout";
@@ -12,7 +13,7 @@ import { TabView } from "tns-core-modules/ui/tab-view";
 // import { Page } from "@nativescript/core/ui/page";
 // import { ScrollEventData, ScrollView } from "@nativescript/core/ui/scroll-view";
 
-import { DataService, DataItem } from "../shared/data.service";
+// import { DataService, DataItem } from "../../shared/data.service";
 const numLabel = 50 ;
 @Component({
     selector: "Home",

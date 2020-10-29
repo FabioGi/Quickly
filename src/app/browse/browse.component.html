@@ -5,4 +5,6 @@
 <GridLayout class="page__content">
     <Label class="page__content-icon far" text="&#xf1ea;"></Label>
     <Label class="page__content-placeholder" text="<!-- Page content goes here -->"></Label>
+     <Label text= "Bonjour" (tap)="routerExtensions.navigate(['auth','register'])"></Label>
+     <Button text="Femme" [nsRouterLink]="['/auth/register']" pageTransition="slide" clearHistory="true"></Button>
 </GridLayout>
