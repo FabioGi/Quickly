@@ -1,0 +1,97 @@
+<GridLayout  id="questionnaire" actionBarHidden="true">
+    <StackLayout>
+        <StackLayout>
+            <Progress value="25" maxValue="100"   class="progress"></Progress>
+        </StackLayout>
+            <StackLayout>
+                <FlexboxLayout justifyContent="space-between">
+                    <Image class="img" src="https://d37sy4vufic209.cloudfront.net/images/topbar/cross-icon-16@2x-3e2d9bb3bb697f9cd949417a3c047ef8.png"
+                     style="margin: 10;"></Image>
+                     <FlexboxLayout  style="margin: 10;">
+                        <Image class="star" src="https://d37sy4vufic209.cloudfront.net/images/quizzes/star-fill@2x-5b4bc07f39525c0b7bc899a385e671c5.png"
+ style="margin: 10;"></Image>
+
+                        <Image class="star" src="https://d37sy4vufic209.cloudfront.net/images/quizzes/star-fill@2x-5b4bc07f39525c0b7bc899a385e671c5.png"
+                        stretch="aspectFill" style="margin: 10;"></Image>
+
+                        <Image class="star" src="https://d37sy4vufic209.cloudfront.net/images/quizzes/star-fill@2x-5b4bc07f39525c0b7bc899a385e671c5.png"
+                        stretch="aspectFill" style="margin: 10;"></Image>
+                     </FlexboxLayout>
+                     <Image class="star" src=" https://d37sy4vufic209.cloudfront.net/images/topbar/feedback-icon@2x-4686f19b9ed517d7babaf0bb0186beaf.png"
+                     style="margin: 10;"></Image>
+                </FlexboxLayout>
+            </StackLayout>
+            <StackLayout>
+                <FlexboxLayout>
+                    <Image class="logo" src=" https://d37sy4vufic209.cloudfront.net/images/quizzes/assistant-neutral-image-50x52@2x-f24e8c958592c4e8f3b73b63e852ea80.png"
+                   ></Image>
+                   <StackLayout class="info">
+                         <Label text='Selectionnez: "Le couteau"' ></Label>
+                   </StackLayout>
+                    <!-- <Label text="Label 1" ></Label>
+                    <Label text="Label 2" ></Label>
+                    <Label text="Label 3" ></Label> -->
+                </FlexboxLayout>
+            </StackLayout>
+            <StackLayout>
+                <Label text="" ></Label>
+            </StackLayout>
+            <StackLayout>
+                <Label text="" ></Label>
+            </StackLayout>
+            <GridLayout columns="*,*" rows="*,*" width="400" height="500"  >
+                <StackLayout col="0" row="0" style="margin: 5; border-radius: 20;">
+                    <Image src="~/assets/exercice1/verre.jpg"
+                    stretch="aspectFit" backgroundColor="red"
+                    ></Image>
+                    <Label text="Glass" class="quiz"></Label>
+                </StackLayout>
+
+                <StackLayout col="1" row="0" style="margin: 5; border-radius: 20;">
+                    <Image src="~/assets/exercice1/couteau.jpg"
+                    stretch="aspectFit"
+                    ></Image>
+                    <Label text="Knife" class="quiz"></Label>
+                </StackLayout>
+
+                <StackLayout col="0" row="1" style="margin: 5; border-radius: 20;">
+                    <Image src="~/assets/exercice1/fourchette.jpg"
+                    stretch="aspectFit"
+                    ></Image>
+                    <Label text="Fork" class="quiz"></Label>
+                </StackLayout>
+
+                <StackLayout col="1" row="1" style="margin: 5; border-radius: 20;">
+                    <Image src="~/assets/exercice1/cuillere.jpg"
+                    stretch="aspectFit"
+                    ></Image>
+                    <Label text="Spoon" class="quiz"></Label>
+                </StackLayout>
+
+
+            <!-- <Image src="~/assets/exercice1/couteau.jpg" col="1" row="0" style="margin: 5;"
+            stretch="aspectFit" backgroundColor="blue"></Image> -->
+
+            <!-- <Image src="~/assets/exercice1/cuillere.jpg" col="0" row="1" style="margin: 5;"
+            stretch="aspectFit" backgroundColor="yellow"></Image>
+            C:\Users\Fabrice Kadio\Quickly\src\assets\exercice1\cuillere.jpg
+            <Image src="~/assets/exercice1/fourchette.jpg" col="1" row="1" style="margin: 5;"
+            stretch="aspectFit" backgroundColor="green"></Image> -->
+
+                <!-- <Label text="Label 1" col="0" row="0" backgroundColor="red" style="margin: 5;"></Label>> -->
+                <!-- <Label text="Label 2" col="1" row="0" backgroundColor="green" style="margin: 5;"></Label>> -->
+                <!-- <Label text="Label 3" col="0" row="1" backgroundColor="blue" style="margin: 5;"></Label>> -->
+                <!-- <Label text="Label 4" col="1" row="1" backgroundColor="yellow" style="margin: 5;"></Label>> -->
+              </GridLayout>
+            <StackLayout>
+                <Label text="" ></Label>
+            </StackLayout>
+
+            <StackLayout>
+                <button   text="Vérifier" backgroundColor="#47ee6e"></button>
+            </StackLayout>
+
+    </StackLayout>
+
+</GridLayout>
+
