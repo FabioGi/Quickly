@@ -7,8 +7,7 @@ import { RouterExtensions } from '@nativescript/angular';
 
 @Component({
 	selector: 'exercice',
-	templateUrl: "./exercice.component.html",
-	styleUrls: ["./exercice.component.scss"]
+	templateUrl: "./exercice.component.html"
 })
 
 export class ExerciceComponent implements OnInit {

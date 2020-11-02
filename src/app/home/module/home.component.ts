@@ -15,10 +15,10 @@ import { DataItem, DataService } from "~/app/shared/data.service";
 
 // import { DataService, DataItem } from "../../shared/data.service";
 const numLabel = 50 ;
+
 @Component({
     selector: "Home",
-    templateUrl: "./home.component.html",
-    styleUrls: ["./home.component.scss"]
+    templateUrl: "./home.component.html"
 })
 export class HomeComponent implements OnInit {
     items: Array<DataItem>;

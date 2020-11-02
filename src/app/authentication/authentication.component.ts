@@ -7,8 +7,7 @@ import { RouterExtensions } from '@nativescript/angular';
 
 @Component({
 	selector: 'authentication',
-	templateUrl: './authentication.component.html',
-    styleUrls: ['./authentication.component.scss']
+	templateUrl: './authentication.component.html'
 })
 
 export class AuthenticationComponent implements OnInit {
