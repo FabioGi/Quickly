@@ -8,7 +8,6 @@ import { RouterExtensions } from '@nativescript/angular/router/router-extensions
 @Component({
 	selector: 'register',
 	templateUrl: './register.component.html',
-	styleUrls: ['./register.component.css']
 })
 
 export class RegisterComponent implements OnInit {

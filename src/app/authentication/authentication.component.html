@@ -1,8 +1,61 @@
 <ActionBar>
     <Label text="Auth"></Label>
 </ActionBar>
-
-<GridLayout class="page__content">
-    <Label class="page__content-icon fas" text="&#xf002;"></Label>
-    <Label text= "Bonjour" (tap)="routerExtensions.navigate(['auth/register'])"></Label>
+<GridLayout>
+    <TabView selectedTabTextColor="white"  tabBackgroundColor="#043c50" selectedColor="#043c50" selectedIndex="0">
+        <StackLayout *tabItem="{title: 'Connexion'}">
+                <StackLayout verticalAlignment="center">
+                    <StackLayout class="form">
+                        <StackLayout class="input-field">
+                            <TextField  class="-rounded-sm" hint="Email" backgroundColor="lightcyan"></TextField>
+                            <StackLayout class="hr-light"></StackLayout>
+                        </StackLayout>
+                        <StackLayout class="input-field">
+                            <TextField  class="-rounded-sm" secure="true" hint="Mot de passe" backgroundColor="lightcyan" text-color ="white"></TextField>                            <StackLayout class="hr-light"></StackLayout>
+                        </StackLayout>
+                        <Button class="bold" text="connexion"></Button>
+                        <Label class="text-right footnote" text="Mot de passe oublié?"></Label>
+                    </StackLayout>
+                    <StackLayout class="login-buttons">
+                            <Button color ="black" backgroundColor ="white" class="gold -rounded-lg" text="Continue Avec Facebook"  automationText="facebookCustom"></Button>
+                        <Button color ="black" backgroundColor ="white" class="-rounded-lg" text="continuer avec google"></Button>
+                        <Button color ="black" backgroundColor ="white" class="-rounded-lg" text="continuer avec Apple"></Button>
+                  </StackLayout>
+                </StackLayout>
+        </StackLayout>
+        <StackLayout *tabItem="{title: 'Incription'}">
+                    <ScrollView>
+                        <StackLayout verticalAlignment="center">
+                            <StackLayout class="form">
+                                <StackLayout class="input-field">
+                                    <TextField  class="-rounded-sm" hint="Prenom" backgroundColor="lightcyan"></TextField>
+                                    <StackLayout class="hr-light"></StackLayout>
+                                </StackLayout>
+                                <StackLayout class="input-field">
+                                    <TextField  class="-rounded-sm" hint="Nom" backgroundColor="lightcyan"></TextField>
+                                    <StackLayout class="hr-light"></StackLayout>
+                                </StackLayout>
+                                <StackLayout class="input-field">
+                                    <TextField  class="-rounded-sm" hint="Email" backgroundColor="lightcyan"></TextField>
+                                    <StackLayout class="hr-light"></StackLayout>
+                                </StackLayout>
+                                <StackLayout class="input-field">
+                                    <TextField  class="-rounded-sm" hint="Telephone" backgroundColor="lightcyan"></TextField>
+                                    <StackLayout class="hr-light"></StackLayout>
+                                </StackLayout>
+                                <StackLayout class="input-field">
+                                    <TextField  class="-rounded-sm" secure="true" hint="Mot de passe" backgroundColor="lightcyan" color ="white"></TextField>                            <StackLayout class="hr-light"></StackLayout>
+                                </StackLayout>
+                                <Button class="bold" text="Incription"></Button>
+                            </StackLayout>
+                            <StackLayout class="login-buttons">
+                                <FacebookLoginButton text="Continue Avec Facebook"></FacebookLoginButton>
+                                <Button color ="black" backgroundColor ="white" class="gold -rounded-lg" text="Continue Avec Facebook"  automationText="facebookCustom"></Button>
+                                <Button color ="black" backgroundColor ="white" class="-rounded-lg" text="continuer avec google"></Button>
+                                <Button color ="black" backgroundColor ="white" class="-rounded-lg" text="continuer avec Apple"></Button>
+                          </StackLayout>
+                        </StackLayout>
+                    </ScrollView>
+                  </StackLayout>
+    </TabView>
 </GridLayout>

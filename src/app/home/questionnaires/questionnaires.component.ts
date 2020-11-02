@@ -8,7 +8,6 @@ import { Page } from 'tns-core-modules/ui/page';
 @Component({
 	selector: 'questionnaires',
 	templateUrl: './questionnaires.component.html',
-	styleUrls: ['./questionnaires.component.css']
 })
 
 export class QuestionnairesComponent implements OnInit {
