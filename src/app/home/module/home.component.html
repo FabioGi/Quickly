@@ -18,113 +18,7 @@
     </ListView>
 </GridLayout> -->
 
-<GridLayout id="main" >
-    <ScrollView id="myScroller" orientation="horizontal" >
-       <StackLayout id="container" orientation="horizontal">
-        <!-- <AbsoluteLayout width="400" height="100%" backgroundColor="lightgray"> -->
-            <!-- <Label text="10, 10" left="10" top="10" width="90" height="90" backgroundColor="red"></Label>
-            <Label text="110, 10" left="110" top="10" width="90" height="90" backgroundColor="green"></Label>
-            <Label text="110, 110" left="110" top="110" width="90" height="90" backgroundColor="blue"></Label>
-            <Label text="10, 110" left="10" top="110" width="90" height="90" backgroundColor="yellow"></Label> -->
 
-            <!-- <Label *ngFor="let item of items"
-            class="my-lbl"
-            [text]="item.name">
-            </Label> -->
-        <!-- </AbsoluteLayout> -->
-          <FlexboxLayout flexDirection="column" width="390" height="90%">
-            <StackLayout width="130" height="30%"  class="my-lbl">
-                <Label text= "Bonjour" (tap)="routerExtensions.navigate(['home','exercice'])" ></Label>
-                <FlexboxLayout justifyContent="space-between">
-                    <Label text=""></Label>
-                    <Label text="" ></Label>
-                    <Label text="0/9"  class="eval" ></Label>
-                </FlexboxLayout>
-             </StackLayout>
-
-             <StackLayout width="130" height="30%"  class="my-lbl">
-                <Label text= "Amour" (tap)="routerExtensions.navigate(['home','questionnaire'])"   ></Label>
-                <FlexboxLayout justifyContent="space-between">
-                    <Label text=""></Label>
-                    <Label text="" ></Label>
-                    <Label text="0/9" class="eval" ></Label>
-                </FlexboxLayout>
-             </StackLayout>
-
-             <StackLayout width="130" height="30%"  class="my-lbl">
-                <Label text= "Les saisons et le temps" ></Label>
-                <FlexboxLayout justifyContent="space-between">
-                    <Label text=""></Label>
-                    <Label text="" ></Label>
-                    <Label text="0/9" class="eval" ></Label>
-                </FlexboxLayout>
-             </StackLayout>
-            <!-- <Label text="Label 4" width="100" height="25%" backgroundColor="yellow" class="my-lbl"></Label> -->
-          </FlexboxLayout>
-
-          <FlexboxLayout flexDirection="column" width="390" height="90%">
-            <StackLayout width="130" height="30%"  class="my-lbl">
-                <Label text= "Bonjour" (tap)="routerExtensions.navigate(['home','exercice'])" ></Label>
-                <FlexboxLayout justifyContent="space-between">
-                    <Label text=""></Label>
-                    <Label text="" ></Label>
-                    <Label text="0/9"  class="eval" ></Label>
-                </FlexboxLayout>
-             </StackLayout>
-
-             <StackLayout width="130" height="30%"  class="my-lbl">
-                <Label text= "Amour" (tap)="routerExtensions.navigate(['home','questionnaire'])"   ></Label>
-                <FlexboxLayout justifyContent="space-between">
-                    <Label text=""></Label>
-                    <Label text="" ></Label>
-                    <Label text="0/9" class="eval" ></Label>
-                </FlexboxLayout>
-             </StackLayout>
-
-             <StackLayout width="130" height="30%"  class="my-lbl">
-                <Label text= "Les saisons et le temps" ></Label>
-                <FlexboxLayout justifyContent="space-between">
-                    <Label text=""></Label>
-                    <Label text="" ></Label>
-                    <Label text="0/9" class="eval" ></Label>
-                </FlexboxLayout>
-             </StackLayout>
-            <!-- <Label text="Label 4" width="100" height="25%" backgroundColor="yellow" class="my-lbl"></Label> -->
-          </FlexboxLayout>
-
-          <FlexboxLayout flexDirection="column" width="390" height="90%">
-            <StackLayout width="130" height="30%"  class="my-lbl">
-                <Label text= "Bonjour" (tap)="routerExtensions.navigate(['home','exercice'])" ></Label>
-                <FlexboxLayout justifyContent="space-between">
-                    <Label text=""></Label>
-                    <Label text="" ></Label>
-                    <Label text="0/9"  class="eval" ></Label>
-                </FlexboxLayout>
-             </StackLayout>
-
-             <StackLayout width="130" height="30%"  class="my-lbl">
-                <Label text= "Amour" (tap)="routerExtensions.navigate(['home','questionnaire'])"   ></Label>
-                <FlexboxLayout justifyContent="space-between">
-                    <Label text=""></Label>
-                    <Label text="" ></Label>
-                    <Label text="0/9" class="eval" ></Label>
-                </FlexboxLayout>
-             </StackLayout>
-
-             <StackLayout width="130" height="30%"  class="my-lbl">
-                <Label text= "Les saisons et le temps" ></Label>
-                <FlexboxLayout justifyContent="space-between">
-                    <Label text=""></Label>
-                    <Label text="" ></Label>
-                    <Label text="0/9" class="eval" ></Label>
-                </FlexboxLayout>
-             </StackLayout>
-            <!-- <Label text="Label 4" width="100" height="25%" backgroundColor="yellow" class="my-lbl"></Label> -->
-          </FlexboxLayout>
-
-       </StackLayout>
-    </ScrollView>
-</GridLayout>
 
 <!-- <GridLayout class="wrapper" rows="auto, *" loaded="onWrapperLoaded">
 
@@ -155,7 +49,7 @@
 <StackLayout>
     <BottomNavigation class="bottom-nav">
         <TabStrip>
-            <TabStripItem class="navigation__item" [nsRouterLink]="['home']">
+            <TabStripItem class="navigation__item" [nsRouterLink]="['../home']">
                 <!--
                     Note TabStripItem will only accept single Label and/or single Image elements that it
                     will "adopt"; any other layout elements you try to specify will be ignored
@@ -163,7 +57,7 @@
                 <Label text="Home"></Label>
                 <Image src="font://&#xf015;" class="fas t-36"></Image>
             </TabStripItem>
-            <TabStripItem class="navigation__item" [nsRouterLink]="['browse']">
+            <TabStripItem class="navigation__item" [nsRouterLink]="['../browse']">
                 <Label text="Browse"></Label>
                 <Image src="font://&#xf1ea;" class="far t-36"></Image>
             </TabStripItem>
@@ -171,22 +65,125 @@
                 <Label text="register"></Label>
                 <Image src="font://&#xf002;" class="fas t-36"></Image>
             </TabStripItem> -->
-            <TabStripItem class="navigation__item" [nsRouterLink]="['auth']">
+            <TabStripItem class="navigation__item" [nsRouterLink]="['../auth']">
                 <Label text="Auth"></Label>
                 <Image src="font://&#xf002;" class="fas t-36"></Image>
             </TabStripItem>
         </TabStrip>
 
-        <!-- <TabContentItem>
-            <page-router-outlet name="browseTab"></page-router-outlet>
+        <TabContentItem>
+            <GridLayout id="main" >
+                <ScrollView id="myScroller" orientation="horizontal" >
+                   <StackLayout id="container" orientation="horizontal">
+                    <!-- <AbsoluteLayout width="400" height="100%" backgroundColor="lightgray"> -->
+                        <!-- <Label text="10, 10" left="10" top="10" width="90" height="90" backgroundColor="red"></Label>
+                        <Label text="110, 10" left="110" top="10" width="90" height="90" backgroundColor="green"></Label>
+                        <Label text="110, 110" left="110" top="110" width="90" height="90" backgroundColor="blue"></Label>
+                        <Label text="10, 110" left="10" top="110" width="90" height="90" backgroundColor="yellow"></Label> -->
+
+                        <!-- <Label *ngFor="let item of items"
+                        class="my-lbl"
+                        [text]="item.name">
+                        </Label> -->
+                    <!-- </AbsoluteLayout> -->
+                      <FlexboxLayout flexDirection="column" width="390" height="90%">
+                        <StackLayout width="130" height="30%"  class="my-lbl">
+                            <Label text= "A table" (tap)="routerExtensions.navigate(['home','exercice'])" ></Label>
+                            <FlexboxLayout justifyContent="space-between">
+                                <Label text=""></Label>
+                                <Label text="" ></Label>
+                                <Label text="0/9"  class="eval" ></Label>
+                            </FlexboxLayout>
+                         </StackLayout>
+
+                         <StackLayout width="130" height="30%"  class="my-lbl">
+                            <Label text= "Animaux familiers" (tap)="routerExtensions.navigate(['home','questionnaire'])"   ></Label>
+                            <FlexboxLayout justifyContent="space-between">
+                                <Label text=""></Label>
+                                <Label text="" ></Label>
+                                <Label text="0/9" class="eval" ></Label>
+                            </FlexboxLayout>
+                         </StackLayout>
+
+                         <StackLayout width="130" height="30%"  class="my-lbl">
+                            <Label text= "Animaux sauvages" ></Label>
+                            <FlexboxLayout justifyContent="space-between">
+                                <Label text=""></Label>
+                                <Label text="" ></Label>
+                                <Label text="0/9" class="eval" ></Label>
+                            </FlexboxLayout>
+                         </StackLayout>
+                        <!-- <Label text="Label 4" width="100" height="25%" backgroundColor="yellow" class="my-lbl"></Label> -->
+                      </FlexboxLayout>
+
+                      <FlexboxLayout flexDirection="column" width="390" height="90%">
+                        <StackLayout width="130" height="30%"  class="my-lbl">
+                            <Label text= "Bonjour" (tap)="routerExtensions.navigate(['home','exercice'])" ></Label>
+                            <FlexboxLayout justifyContent="space-between">
+                                <Label text=""></Label>
+                                <Label text="" ></Label>
+                                <Label text="0/9"  class="eval" ></Label>
+                            </FlexboxLayout>
+                         </StackLayout>
+
+                         <StackLayout width="130" height="30%"  class="my-lbl">
+                            <Label text= "Amour" (tap)="routerExtensions.navigate(['home','questionnaire'])"   ></Label>
+                            <FlexboxLayout justifyContent="space-between">
+                                <Label text=""></Label>
+                                <Label text="" ></Label>
+                                <Label text="0/9" class="eval" ></Label>
+                            </FlexboxLayout>
+                         </StackLayout>
+
+                         <StackLayout width="130" height="30%"  class="my-lbl">
+                            <Label text= "Les saisons et le temps" ></Label>
+                            <FlexboxLayout justifyContent="space-between">
+                                <Label text=""></Label>
+                                <Label text="" ></Label>
+                                <Label text="0/9" class="eval" ></Label>
+                            </FlexboxLayout>
+                         </StackLayout>
+                        <!-- <Label text="Label 4" width="100" height="25%" backgroundColor="yellow" class="my-lbl"></Label> -->
+                      </FlexboxLayout>
+
+                      <FlexboxLayout flexDirection="column" width="390" height="90%">
+                        <StackLayout width="130" height="30%"  class="my-lbl">
+                            <Label text= "Bonjour" (tap)="routerExtensions.navigate(['home','exercice'])" ></Label>
+                            <FlexboxLayout justifyContent="space-between">
+                                <Label text=""></Label>
+                                <Label text="" ></Label>
+                                <Label text="0/9"  class="eval" ></Label>
+                            </FlexboxLayout>
+                         </StackLayout>
+
+                         <StackLayout width="130" height="30%"  class="my-lbl">
+                            <Label text= "Amour" (tap)="routerExtensions.navigate(['home','questionnaire'])"   ></Label>
+                            <FlexboxLayout justifyContent="space-between">
+                                <Label text=""></Label>
+                                <Label text="" ></Label>
+                                <Label text="0/9" class="eval" ></Label>
+                            </FlexboxLayout>
+                         </StackLayout>
+
+                         <StackLayout width="130" height="30%"  class="my-lbl">
+                            <Label text= "Les saisons et le temps" ></Label>
+                            <FlexboxLayout justifyContent="space-between">
+                                <Label text=""></Label>
+                                <Label text="" ></Label>
+                                <Label text="0/9" class="eval" ></Label>
+                            </FlexboxLayout>
+                         </StackLayout>
+                        <!-- <Label text="Label 4" width="100" height="25%" backgroundColor="yellow" class="my-lbl"></Label> -->
+                      </FlexboxLayout>
+
+                   </StackLayout>
+                </ScrollView>
+            </GridLayout>
         </TabContentItem>
 
         <TabContentItem>
-            <page-router-outlet name="searchTab"></page-router-outlet>
+            <page-router-outlet ></page-router-outlet>
         </TabContentItem>
-        <TabContentItem>
-            <page-router-outlet name="authTab"></page-router-outlet>
-        </TabContentItem> -->
 
     </BottomNavigation>
 
