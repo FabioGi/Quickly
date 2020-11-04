@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
     items: Array<DataItem>;
     scrollLayout: ScrollView = null ;
     contentContainer: StackLayout  = null ;
+    result = false;
 
     constructor(private _itemService: DataService,
         public routerExtensions: RouterExtensions,

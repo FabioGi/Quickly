@@ -1,0 +1,85 @@
+<GridLayout  id="main" actionBarHidden="true">
+    <StackLayout class="degrade">
+        <StackLayout>
+            <Progress value="25" maxValue="100"   class="progress"></Progress>
+        </StackLayout>
+            <StackLayout>
+                <FlexboxLayout justifyContent="space-between">
+                    <Image class="img" src="https://d37sy4vufic209.cloudfront.net/images/topbar/cross-icon-16@2x-3e2d9bb3bb697f9cd949417a3c047ef8.png"
+                     style="margin: 10;"></Image>
+                     <FlexboxLayout  style="margin: 10;">
+                        <Image class="star" src="https://d37sy4vufic209.cloudfront.net/images/quizzes/star-fill@2x-5b4bc07f39525c0b7bc899a385e671c5.png"
+ style="margin: 10;"></Image>
+
+                        <Image class="star" src="https://d37sy4vufic209.cloudfront.net/images/quizzes/star-fill@2x-5b4bc07f39525c0b7bc899a385e671c5.png"
+                        stretch="aspectFill" style="margin: 10;"></Image>
+
+                        <Image class="star" src="https://d37sy4vufic209.cloudfront.net/images/quizzes/star-fill@2x-5b4bc07f39525c0b7bc899a385e671c5.png"
+                        stretch="aspectFill" style="margin: 10;"></Image>
+                     </FlexboxLayout>
+                     <Image class="star" src=" https://d37sy4vufic209.cloudfront.net/images/topbar/feedback-icon@2x-4686f19b9ed517d7babaf0bb0186beaf.png"
+                     style="margin: 10;"></Image>
+                </FlexboxLayout>
+            </StackLayout>
+            <StackLayout>
+                <FlexboxLayout>
+                    <Image class="logo" src=" https://d37sy4vufic209.cloudfront.net/images/quizzes/assistant-neutral-image-50x52@2x-f24e8c958592c4e8f3b73b63e852ea80.png"
+                   ></Image>
+                   <StackLayout class="info">
+                         <Label text='Choisissez la traduction correcte' ></Label>
+                   </StackLayout>
+                </FlexboxLayout>
+            </StackLayout>
+            <StackLayout>
+                <Label text="" ></Label>
+            </StackLayout>
+            <StackLayout>
+                <Label text="" ></Label>
+            </StackLayout>
+            <!-- <StackLayout>
+                <Label text="" ></Label>
+            </StackLayout> -->
+            <StackLayout>
+                <Label text="c'est du café" class="info" ></Label>
+            </StackLayout>
+            <StackLayout>
+                <Label text="" ></Label>
+            </StackLayout>
+            <StackLayout>
+                <Label text="" ></Label>
+            </StackLayout>
+            <!-- <GridLayout  width="200" height="250" columns="*,*" rows="*,*,*,*"
+            horizontalAlignment="center" verticalAlignment="center">
+                <StackLayout row="0" col="0" orientation="horizontal" width="210" height="210">
+                    <Label text="It's coffee" class="qcm-label"></Label>
+                </StackLayout>
+
+                <StackLayout  row="1" col="0" >
+                    <Label text="It's tea" class="qcm-label"></Label>
+                </StackLayout>
+                <StackLayout  row="2" col="0" >
+                    <Label text="It's bread" class="qcm-label"></Label>
+                </StackLayout>
+                <StackLayout  row="3" col="0" >
+                    <Label text="It's water" class="qcm-label"></Label>
+                </StackLayout>
+              </GridLayout> -->
+              <FlexboxLayout flexDirection="column" width="350" height="400">
+                <Label text="It's coffee" class="qcm-label"></Label>
+                <Label text="It's tea" class="qcm-label"></Label>
+                <Label text="It's bread" class="qcm-label"></Label>
+                <Label text="It's water" class="qcm-label"></Label>
+              </FlexboxLayout>
+            <StackLayout>
+                <Label text="" ></Label>
+            </StackLayout>
+
+            <StackLayout>
+                <button   text="Vérifier"
+                (tap)="routerExtensions.navigate(['home','appar'])"></button>
+            </StackLayout>
+
+    </StackLayout>
+
+</GridLayout>
+

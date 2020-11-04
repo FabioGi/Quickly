@@ -7,15 +7,16 @@ import { Page } from 'tns-core-modules/ui/page';
 //import { ActivatedRoute } from '@angular/router';
 
 @Component({
-	selector: 'questionnaires',
-	templateUrl: './questionnaires.component.html'
+	selector: 'resultat-quatre-image',
+	templateUrl: './resultat-quatre-image.component.html',
 })
 
-export class QuestionnairesComponent implements OnInit {
-
+export class ResultatQuatreImageComponent implements OnInit {
+    result: boolean = false;
     constructor(private page: Page,
-               public routerExtensions: RouterExtensions) {
-        this.page.actionBarHidden = true;
-    }
+        public routerExtensions: RouterExtensions) {
+       this.page.actionBarHidden = true;
+}
+
 	ngOnInit() { }
 }

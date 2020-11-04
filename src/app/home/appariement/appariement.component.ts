@@ -7,15 +7,17 @@ import { Page } from 'tns-core-modules/ui/page';
 //import { ActivatedRoute } from '@angular/router';
 
 @Component({
-	selector: 'questionnaires',
-	templateUrl: './questionnaires.component.html'
+	selector: 'appariement',
+	templateUrl: './appariement.component.html',
+	styleUrls: ['./appariement.component.css']
 })
 
-export class QuestionnairesComponent implements OnInit {
-
+export class AppariementComponent implements OnInit {
+    tvtext = "";
     constructor(private page: Page,
-               public routerExtensions: RouterExtensions) {
+        public routerExtensions: RouterExtensions) {
         this.page.actionBarHidden = true;
-    }
+ }
+
 	ngOnInit() { }
 }

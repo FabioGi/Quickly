@@ -26,7 +26,7 @@
                     <Image class="logo" src=" https://d37sy4vufic209.cloudfront.net/images/quizzes/assistant-neutral-image-50x52@2x-f24e8c958592c4e8f3b73b63e852ea80.png"
                    ></Image>
                    <StackLayout class="info">
-                         <Label text='Selectionnez: "Le couteau"' ></Label>
+                         <Label text='Traduisez cette phrase' ></Label>
                    </StackLayout>
                     <!-- <Label text="Label 1" ></Label>
                     <Label text="Label 2" ></Label>
@@ -37,52 +37,28 @@
                 <Label text="" ></Label>
             </StackLayout>
             <StackLayout>
-                <Label text="" ></Label>
+                <FlexboxLayout justifyContent="space-between">
+                    <Image class="img2" src="https://d37sy4vufic209.cloudfront.net/images/quizzes/speaker-icon@2x-34c4955ceccc85440f054b1f15f3ef61.png"
+                    style="margin: 10;"></Image>
+                    <Label text='Hello' class="info"></Label>
+                </FlexboxLayout>
             </StackLayout>
-            <GridLayout columns="*,*" rows="*,*" width="400" height="500"  >
-                <StackLayout col="0" row="0" style="margin: 5; border-radius: 20;">
-                    <Image src="~/assets/exercice1/verre.jpg"
-                    stretch="aspectFit" backgroundColor="red"
-                    ></Image>
-                    <Label text="Glass" class="quiz"></Label>
-                </StackLayout>
-
-                <StackLayout col="1" row="0" style="margin: 5; border-radius: 20;">
-                    <Image src="~/assets/exercice1/couteau.jpg"
-                    stretch="aspectFit"
-                    ></Image>
-                    <Label text="Knife" class="quiz"></Label>
-                </StackLayout>
-
-                <StackLayout col="0" row="1" style="margin: 5; border-radius: 20;">
-                    <Image src="~/assets/exercice1/fourchette.jpg"
-                    stretch="aspectFit"
-                    ></Image>
-                    <Label text="Fork" class="quiz"></Label>
-                </StackLayout>
-
-                <StackLayout col="1" row="1" style="margin: 5; border-radius: 20;">
-                    <Image src="~/assets/exercice1/cuillere.jpg"
-                    stretch="aspectFit"
-                    ></Image>
-                    <Label text="Spoon" class="quiz"></Label>
-                </StackLayout>
-
-
-            <!-- <Image src="~/assets/exercice1/couteau.jpg" col="1" row="0" style="margin: 5;"
-            stretch="aspectFit" backgroundColor="blue"></Image> -->
-
-            <!-- <Image src="~/assets/exercice1/cuillere.jpg" col="0" row="1" style="margin: 5;"
-            stretch="aspectFit" backgroundColor="yellow"></Image>
-            C:\Users\Fabrice Kadio\Quickly\src\assets\exercice1\cuillere.jpg
-            <Image src="~/assets/exercice1/fourchette.jpg" col="1" row="1" style="margin: 5;"
-            stretch="aspectFit" backgroundColor="green"></Image> -->
-
-                <!-- <Label text="Label 1" col="0" row="0" backgroundColor="red" style="margin: 5;"></Label>> -->
-                <!-- <Label text="Label 2" col="1" row="0" backgroundColor="green" style="margin: 5;"></Label>> -->
-                <!-- <Label text="Label 3" col="0" row="1" backgroundColor="blue" style="margin: 5;"></Label>> -->
-                <!-- <Label text="Label 4" col="1" row="1" backgroundColor="yellow" style="margin: 5;"></Label>> -->
+             <GridLayout  width="80%" height="200"
+             horizontalAlignment="center" verticalAlignment="center"  >
+                <TextView hint="Enter some text..."
+                     [text]="tvtext"
+                     class="info" style="background-color: whitesmoke;">
+                </TextView>
+                <!-- (textChange)="onTextChange($event) -->
               </GridLayout>
+              <StackLayout>
+                <FlexboxLayout style="margin: 5; text-align: center;">
+                    <Label text='This' class="appr-label" ></Label>
+                    <Label text='is'class="appr-label" ></Label>
+                    <Label text='a' class="appr-label" ></Label>
+                    <Label text='fork'class="appr-label" ></Label>
+                </FlexboxLayout>
+              </StackLayout>
             <StackLayout>
                 <Label text="" ></Label>
             </StackLayout>
