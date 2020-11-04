@@ -1,8 +1,92 @@
 <ActionBar>
     <Label text="Auth"></Label>
 </ActionBar>
+<GridLayout backgroundColor= "#385898">
+    <TabView selectedTabTextColor="white"  tabBackgroundColor="#043c50">
+        <StackLayout class="tab" *tabItem="{title: 'Connexion'}">
+                <StackLayout verticalAlignment="center">
+                    <StackLayout class="form">
+                        <StackLayout class="input-field">
+                            <TextField  class="-rounded-sm" hint="Email" backgroundColor="lightcyan"></TextField>
+                            <StackLayout class="hr-light"></StackLayout>
+                        </StackLayout>
+                        <StackLayout class="input-field">
+                            <TextField  class="-rounded-sm" secure="true" hint="Mot de passe" backgroundColor="lightcyan" text-color ="white"></TextField>
+                            <StackLayout class="hr-light"></StackLayout>
+                        </StackLayout>
+                        <Label color ="white" class="text-right footnote" text="Mot de passe oublié?"></Label>
+                    </StackLayout>
+                        <StackLayout>
+                        <Button class="bold" text="Connexion"></Button>
+                        </StackLayout>
+                        <StackLayout>
+                    </StackLayout>
+                </StackLayout>
+                  <StackLayout>
+                    <Label text="" ></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label text="" ></Label>
+                </StackLayout>
+                <StackLayout class="btn-img"  orientation="horizontal">
+                    <Image src="https://d37sy4vufic209.cloudfront.net/images/social/social_facebook-icon-32@2x-92d2af6633ab6534d8fa27b3fd0e3ecc.png" width="10%" marginRight="10"></Image>
+                    <Label text="Continuer avec Facebook"></Label>
+                </StackLayout>
+                <StackLayout class="btn-img"  orientation="horizontal">
+                    <Image src="https://d37sy4vufic209.cloudfront.net/images/social/social_google-icon-32@2x-7738dc9a3ba9435635d9bb295690b7cc.png" width="10%" marginRight="10"></Image>
+                    <Label text="Continuer avec Google"></Label>
+                </StackLayout>
+                <StackLayout class="btn-img"  orientation="horizontal">
+                    <Image src="https://d37sy4vufic209.cloudfront.net/images/social/social_apple-icon-32@2x-19550c88d2290613da5f635fc6ffee11.png" width="10%"  marginRight="10"></Image>
+                    <Label text="Continuer avec Apple"></Label>
+                </StackLayout>
+        </StackLayout>
+        <StackLayout *tabItem="{title: 'Incription'}">
+                <ScrollView height="650">
+                    <StackLayout verticalAlignment="center">
+                        <StackLayout class="form">
+                            <StackLayout class="input-field">
+                                <TextField  class="-rounded-sm" hint="Prenom" backgroundColor="lightcyan"></TextField>
+                                <StackLayout class="hr-light"></StackLayout>
+                            </StackLayout>
+                            <StackLayout class="input-field">
+                                <TextField  class="-rounded-sm" hint="Nom" backgroundColor="lightcyan"></TextField>
+                                <StackLayout class="hr-light"></StackLayout>
+                                </StackLayout>
+                            <StackLayout class="input-field">
+                                <TextField  class="-rounded-sm" hint="Email" backgroundColor="lightcyan"></TextField>
+                                <StackLayout class="hr-light"></StackLayout>
+                            </StackLayout>
+                            <StackLayout class="input-field">
+                                <TextField  class="-rounded-sm" hint="Telephone" backgroundColor="lightcyan"></TextField>
+                                <StackLayout class="hr-light"></StackLayout>
+                            </StackLayout>
+                            <StackLayout class="input-field">
+                                <TextField  class="-rounded-sm" secure="true" hint="Mot de passe" backgroundColor="lightcyan" color ="white"></TextField>
+                                <StackLayout class="hr-light"></StackLayout>
+                            </StackLayout>
+                            <StackLayout>
+                                <Label text="" ></Label>
+                            </StackLayout>
+                                <Button class="bold" text="Incription"></Button>
 
-<GridLayout class="page__content">
-    <Label class="page__content-icon fas" text="&#xf002;"></Label>
-    <Label text= "Bonjour" (tap)="routerExtensions.navigate(['auth/register'])"></Label>
+                            <StackLayout>
+                                <StackLayout class="btn-img"  orientation="horizontal">
+                                    <Image src="https://d37sy4vufic209.cloudfront.net/images/social/social_facebook-icon-32@2x-92d2af6633ab6534d8fa27b3fd0e3ecc.png" width="10%" marginRight="10"></Image>
+                                    <Label text="Continuer avec Facebook"></Label>
+                                </StackLayout>
+                                <StackLayout class="btn-img"  orientation="horizontal">
+                                    <Image src="https://d37sy4vufic209.cloudfront.net/images/social/social_google-icon-32@2x-7738dc9a3ba9435635d9bb295690b7cc.png" width="10%" marginRight="10"></Image>
+                                    <Label text="Continuer avec Google"></Label>
+                                </StackLayout>
+                                <StackLayout class="btn-img"  orientation="horizontal">
+                                    <Image src="https://d37sy4vufic209.cloudfront.net/images/social/social_apple-icon-32@2x-19550c88d2290613da5f635fc6ffee11.png" width="10%" marginRight="10"></Image>
+                                    <Label text="Continuer avec Apple"></Label>
+                                </StackLayout>
+                             </StackLayout>
+                            </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+    </StackLayout>
+    </TabView>
 </GridLayout>
