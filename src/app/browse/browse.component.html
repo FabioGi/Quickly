@@ -1,10 +1,44 @@
 <ActionBar>
     <Label text="Browse"></Label>
 </ActionBar>
+<GridLayout  >
+    <StackLayout backgroundColor ="#0979a1">
 
-<GridLayout class="page__content">
-    <Label class="page__content-icon far" text="&#xf1ea;"></Label>
-    <Label class="page__content-placeholder" text="<!-- Page content goes here -->"></Label>
-     <Label text= "Bonjour" (tap)="routerExtensions.navigate(['auth','register'])"></Label>
-     <Button text="Femme" [nsRouterLink]="['/auth/register']" pageTransition="slide" clearHistory="true"></Button>
+           <StackLayout class="info">
+                 <Label text='Cours' class="center"></Label>
+           </StackLayout>
+
+            <SearchBar hint="Rechercher" backgroundColor="#1f3b61" margin ="10" color ="white">
+       </SearchBar>
+            <GridLayout backgroundColor ="#17a2b8" margin ="10">
+                <StackLayout>
+                    <FlexboxLayout>
+                        <Image class="logo" src=" https://d37sy4vufic209.cloudfront.net/images/quizzes/assistant-neutral-image-50x52@2x-f24e8c958592c4e8f3b73b63e852ea80.png"
+                       ></Image>
+                       <StackLayout class="info">
+                             <Label text='Bonjour' color ="white"></Label>
+                       </StackLayout>
+                    </FlexboxLayout>
+                <StackLayout rows="3">
+                     <ListView height="650" [items]="items" class="list-group" separatorColor="#1f3b61" row ="1">
+                       <ng-template let-item="item">
+                            <GridLayout height="45">
+                                <stackLayout  orientation="horizontal">
+                                <Image src="~/assets/icon-exo.PNG"
+                                width="25" height="25"></Image>
+                                <Label [text]="item" color="white" font-weight= "bold"></Label>
+                                </stackLayout>
+                                <FlexboxLayout justifyContent="space-between">
+                                    <Label text=""></Label>
+                                    <Label text="" ></Label>
+                                    <button text="Démarrer" class="eval"></button>
+                                </FlexboxLayout>
+                            </GridLayout>
+                      </ng-template>
+                    </ListView>
+                </StackLayout>
+            </StackLayout>
+             </GridLayout>
+    </StackLayout>
 </GridLayout>
+
