@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { RouterExtensions } from '@nativescript/angular';
+import { Page } from "@nativescript/core";
 
 @Component({
     selector: "Browse",
@@ -9,13 +10,14 @@ import { RouterExtensions } from '@nativescript/angular';
 export class BrowseComponent implements OnInit {
 
     public items: string[] = [];
-    constructor(public routerExtensions: RouterExtensions) {
-
+    constructor(public routerExtensions: RouterExtensions,
+                public page: Page) {
+        this.page.actionBarHidden = true;
         // Use the component constructor to inject providers.
     }
 
     ngOnInit(): void {
-        for (var i = 1; i < 10; i++) {
+        for (var i = 1; i < 20; i++) {
             this.items.push("Exercice " +  i);
         }
 

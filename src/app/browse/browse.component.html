@@ -1,37 +1,35 @@
-<ActionBar>
-    <Label text="Browse"></Label>
-</ActionBar>
-<GridLayout  >
-    <StackLayout backgroundColor ="#0979a1">
+<GridLayout id="main">
+    <StackLayout class="degrade">
 
-           <StackLayout class="info">
-                 <Label text='Cours' class="center"></Label>
-           </StackLayout>
-
-            <SearchBar hint="Rechercher" backgroundColor="#1f3b61" margin ="10" color ="white">
-       </SearchBar>
-            <GridLayout backgroundColor ="#17a2b8" margin ="10">
+        <FlexboxLayout justifyContent="space-between" class="info" style="margin-top: 30;">
+            <Label text=""></Label>
+            <Label text="Cours"></Label>
+            <Label text=""></Label>
+        </FlexboxLayout>
+            <GridLayout backgroundColor ="#17a2b8" margin ="10" style="border-radius: 30;">
                 <StackLayout>
-                    <FlexboxLayout>
+                    <FlexboxLayout style="margin: 15 ;">
                         <Image class="logo" src=" https://d37sy4vufic209.cloudfront.net/images/quizzes/assistant-neutral-image-50x52@2x-f24e8c958592c4e8f3b73b63e852ea80.png"
                        ></Image>
                        <StackLayout class="info">
-                             <Label text='Bonjour' color ="white"></Label>
+                             <Label text='Bonjour' color ="white" style="margin-left: 30;"></Label>
                        </StackLayout>
                     </FlexboxLayout>
-                <StackLayout rows="45">
+                <StackLayout>
                      <ListView height="650" [items]="items" class="list-group" separatorColor="#1f3b61" row ="1">
                        <ng-template let-item="item">
                             <GridLayout height="45">
                                 <stackLayout  orientation="horizontal">
                                 <Image src="~/assets/icon-exo.PNG"
                                 width="25" height="25"></Image>
-                                <Label [text]="item" color="white" font-weight= "bold"></Label>
+                                <Label [text]="item" class="info"></Label>
                                 </stackLayout>
                                 <FlexboxLayout justifyContent="space-between">
                                     <Label text=""></Label>
                                     <Label text="" ></Label>
-                                    <button text="Démarrer" class="eval"></button>
+                                    <Label text="Démarrer" class="eval"
+                                     style="color: white; font-weight: bold; width: 100;
+                                      font-size: 15;padding: 10; text-align: center;"></Label>
                                 </FlexboxLayout>
                             </GridLayout>
                       </ng-template>
