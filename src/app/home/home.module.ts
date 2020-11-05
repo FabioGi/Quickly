@@ -8,10 +8,13 @@ import { ExerciceComponent } from "./exercice/exercice.component";
 import { HomeRoutingModule } from "./home-routing.module";
 import { ItemDetailComponent } from "./item-detail/item-detail.component";
 import { HomeComponent } from "./module/home.component";
+import { QcmBisComponent } from "./qcm-bis/qcm-bis.component";
+import { QuatreImageBisComponent } from "./quatre-image-bis/quatre-image-bis.component";
 import { QuestionnaireQcmComponent } from "./questionnaire-qcm/questionnaire-qcm.component";
 import { QuestionnaireSwitchComponent } from "./questionnaire-switch/questionnaire-switch.component";
 import { QuestionnairesComponent } from "./questionnaires/questionnaires.component";
 import { ResultatQuatreImageComponent } from "./questionnaires/resultat-quatre-image/resultat-quatre-image.component";
+import { SwitchBisComponent } from "./switch-bis/switch-bis.component";
 // import { HomeComponent } from "./module/home.component";
 // import { ItemDetailComponent } from "./item-detail/item-detail.component";
 
@@ -30,7 +33,10 @@ import { ResultatQuatreImageComponent } from "./questionnaires/resultat-quatre-i
         ResultatQuatreImageComponent,
         QuestionnaireSwitchComponent,
         QuestionnaireQcmComponent,
-        AppariementComponent
+        AppariementComponent,
+        QuatreImageBisComponent,
+        SwitchBisComponent,
+        QcmBisComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA

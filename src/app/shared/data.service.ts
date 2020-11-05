@@ -524,6 +524,8 @@ const lessons =
 })
 export class DataService {
 
+    public globalData: any ;
+    public currentLesson: any;
     private items = new Array<DataItem>(
         {
             id: 1,
@@ -626,6 +628,7 @@ export class DataService {
             description: "Description for Item 20"
         }
     );
+    // currentLesson: { id: number; name: string; title: string; Exercices: ({ id: number; type: string; question: string; answer: string; suggestions: { id: number; name: string; image: string; media: string; }[]; statement?: undefined; media?: undefined; } | { ...; } | { ...; })[]; Categorie?: undefined; } | { ...; };
 
     getItems(): Array<DataItem> {
         return this.items;
@@ -634,11 +637,24 @@ export class DataService {
     getItem(id: number): DataItem {
         return this.items.filter((item) => item.id === id)[0];
     }
+    /**
+     * Quickly service
+     */
+    getLessonOrderbyTitle(title){
+        return lessons.Lesson.filter((item) => item.title === title)[0];
+    }
+
+    getExerciseOrderById(id,title){
+        this.currentLesson = this.getLessonOrderbyTitle(title)
+        return this.currentLesson.Exercices[id];
+    }
 
 }
 
 
 // getLessonOrderbyTitle(title)
+// getExerciceListeOrderByLessonTitle()
+// getExerciceDetailsOrderByType
 
 
 

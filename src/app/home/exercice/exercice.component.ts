@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterExtensions } from '@nativescript/angular';
+import { DataService } from '~/app/shared/data.service';
 // import { RouterExtensions } from 'nativescript-angular';
 //import { TextField } from 'ui/text-field';
 //import { EventData } from 'data/observable';
@@ -12,7 +13,10 @@ import { RouterExtensions } from '@nativescript/angular';
 
 export class ExerciceComponent implements OnInit {
 
-	constructor(public routerExtensions: RouterExtensions) { }
+    constructor(public routerExtensions: RouterExtensions,
+                private ds: DataService) { }
 
-	ngOnInit() { }
+	ngOnInit() {
+        // console.log(this.ds.getLessonOrderbyTitle("A table").Exercices);
+    }
 }
