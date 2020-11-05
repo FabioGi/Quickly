@@ -1,5 +1,5 @@
 <GridLayout  id="main" actionBarHidden="true">
-    <StackLayout class="degrade">
+    <StackLayout class="degrade" *ngIf="exercises">
         <StackLayout>
             <Progress value="25" maxValue="100"   class="progress"></Progress>
         </StackLayout>
@@ -27,7 +27,7 @@
                     <Image class="logo" src=" https://d37sy4vufic209.cloudfront.net/images/quizzes/assistant-neutral-image-50x52@2x-f24e8c958592c4e8f3b73b63e852ea80.png"
                    ></Image>
                    <StackLayout class="info">
-                         <Label text='Selectionnez: "Le couteau"' ></Label>
+                         <Label [text]= "exercises.question"></Label>
                    </StackLayout>
                     <!-- <Label text="Label 1" ></Label>
                     <Label text="Label 2" ></Label>
@@ -40,30 +40,30 @@
             <StackLayout>
                 <Label text="" ></Label>
             </StackLayout>
-            <GridLayout columns="*,*" rows="*,*" width="400" height="500"  >
+            <GridLayout columns="*,*" rows="*,*" width="400" height="500" *ngIf="exercises.suggestions" >
                 <StackLayout col="0" row="0" style="margin: 5; border-radius: 20;">
-                    <Image src="~/assets/exercice1/verre.jpg"
+                    <Image [src]="imagePath(0,exercises.suggestions)"
                     stretch="aspectFit" backgroundColor="red"
                     ></Image>
                     <Label text="Glass" class="quiz"></Label>
                 </StackLayout>
 
                 <StackLayout col="1" row="0" style="margin: 5; border-radius: 20;">
-                    <Image src="~/assets/exercice1/couteau.jpg"
+                    <Image [src]="imagePath(1,exercises.suggestions)"
                     stretch="aspectFit"
                     ></Image>
                     <Label text="Knife" class="quiz"></Label>
                 </StackLayout>
 
                 <StackLayout col="0" row="1" style="margin: 5; border-radius: 20;">
-                    <Image src="~/assets/exercice1/fourchette.jpg"
+                    <Image [src]="imagePath(2,exercises.suggestions)"
                     stretch="aspectFit"
                     ></Image>
                     <Label text="Fork" class="quiz"></Label>
                 </StackLayout>
 
                 <StackLayout col="1" row="1" style="margin: 5; border-radius: 20;">
-                    <Image src="~/assets/exercice1/cuillere.jpg"
+                    <Image [src]="imagePath(3,exercises.suggestions)"
                     stretch="aspectFit"
                     ></Image>
                     <Label text="Spoon" class="quiz"></Label>

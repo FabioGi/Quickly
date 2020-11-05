@@ -88,7 +88,7 @@
                     <!-- </AbsoluteLayout> -->
                       <FlexboxLayout flexDirection="column" width="390" height="90%">
                         <StackLayout width="130" height="30%"  class="my-lbl">
-                            <Label text= "A table" (tap)="routerExtensions.navigate(['home','exercice'])" ></Label>
+                            <Label text= "A table" (tap)="routerExtensions.navigate(['home','exercice','A table'])" ></Label>
                             <FlexboxLayout justifyContent="space-between">
                                 <Label text=""></Label>
                                 <Label text="" ></Label>
@@ -97,16 +97,15 @@
                          </StackLayout>
 
                          <StackLayout width="130" height="30%"  class="my-lbl">
-                            <Label text= "Animaux familiers" (tap)="routerExtensions.navigate(['home','questionnaire'])"   ></Label>
+                            <Label text= "Animaux familiers" (tap)="routerExtensions.navigate(['home','exercice','Les animaux familiers'])"  ></Label>
                             <FlexboxLayout justifyContent="space-between">
                                 <Label text=""></Label>
                                 <Label text="" ></Label>
                                 <Label text="0/9" class="eval" ></Label>
                             </FlexboxLayout>
                          </StackLayout>
-
                          <StackLayout width="130" height="30%"  class="my-lbl">
-                            <Label text= "Animaux sauvages" ></Label>
+                            <Label text= "Animaux sauvages" (tap)="routerExtensions.navigate(['home','exercice','Les animaux sauvages'])" ></Label>
                             <FlexboxLayout justifyContent="space-between">
                                 <Label text=""></Label>
                                 <Label text="" ></Label>

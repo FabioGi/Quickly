@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { RouterExtensions } from '@nativescript/angular';
 import { DataService } from '~/app/shared/data.service';
 // import { RouterExtensions } from 'nativescript-angular';
@@ -12,11 +13,15 @@ import { DataService } from '~/app/shared/data.service';
 })
 
 export class ExerciceComponent implements OnInit {
-
+    title: string;
+    exercises: any;
     constructor(public routerExtensions: RouterExtensions,
-                private ds: DataService) { }
+                private ds: DataService,
+                private router: ActivatedRoute) { }
 
 	ngOnInit() {
-        // console.log(this.ds.getLessonOrderbyTitle("A table").Exercices);
+         this.title = this.router.snapshot.params.title;
+         this.exercises = this.ds.getLessonOrderbyTitle(this.title).Exercices;
+        // console.log(this.ds.getLessonOrderbyTitle(this.title).Exercices);
     }
 }

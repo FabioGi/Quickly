@@ -4,13 +4,13 @@
 
 <GridLayout id="main" >
     <ScrollView id="myScroller" orientation="horizontal" >
-        <StackLayout id="container" orientation="horizontal">
+        <StackLayout id="container" orientation="horizontal" *ngIf="exercises">
             <!-- <StackLayout class="exercice" orientation="vertical"  backgroundColor="lightgray" >
                 <Label text="Label x" id="leçon" ></Label> <br> <br>
                 <Label text="Label x" width="50" height="50" ></Label>
                 <Label text="Label x" width="50" height="50 "></Label>
             </StackLayout> -->
-             <FlexboxLayout flexDirection="column" class="exercice">
+             <FlexboxLayout flexDirection="column" class="exercice" *ngFor="let item of exercises;let index  =index">
                  <StackLayout>
                     <Label text="" width="80" height="80" ></Label>
                  </StackLayout>
@@ -20,10 +20,18 @@
                  <!-- </StackLayout> -->
 
                  <StackLayout>
+                  <Label text="" width="80" height="80" ></Label>
+               </StackLayout>
+<!--
+               <StackLayout> -->
+                  <Label [text]="item.type" width="80" height="120"></Label>
+               <!-- </StackLayout> -->
+
+                 <StackLayout>
                     <Label text="" width="80" height="80" ></Label>
                  </StackLayout>
 
-                <Label text="1/9" width="80" height="120" ></Label>
+                <Label [text]="item.id+'/'+8" width="80" height="120" ></Label>
 
                 <StackLayout>
                     <Label text="" width="80" height="80" ></Label>
@@ -31,57 +39,10 @@
 
                 <!-- <Label text="Label 3" width="80" height="120" ></Label> -->
                 <button  width="80" height="120" text="Demarrer"
-                 (tap)="routerExtensions.navigate(['home','questionnaire'])" ></button>
+                 (tap)="routerExtensions.navigate(['home','questionnaire',index,title])" ></button>
+                 <!-- title: "Les animaux familiers", -->
 
               </FlexboxLayout>
-
-              <FlexboxLayout flexDirection="column" class="exercice">
-                <StackLayout>
-                   <Label text="" width="80" height="80" ></Label>
-                </StackLayout>
-<!--
-                <StackLayout> -->
-                   <Label text="Exercice" width="80" height="120"></Label>
-                <!-- </StackLayout> -->
-
-                <StackLayout>
-                   <Label text="" width="80" height="80" ></Label>
-                </StackLayout>
-
-               <Label text="2/9" width="80" height="120" ></Label>
-
-               <StackLayout>
-                   <Label text="" width="80" height="80" ></Label>
-                </StackLayout>
-
-               <!-- <Label text="Label 3" width="80" height="120" ></Label> -->
-               <button  width="80" height="120" text="Demarrer"></button>
-
-             </FlexboxLayout>
-
-             <FlexboxLayout flexDirection="column" class="exercice">
-                <StackLayout>
-                   <Label text="" width="80" height="80" ></Label>
-                </StackLayout>
-<!--
-                <StackLayout> -->
-                   <Label text="Exercice" width="80" height="120"></Label>
-                <!-- </StackLayout> -->
-
-                <StackLayout>
-                   <Label text="" width="80" height="80" ></Label>
-                </StackLayout>
-
-               <Label text="3/9" width="80" height="120" ></Label>
-
-               <StackLayout>
-                   <Label text="" width="80" height="80" ></Label>
-                </StackLayout>
-
-               <!-- <Label text="Label 3" width="80" height="120" ></Label> -->
-               <button  width="60" height="120"  text="Demarrer"></button>
-
-             </FlexboxLayout>
 
         </StackLayout>
     </ScrollView>

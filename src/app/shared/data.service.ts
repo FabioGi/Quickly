@@ -193,8 +193,8 @@ const lessons =
                             {
                                id: 1,
                                name: "cat",
-                               image:"chat.jpg",
-                               media: "chat.mp3"
+                               image:"cat.jpg",
+                               media: "cat.mp3"
                             },
                             {
                                id: 2,
@@ -361,8 +361,8 @@ const lessons =
                             {
                                id: 1,
                                name: "elephant",
-                               image:"éléphant.jpg",
-                               media:"éléphant.mp3"
+                               image:"elephant.jpg",
+                               media:"elephant.mp3"
                             },
                             {
                                id: 2,
@@ -373,8 +373,8 @@ const lessons =
                             {
                                id: 3,
                                name: "zebra",
-                               image:"zèbre.jpg",
-                               media:"zèbre.mp3"
+                               image:"zebre.jpg",
+                               media:"zebre.mp3"
                             },
                             {
                                id: 4,
@@ -502,14 +502,14 @@ const lessons =
                             {
                                id: 1,
                                name: "elephant",
-                               image:"éléphant.jpg",
-                               media: "éléphant.mp3"
+                               image:"elephant.jpg",
+                               media: "elephant.mp3"
                             },
                             {
                                id: 2,
                                name: "zebra",
-                               image:"zèbre.jpg",
-                               media:"zèbre.mp3"
+                               image:"zebre.jpg",
+                               media:"zebre.mp3"
                             }
                          ]
           }
@@ -647,6 +647,10 @@ export class DataService {
     getExerciseOrderById(id,title){
         this.currentLesson = this.getLessonOrderbyTitle(title)
         return this.currentLesson.Exercices[id];
+    }
+
+    getAllLessons(){
+        return lessons.Lesson ;
     }
 
 }

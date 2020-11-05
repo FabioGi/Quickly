@@ -25,10 +25,12 @@ export class HomeComponent implements OnInit {
     scrollLayout: ScrollView = null ;
     contentContainer: StackLayout  = null ;
     result = false;
+    module:any;
 
     constructor(private _itemService: DataService,
         public routerExtensions: RouterExtensions,
-        public page: Page) { }
+        public page: Page,
+        public ds: DataService) { }
         // onScroll(args: ScrollEventData) {
         //     const scrollView = args.object as ScrollView;
 
@@ -38,6 +40,7 @@ export class HomeComponent implements OnInit {
 
     ngOnInit(): void {
         this.items = this._itemService.getItems();
+      //  this.module = this.ds.currentLesson;
         // this.scrollLayout = this.page.getViewById("myScroller") as ScrollView;
         // this.contentContainer = this.page.getViewById("contentContainer") as StackLayout;
         // for (let index = 0; index <= numLabel; index++) {

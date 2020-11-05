@@ -18,8 +18,8 @@ import { AppariementBisComponent } from "./appariement-bis/appariement-bis.compo
 const routes: Routes = [
     { path: "", component: HomeComponent },
     { path: "item", component: ItemDetailComponent },
-    { path: "exercice", component: ExerciceComponent},
-    { path: "questionnaire", component: QuestionnairesComponent},
+    { path: "exercice/:title", component: ExerciceComponent},
+    { path: "questionnaire/:id1/:id2", component: QuestionnairesComponent},
     { path: "resultat44", component: ResultatQuatreImageComponent},
     { path: "switch", component: QuestionnaireSwitchComponent },
     { path: "qcm", component: QuestionnaireQcmComponent },
