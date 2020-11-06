@@ -20,14 +20,14 @@ const routes: Routes = [
     { path: "item", component: ItemDetailComponent },
     { path: "exercice/:title", component: ExerciceComponent},
     { path: "questionnaire/:id1/:id2", component: QuestionnairesComponent},
-    { path: "resultat44", component: ResultatQuatreImageComponent},
-    { path: "switch", component: QuestionnaireSwitchComponent },
-    { path: "qcm", component: QuestionnaireQcmComponent },
-    { path: "appar",component: AppariementComponent},
-    { path: "quatre-bis", component: QuatreImageBisComponent},
-    { path: "switch-bis", component: SwitchBisComponent},
-    { path: "qcm-bis", component: QcmBisComponent},
-    { path: "apar-bis", component: AppariementBisComponent}
+    { path: "resultat44/:id1/:id2", component: ResultatQuatreImageComponent},
+    { path: "switch/:id1/:id2", component: QuestionnaireSwitchComponent },
+    { path: "qcm/:id1/:id2", component: QuestionnaireQcmComponent },
+    { path: "appar/:id1/:id2",component: AppariementComponent},
+    { path: "quatre-bis/:id1/:id2", component: QuatreImageBisComponent},
+    { path: "switch-bis/:id1/:id2", component: SwitchBisComponent},
+    { path: "qcm-bis/:id1/:id2", component: QcmBisComponent},
+    { path: "apar-bis/:id1/:id2", component: AppariementBisComponent}
 
 ];
 

@@ -16,6 +16,9 @@ import { DataService } from '~/app/shared/data.service';
 
 export class QuestionnairesComponent implements OnInit {
     exercises: any;
+    id2: any;
+    id: number;
+    title: number;
     constructor(private page: Page,
                public routerExtensions: RouterExtensions,
                private ds: DataService,
@@ -23,13 +26,15 @@ export class QuestionnairesComponent implements OnInit {
         this.page.actionBarHidden = true;
     }
 	ngOnInit() {
-       const id =  +this.route.snapshot.params.id1;
-       const id2 = this.route.snapshot.params.id2;
-       this.exercises = this.ds.getExerciseOrderById(id, id2);
-       console.log(this.exercises);
+        this.id =  +this.route.snapshot.params.id1;
+        this.title = this.route.snapshot.params.id2;
+       this.exercises = this.ds.getExerciseOrderById(this.id, this.title);
+       // console.log(this.exercises);
+       console.log(this.id)
     }
 
     imagePath(index,data){
-        return '~/assets/media/'+data[index].image;
+        // return '~/assets/media/'+data[index].image;
+        return this.ds.imagePath(index,data);
     }
 }

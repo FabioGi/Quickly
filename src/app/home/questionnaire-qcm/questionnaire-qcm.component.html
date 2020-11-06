@@ -1,5 +1,5 @@
 <GridLayout  id="main" actionBarHidden="true">
-    <StackLayout class="degrade">
+    <StackLayout class="degrade" *ngIf="exercises">
         <StackLayout>
             <Progress value="25" maxValue="100"   class="progress"></Progress>
         </StackLayout>
@@ -40,7 +40,7 @@
                 <Label text="" ></Label>
             </StackLayout> -->
             <StackLayout>
-                <Label text="c'est du café" class="info" ></Label>
+                <Label [text]="exercises.statement" class="info" ></Label>
             </StackLayout>
             <StackLayout>
                 <Label text="" ></Label>
@@ -64,19 +64,19 @@
                     <Label text="It's water" class="qcm-label"></Label>
                 </StackLayout>
               </GridLayout> -->
-              <FlexboxLayout flexDirection="column" width="350" height="400">
-                <Label text="It's coffee" class="qcm-label"></Label>
-                <Label text="It's tea" class="qcm-label"></Label>
+              <FlexboxLayout flexDirection="column"  *ngFor="let item of exercises.suggestions">
+                <Label [text]="item" class="qcm-label"></Label>
+                <!-- <Label text="It's tea" class="qcm-label"></Label>
                 <Label text="It's bread" class="qcm-label"></Label>
-                <Label text="It's water" class="qcm-label"></Label>
+                <Label text="It's water" class="qcm-label"></Label> -->
               </FlexboxLayout>
             <StackLayout>
                 <Label text="" ></Label>
             </StackLayout>
 
             <StackLayout>
-                <button   text="Vérifier"
-                (tap)="routerExtensions.navigate(['home','appar'])"></button>
+                <button  text="Vérifier"
+                (tap)="routerExtensions.navigate(['home','appar',item,title])"></button>
             </StackLayout>
 
     </StackLayout>

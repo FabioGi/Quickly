@@ -127,21 +127,26 @@ const lessons =
                             }
                        ]
           },
-           {
-             id: 6,
-             type: "Appariement",
-             question: "Traduiser cette phrase",
-             statement: "This is a spoon",
-             answer: "c'est une cuillère",
-             media: "this_is_a_spoon.mp3",
-             suggestions:[
-                            "une",
-                            "c'est",
-                            "verre",
-                            "un",
-                            "cuillère",
-                         ]
-          },
+          {
+            id: 6,
+            type: "Switch",
+            question: "Selectionnez:'cuillère'",
+            answer: "spoon",
+            suggestions:[
+                           {
+                              id: 1,
+                              name: "fork",
+                              image:"fourchette.jpg",
+                              media: "fourchette.mp3"
+                           },
+                           {
+                              id: 2,
+                              name: "spoon",
+                              image:"cuillere.jpg",
+                              media: "cuillere.mp3"
+                           }
+                        ]
+         },
           {
              id: 7,
              type: "QCM",
@@ -156,25 +161,20 @@ const lessons =
                          ]
           },
           {
-             id: 8,
-             type: "Switch",
-             question: "Selectionnez:'cuillère'",
-             answer: "spoon",
-             suggestions:[
-                            {
-                               id: 1,
-                               name: "fork",
-                               image:"fourchette.jpg",
-                               media: "fourchette.mp3"
-                            },
-                            {
-                               id: 2,
-                               name: "spoon",
-                               image:"cuillere.jpg",
-                               media: "cuillere.mp3"
-                            }
-                         ]
-          }
+            id: 8,
+            type: "Appariement",
+            question: "Traduiser cette phrase",
+            statement: "This is a spoon",
+            answer: "c'est une cuillère",
+            media: "this_is_a_spoon.mp3",
+            suggestions:[
+                           "une",
+                           "c'est",
+                           "verre",
+                           "un",
+                           "cuillère",
+                        ]
+         }
 
   ]
             },
@@ -296,21 +296,26 @@ const lessons =
                             }
                        ]
           },
-           {
-             id: 6,
-             type: "Appariement",
-             question: "Traduiser cette phrase",
-             statement: "This is a bird",
-             answer: "c'est un oiseau",
-             media: "this_is_a_bird.mp3",
-             suggestions:[
-                            "une",
-                            "c'est",
-                            "verre",
-                            "un",
-                            "cuillère",
-                         ]
-          },
+          {
+            id: 6,
+            type: "Switch",
+            question: "Selectionnez:'lapin'",
+            answer: "spoon",
+            suggestions:[
+                           {
+                              id: 1,
+                              name: "bird",
+                              image:"oiseau.jpg",
+                              media: "oiseau.mp3"
+                           },
+                           {
+                              id: 2,
+                              name: "rabbit",
+                              image:"lapin.jpg",
+                              media: "lapin.mp3"
+                           }
+                        ]
+         },
           {
              id: 7,
              type: "QCM",
@@ -325,25 +330,21 @@ const lessons =
                          ]
           },
           {
-             id: 8,
-             type: "Switch",
-             question: "Selectionnez:'lapin'",
-             answer: "spoon",
-             suggestions:[
-                            {
-                               id: 1,
-                               name: "bird",
-                               image:"oiseau.jpg",
-                               media: "oiseau.mp3"
-                            },
-                            {
-                               id: 2,
-                               name: "rabbit",
-                               image:"lapin.jpg",
-                               media: "lapin.mp3"
-                            }
-                         ]
-          }
+            id: 8,
+            type: "Appariement",
+            question: "Traduiser cette phrase",
+            statement: "This is a bird",
+            answer: "c'est un oiseau",
+            media: "this_is_a_bird.mp3",
+            suggestions:[
+                           "une",
+                           "c'est",
+                           "verre",
+                           "un",
+                           "cuillère",
+                        ]
+         }
+
 
   ]
  },
@@ -399,7 +400,7 @@ const lessons =
                             {
                                id: 2,
                                name: "singe",
-                               image:"monkey.jpg",
+                               image:"singe.jpg",
                                media: "monkey.mp3"
                             }
                          ]
@@ -465,21 +466,26 @@ const lessons =
                             }
                        ]
           },
-
-           {
-             id: 6,
-             type: "Appariement",
-             question: "Traduiser cette phrase",
-             statement: "This is an elephant",
-             answer: "c'est un éléphant",
-             media: "this_is_a_elephant.mp3",
-             suggestions:[
-                            "éléphant",
-                            "c'est",
-                            "verre",
-                            "un"
-                         ]
-          },
+          {
+            id: 6,
+            type: "Switch",
+            question: "Selectionnez:'zèbre'",
+            answer: "zebra",
+            suggestions:[
+                           {
+                              id: 1,
+                              name: "elephant",
+                              image:"elephant.jpg",
+                              media: "elephant.mp3"
+                           },
+                           {
+                              id: 2,
+                              name: "zebra",
+                              image:"zebre.jpg",
+                              media:"zebre.mp3"
+                           }
+                        ]
+         },
           {
              id: 7,
              type: "QCM",
@@ -494,25 +500,19 @@ const lessons =
                          ]
           },
           {
-             id: 8,
-             type: "Switch",
-             question: "Selectionnez:'zèbre'",
-             answer: "zebra",
-             suggestions:[
-                            {
-                               id: 1,
-                               name: "elephant",
-                               image:"elephant.jpg",
-                               media: "elephant.mp3"
-                            },
-                            {
-                               id: 2,
-                               name: "zebra",
-                               image:"zebre.jpg",
-                               media:"zebre.mp3"
-                            }
-                         ]
-          }
+            id: 8,
+            type: "Appariement",
+            question: "Traduiser cette phrase",
+            statement: "This is an elephant",
+            answer: "c'est un éléphant",
+            media: "this_is_a_elephant.mp3",
+            suggestions:[
+                           "éléphant",
+                           "c'est",
+                           "verre",
+                           "un"
+                        ]
+         }
 
   ]
  }
@@ -651,6 +651,10 @@ export class DataService {
 
     getAllLessons(){
         return lessons.Lesson ;
+    }
+
+    imagePath(index,data){
+        return '~/assets/media/'+data[index].image;
     }
 
 }

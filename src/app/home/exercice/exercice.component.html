@@ -10,7 +10,7 @@
                 <Label text="Label x" width="50" height="50" ></Label>
                 <Label text="Label x" width="50" height="50 "></Label>
             </StackLayout> -->
-             <FlexboxLayout flexDirection="column" class="exercice" *ngFor="let item of exercises;let index  =index">
+             <FlexboxLayout flexDirection="column" class="exercice" *ngFor="let item of exercises;let index =index">
                  <StackLayout>
                     <Label text="" width="80" height="80" ></Label>
                  </StackLayout>
@@ -39,7 +39,7 @@
 
                 <!-- <Label text="Label 3" width="80" height="120" ></Label> -->
                 <button  width="80" height="120" text="Demarrer"
-                 (tap)="routerExtensions.navigate(['home','questionnaire',index,title])" ></button>
+                 (tap)="routerGame(index)" ></button>
                  <!-- title: "Les animaux familiers", -->
 
               </FlexboxLayout>

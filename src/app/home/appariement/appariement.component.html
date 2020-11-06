@@ -1,5 +1,5 @@
 <GridLayout  id="main" actionBarHidden="true">
-    <StackLayout class="degrade">
+    <StackLayout class="degrade" *ngIf="exercises">
         <StackLayout>
             <Progress value="25" maxValue="100"   class="progress"></Progress>
         </StackLayout>
@@ -40,7 +40,7 @@
                 <FlexboxLayout justifyContent="space-between">
                     <Image class="img2" src="https://d37sy4vufic209.cloudfront.net/images/quizzes/speaker-icon@2x-34c4955ceccc85440f054b1f15f3ef61.png"
                     style="margin: 10;"></Image>
-                    <Label text='Hello' class="info"></Label>
+                    <Label [text]="exercises.statement" class="info"></Label>
                 </FlexboxLayout>
             </StackLayout>
              <GridLayout  width="80%" height="200"
@@ -51,21 +51,20 @@
                 </TextView>
                 <!-- (textChange)="onTextChange($event) -->
               </GridLayout>
-              <StackLayout>
-                <FlexboxLayout style="margin: 5; text-align: center;">
-                    <Label text='This' class="appr-label" ></Label>
-                    <Label text='is'class="appr-label" ></Label>
-                    <Label text='a' class="appr-label" ></Label>
-                    <Label text='fork'class="appr-label" ></Label>
-                </FlexboxLayout>
-              </StackLayout>
+              <!-- <StackLayout> -->
+                <!-- <FlexboxLayout style="margin: 5;" orientation="horizontal">
+                    <v-template *ngFor="let item of exercises.suggestions">
+                        <Label [text]="item" class="appr-label" ></Label>
+                       </v-template>
+                </FlexboxLayout> -->
+              <!-- </StackLayout> -->
             <StackLayout>
                 <Label text="" ></Label>
             </StackLayout>
 
             <StackLayout>
                 <button text="Vérifier"
-                (tap)="routerExtensions.navigate(['home','quatre-bis'])"></button>
+                (tap)="routerExtensions.navigate(['home','quatre-bis',4,title])"></button>
             </StackLayout>
 
     </StackLayout>
