@@ -20,7 +20,7 @@ const routes: Routes = [
     { path: "item", component: ItemDetailComponent },
     { path: "exercice/:title", component: ExerciceComponent},
     { path: "questionnaire/:id1/:id2", component: QuestionnairesComponent},
-    { path: "resultat44/:id1/:id2", component: ResultatQuatreImageComponent},
+    { path: "resultat44/:id1/:id2/:response/:image/:correct/:cimage", component: ResultatQuatreImageComponent},
     { path: "switch/:id1/:id2", component: QuestionnaireSwitchComponent },
     { path: "qcm/:id1/:id2", component: QuestionnaireQcmComponent },
     { path: "appar/:id1/:id2",component: AppariementComponent},

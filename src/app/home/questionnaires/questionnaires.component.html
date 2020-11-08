@@ -1,37 +1,37 @@
 <GridLayout  id="main" actionBarHidden="true">
-    <StackLayout class="degrade" *ngIf="exercises">
+    <StackLayout class="degrade">
         <StackLayout>
             <Progress value="25" maxValue="100"   class="progress"></Progress>
         </StackLayout>
-            <StackLayout>
+            <!-- <StackLayout>
                 <FlexboxLayout justifyContent="space-between">
-                    <Image class="img" src="https://d37sy4vufic209.cloudfront.net/images/topbar/cross-icon-16@2x-3e2d9bb3bb697f9cd949417a3c047ef8.png"
+                    <Image class="img" src="~/assets/quickly/cross.png"
                      style="margin: 10;"></Image>
                      <FlexboxLayout  style="margin: 10;">
-                        <Image class="star" src="https://d37sy4vufic209.cloudfront.net/images/quizzes/star-fill@2x-5b4bc07f39525c0b7bc899a385e671c5.png"
+                        <Image class="star" src="~/assets/quickly/star.png"
  style="margin: 10;"></Image>
 
-                        <Image class="star" src="https://d37sy4vufic209.cloudfront.net/images/quizzes/star-fill@2x-5b4bc07f39525c0b7bc899a385e671c5.png"
+                        <Image class="star" src="~/assets/quickly/star.png"
                         stretch="aspectFill" style="margin: 10;"></Image>
 
-                        <Image class="star" src="https://d37sy4vufic209.cloudfront.net/images/quizzes/star-fill@2x-5b4bc07f39525c0b7bc899a385e671c5.png"
+                        <Image class="star" src="~/assets/quickly/star.png"
                         stretch="aspectFill" style="margin: 10;"></Image>
                      </FlexboxLayout>
-                     <Image class="star" src=" https://d37sy4vufic209.cloudfront.net/images/topbar/feedback-icon@2x-4686f19b9ed517d7babaf0bb0186beaf.png"
+                     <Image class="star" src="~/assets/quickly/beaf.png"
                      style="margin: 10;"></Image>
                 </FlexboxLayout>
-            </StackLayout>
-
+            </StackLayout> -->
+            <header-layout></header-layout>
             <StackLayout>
                 <FlexboxLayout>
-                    <Image class="logo" src=" https://d37sy4vufic209.cloudfront.net/images/quizzes/assistant-neutral-image-50x52@2x-f24e8c958592c4e8f3b73b63e852ea80.png"
+                    <Image class="logo" src=" ~/assets/quickly/logo.png"
                    ></Image>
                    <StackLayout class="info">
                          <Label [text]= "exercises.question"></Label>
                    </StackLayout>
                     <!-- <Label text="Label 1" ></Label>
                     <Label text="Label 2" ></Label>
-                    <Label text="Label 3" ></Label> -->
+                    <Label text="Label 3" ></Labe> -->
                 </FlexboxLayout>
             </StackLayout>
             <StackLayout>
@@ -40,60 +40,53 @@
             <StackLayout>
                 <Label text="" ></Label>
             </StackLayout>
-            <GridLayout columns="*,*" rows="*,*" width="400" height="500" *ngIf="exercises.suggestions" >
+            <GridLayout columns="*,*" rows="*,*" width="400" height="500" >
                 <StackLayout col="0" row="0" style="margin: 5; border-radius: 20;">
                     <Image [src]="imagePath(0,exercises.suggestions)"
-                    stretch="aspectFit" backgroundColor="red"
+                    stretch="aspectFit"
                     ></Image>
-                    <Label [text]="exercises.suggestions[0].name" class="quiz"></Label>
+                    <Label [text]="exercises.suggestions[0].name" class="quiz"
+                    (tap)="selectImage(exercises.suggestions[0], $event)"
+                    #checked
+                    ></Label>
                 </StackLayout>
 
                 <StackLayout col="1" row="0" style="margin: 5; border-radius: 20;">
                     <Image [src]="imagePath(1,exercises.suggestions)"
                     stretch="aspectFit"
                     ></Image>
-                    <Label [text]="exercises.suggestions[1].name" class="quiz"></Label>
+                    <Label [text]="exercises.suggestions[1].name" class="quiz"
+                    #checked2
+                    (tap)="selectImage(exercises.suggestions[1], $event)" ></Label>
                 </StackLayout>
 
                 <StackLayout col="0" row="1" style="margin: 5; border-radius: 20;">
                     <Image [src]="imagePath(2,exercises.suggestions)"
                     stretch="aspectFit"
                     ></Image>
-                    <Label [text]="exercises.suggestions[2].name" class="quiz"></Label>
+                    <Label [text]="exercises.suggestions[2].name" class="quiz"
+                    (tap)="selectImage(exercises.suggestions[2], $event)"
+                    #checked3></Label>
                 </StackLayout>
 
                 <StackLayout col="1" row="1" style="margin: 5; border-radius: 20;">
                     <Image [src]="imagePath(3,exercises.suggestions)"
                     stretch="aspectFit"
                     ></Image>
-                    <Label [text]="exercises.suggestions[3].name" class="quiz"></Label>
+                    <Label [text]="exercises.suggestions[3].name" class="quiz"
+                    (tap)="selectImage(exercises.suggestions[3], $event)"
+                    #checked1></Label>
                 </StackLayout>
-
-
-            <!-- <Image src="~/assets/exercice1/couteau.jpg" col="1" row="0" style="margin: 5;"
-            stretch="aspectFit" backgroundColor="blue"></Image> -->
-
-            <!-- <Image src="~/assets/exercice1/cuillere.jpg" col="0" row="1" style="margin: 5;"
-            stretch="aspectFit" backgroundColor="yellow"></Image>
-            C:\Users\Fabrice Kadio\Quickly\src\assets\exercice1\cuillere.jpg
-            <Image src="~/assets/exercice1/fourchette.jpg" col="1" row="1" style="margin: 5;"
-            stretch="aspectFit" backgroundColor="green"></Image> -->
-
-                <!-- <Label text="Label 1" col="0" row="0" backgroundColor="red" style="margin: 5;"></Label>> -->
-                <!-- <Label text="Label 2" col="1" row="0" backgroundColor="green" style="margin: 5;"></Label>> -->
-                <!-- <Label text="Label 3" col="0" row="1" backgroundColor="blue" style="margin: 5;"></Label>> -->
-                <!-- <Label text="Label 4" col="1" row="1" backgroundColor="yellow" style="margin: 5;"></Label>> -->
               </GridLayout>
             <StackLayout>
                 <Label text="" ></Label>
             </StackLayout>
 
             <StackLayout>
-                <button text="Vérifier"
-                (tap)="routerExtensions.navigate(['home','resultat44',id,title])"></button>
+                <button text="Vérifier" (tap)="sentResponse(id,title)"
+                *ngIf="verify"></button>
             </StackLayout>
-
     </StackLayout>
-
 </GridLayout>
+
 

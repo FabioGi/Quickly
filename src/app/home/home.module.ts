@@ -15,6 +15,7 @@ import { QuestionnaireSwitchComponent } from "./questionnaire-switch/questionnai
 import { QuestionnairesComponent } from "./questionnaires/questionnaires.component";
 import { ResultatQuatreImageComponent } from "./questionnaires/resultat-quatre-image/resultat-quatre-image.component";
 import { SwitchBisComponent } from "./switch-bis/switch-bis.component";
+import { HeaderLayoutComponent } from "./ui/header-layout/header-layout.component";
 // import { HomeComponent } from "./module/home.component";
 // import { ItemDetailComponent } from "./item-detail/item-detail.component";
 
@@ -36,7 +37,8 @@ import { SwitchBisComponent } from "./switch-bis/switch-bis.component";
         AppariementComponent,
         QuatreImageBisComponent,
         SwitchBisComponent,
-        QcmBisComponent
+        QcmBisComponent,
+        HeaderLayoutComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA

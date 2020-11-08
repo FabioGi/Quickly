@@ -3,30 +3,14 @@
         <StackLayout>
             <Progress value="25" maxValue="100"   class="progress"></Progress>
         </StackLayout>
-            <StackLayout>
-                <FlexboxLayout justifyContent="space-between">
-                    <Image class="img" src="https://d37sy4vufic209.cloudfront.net/images/topbar/cross-icon-16@2x-3e2d9bb3bb697f9cd949417a3c047ef8.png"
-                     style="margin: 10;"></Image>
-                     <FlexboxLayout  style="margin: 10;">
-                        <Image class="star" src="https://d37sy4vufic209.cloudfront.net/images/quizzes/star-fill@2x-5b4bc07f39525c0b7bc899a385e671c5.png"
- style="margin: 10;"></Image>
-
-                        <Image class="star" src="https://d37sy4vufic209.cloudfront.net/images/quizzes/star-fill@2x-5b4bc07f39525c0b7bc899a385e671c5.png"
-                        stretch="aspectFill" style="margin: 10;"></Image>
-
-                        <Image class="star" src="https://d37sy4vufic209.cloudfront.net/images/quizzes/star-fill@2x-5b4bc07f39525c0b7bc899a385e671c5.png"
-                        stretch="aspectFill" style="margin: 10;"></Image>
-                     </FlexboxLayout>
-                     <Image class="star" src=" https://d37sy4vufic209.cloudfront.net/images/topbar/feedback-icon@2x-4686f19b9ed517d7babaf0bb0186beaf.png"
-                     style="margin: 10;"></Image>
-                </FlexboxLayout>
-            </StackLayout>
+        <header-layout></header-layout>
             <StackLayout>
                 <FlexboxLayout>
-                    <Image class="logo" src=" https://d37sy4vufic209.cloudfront.net/images/quizzes/assistant-neutral-image-50x52@2x-f24e8c958592c4e8f3b73b63e852ea80.png"
+                    <Image class="logo" src="~/assets/quickly/logo.png"
                    ></Image>
                    <StackLayout class="info">
-                         <Label text="c'est correct" ></Label>
+                         <Label text="c'est correct" *ngIf="final_result"></Label>
+                         <Label text="Mauvaise reponse" *ngIf="!final_result"></Label>
                    </StackLayout>
                     <!-- <Label text="Label 1" ></Label>
                     <Label text="Label 2" ></Label>
@@ -41,34 +25,34 @@
             </StackLayout>
             <GridLayout width="400" height="500"
               horizontalAlignment="center" verticalAlignment="center"
-              *ngIf="result">
+              *ngIf="final_result">
                 <StackLayout col="0" row="0" style="margin: 5; border-radius: 20;">
-                    <Image src="~/assets/exercice1/verre.jpg"
+                    <Image [src]="correct_image_path"
                     stretch="aspectFit" backgroundColor="red"
                     ></Image>
-                    <Label text="Glass" class="quiz"></Label>
+                    <Label [text]="correct" class="quiz" backgroundColor="green"></Label>
                 </StackLayout>
 
               </GridLayout>
               <GridLayout width="400" height="500"
-              columns="*,2*" rows="2*,3*" *ngIf="!result" >
+              columns="*,2*" rows="2*,3*" *ngIf="!final_result" >
                 <StackLayout col="0" row="0" style="margin: 5; border-radius: 20;" backgroundColor="#000000a6">
-                    <Image src="~/assets/exercice1/verre.jpg"
+                    <Image [src]="bad_image_path"
                     stretch="aspectFit"
                     ></Image>
-                    <Label text="Glass" class="quiz" backgroundColor="red"></Label>
+                    <Label [text]="response" class="quiz" backgroundColor="red"></Label>
                 </StackLayout>
 
                 <StackLayout col="1" row="1" style="margin: 5; border-radius: 20;">
-                    <Image src="~/assets/exercice1/cuillere.jpg"
+                    <Image [src]="correct_image_path"
                     stretch="aspectFit"
                     ></Image>
-                    <Label text="Spoon" class="quiz"></Label>
+                    <Label [text]="correct" class="quiz" backgroundColor="green"></Label>
                 </StackLayout>
               </GridLayout>
-            <StackLayout>
-                <Label text="" ></Label>
-            </StackLayout>
+            <!-- <StackLayout>
+                <Label [text]="response" ></Label>
+            </StackLayout> -->
             <StackLayout>
                 <button   text="continuer"
                 (tap)="routerExtensions.navigate(['home','switch',item,title])"></button>

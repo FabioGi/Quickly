@@ -20,6 +20,7 @@ const lessons =
              type: "4x4",
              question: "Selectionnez:'couteau'",
              answer: "knife",
+             answer_image: "verre.jpg",
              suggestions:[
                             {
                                id: 1,
@@ -100,6 +101,7 @@ const lessons =
              type: "4x4",
              question: "Selectionnez:'pain'",
              answer: "bread",
+             answer_image: "eau.jpg",
              suggestions:[
                             {
                                id: 1,
@@ -189,6 +191,7 @@ const lessons =
              type: "4x4",
              question: "Selectionnez:'oiseau'",
              answer: "bird",
+             answer_image: "oiseau.jpg",
              suggestions:[
                             {
                                id: 1,
@@ -221,6 +224,7 @@ const lessons =
              type: "Switch",
              question: "Selectionnez:'chien'",
              answer: "dog",
+             answer_image: "chien.jpg",
              suggestions:[
                             {
                                id: 1,
@@ -269,6 +273,7 @@ const lessons =
              type: "4x4",
              question: "Selectionnez:'thé'",
              answer: "tea",
+             answer_image: "the.jpg",
              suggestions:[
                             {
                                id: 1,
@@ -358,6 +363,7 @@ const lessons =
              type: "4x4",
              question: "Selectionnez:'singe'",
              answer: "monkey",
+             answer_image: "singe.jpg",
              suggestions:[
                             {
                                id: 1,
@@ -439,6 +445,7 @@ const lessons =
              type: "4x4",
              question: "Selectionnez:'café'",
              answer: "coffee",
+             answer_image: "cafe.jpg",
              suggestions:[
                             {
                                id: 1,

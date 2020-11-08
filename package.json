@@ -43,6 +43,7 @@
     "@nativescript/core": "~7.0.0",
     "@nativescript/theme": "~2.3.0",
     "nativescript-angular": "^10.0.0",
+    "nativescript-audio-player": "^1.0.3",
     "reflect-metadata": "~0.1.12",
     "rxjs": "^6.6.0",
     "tns-core-modules": "^6.5.20",
