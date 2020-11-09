@@ -6,41 +6,55 @@
             <Label text="Cours"></Label>
             <Label text=""></Label>
         </FlexboxLayout>
-            <GridLayout backgroundColor ="#17a2b8" margin ="10" style="border-radius: 30;" *ngIf="exercices">
-                <StackLayout>
-                    <StackLayout *ngFor="let item of exercices">
-                        <FlexboxLayout style="margin: 15 ;" >
+            <GridLayout backgroundColor ="#17a2b8" margin ="10" style="border-radius: 30;">
+                <ScrollView id="myScroller" orientation="vertical" >
+                <StackLayout  id="container" orientation="vertical" *ngIf="lesson">
+                    <StackLayout *ngFor="let item of lesson">
+                        <FlexboxLayout style="margin: 15 ;">
                             <Image class="logo" src="~/assets/quickly/logo.png"
                            ></Image>
                            <StackLayout class="info">
-                                 <Label [text]='item.title' color ="white" style="margin-left: 30;"></Label>
+                                 <Label [text]="item.title" color ="white" style="margin-left: 30;"></Label>
                            </StackLayout>
                         </FlexboxLayout>
-                        <StackLayout>
-                            <StackLayout height="650"  *ngFor="let element of item.Exercices" class="list-group" separatorColor="#1f3b61" >
-                              <!-- <ng-template let-item="item"> -->
-                                   <GridLayout>
-                                       <stackLayout  orientation="horizontal">
-                                       <Image src="~/assets/icon-exo.PNG"
-                                       width="25" height="25"></Image>
-                                       <Label [text]="element.type" class="info"></Label>
-                                       </stackLayout>
-                                       <FlexboxLayout justifyContent="space-between">
-                                           <Label text=""></Label>
-                                           <Label text="" ></Label>
-                                           <Label text="Démarrer" class="eval"
-                                            style="color: white; font-weight: bold; width: 100;
-                                             font-size: 15;padding: 10; text-align: center;"></Label>
-                                       </FlexboxLayout>
-                                   </GridLayout>
-                             <!-- </ng-template> -->
-                           </StackLayout>
-                       </StackLayout>
+                    <StackLayout *ngFor="let element of item.Exercices;let index = index" >
+                    <StackLayout>
+                        <FlexboxLayout style="margin-left: 20;">
+                            <Image src="~/assets/icon-exo.PNG"
+                            width="25" height="25"></Image>
+                            <Label [text]="element.type" class="info" style="margin-bottom: 10;"></Label>
+                            <Label text="Démarrer" class="eval"
+                            style="color: white; font-weight: bold; width: 100;
+                             font-size: 15;padding: 10; text-align: center;" ></Label>
+                        </FlexboxLayout>
+
                     </StackLayout>
 
 
-            </StackLayout>
+                     <!--  <ListView height="650" class="list-group" separatorColor="#1f3b61" row ="1">
+                          <ng-template *ngFor="let element of item.Exercices;let index  =index">
+                               <GridLayout height="45">
+                                   <stackLayout  orientation="horizontal">
+                                   <Image src="~/assets/icon-exo.PNG"
+                                   width="25" height="25"></Image>
+                                   <Label [text]="element.type" class="info"></Label>
+                                   </stackLayout>
+                                   <FlexboxLayout justifyContent="space-between">
+                                       <Label text=""></Label>
+                                       <Label text="" ></Label>
+                                       <Label text="Démarrer" class="eval"
+                                        style="color: white; font-weight: bold; width: 100;
+                                         font-size: 15;padding: 10; text-align: center;" ></Label>
+                                   </FlexboxLayout>
+                               </GridLayout>
+                         </ng-template>
+                       </ListView>-->
+                   </StackLayout>
+                   </StackLayout>
+                  </StackLayout>
+                  </ScrollView>
              </GridLayout>
     </StackLayout>
 </GridLayout>
+
 
