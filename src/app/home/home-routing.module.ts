@@ -14,10 +14,11 @@ import { QuatreImageBisComponent } from "./quatre-image-bis/quatre-image-bis.com
 import { SwitchBisComponent } from "./switch-bis/switch-bis.component";
 import { QcmBisComponent } from "./qcm-bis/qcm-bis.component";
 import { AppariementBisComponent } from "./appariement-bis/appariement-bis.component";
+import { ResultatSwitchComponent } from "./questionnaire-switch/resultat-switch/resultat-switch.component";
 
 const routes: Routes = [
     { path: "", component: HomeComponent },
-    { path: "item", component: ItemDetailComponent },
+   // { path: "item", component: ItemDetailComponent },
     { path: "exercice/:title", component: ExerciceComponent},
     { path: "questionnaire/:id1/:id2", component: QuestionnairesComponent},
     { path: "resultat44/:id1/:id2/:response/:image/:correct/:cimage", component: ResultatQuatreImageComponent},
@@ -27,7 +28,8 @@ const routes: Routes = [
     { path: "quatre-bis/:id1/:id2", component: QuatreImageBisComponent},
     { path: "switch-bis/:id1/:id2", component: SwitchBisComponent},
     { path: "qcm-bis/:id1/:id2", component: QcmBisComponent},
-    { path: "apar-bis/:id1/:id2", component: AppariementBisComponent}
+    { path: "apar-bis/:id1/:id2", component: AppariementBisComponent},
+    { path: "result-switch/:id1/:id2/:response/:image/:correct/:cimage",component: ResultatSwitchComponent}
 
 ];
 

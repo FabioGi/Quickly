@@ -12,6 +12,7 @@ import { QcmBisComponent } from "./qcm-bis/qcm-bis.component";
 import { QuatreImageBisComponent } from "./quatre-image-bis/quatre-image-bis.component";
 import { QuestionnaireQcmComponent } from "./questionnaire-qcm/questionnaire-qcm.component";
 import { QuestionnaireSwitchComponent } from "./questionnaire-switch/questionnaire-switch.component";
+import { ResultatSwitchComponent } from "./questionnaire-switch/resultat-switch/resultat-switch.component";
 import { QuestionnairesComponent } from "./questionnaires/questionnaires.component";
 import { ResultatQuatreImageComponent } from "./questionnaires/resultat-quatre-image/resultat-quatre-image.component";
 import { SwitchBisComponent } from "./switch-bis/switch-bis.component";
@@ -38,7 +39,8 @@ import { HeaderLayoutComponent } from "./ui/header-layout/header-layout.componen
         QuatreImageBisComponent,
         SwitchBisComponent,
         QcmBisComponent,
-        HeaderLayoutComponent
+        HeaderLayoutComponent,
+        ResultatSwitchComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA

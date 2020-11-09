@@ -20,7 +20,7 @@ const lessons =
              type: "4x4",
              question: "Selectionnez:'couteau'",
              answer: "knife",
-             answer_image: "verre.jpg",
+             answer_image: "couteau.jpg",
              suggestions:[
                             {
                                id: 1,
@@ -53,6 +53,7 @@ const lessons =
              type: "Switch",
              question: "Selectionnez:'verre'",
              answer: "glass",
+             answer_image: "verre.jpg",
              suggestions:[
                             {
                                id: 1,
@@ -134,6 +135,7 @@ const lessons =
             type: "Switch",
             question: "Selectionnez:'cuillère'",
             answer: "spoon",
+            answer_image: "cuillere.jpg",
             suggestions:[
                            {
                               id: 1,
@@ -305,7 +307,8 @@ const lessons =
             id: 6,
             type: "Switch",
             question: "Selectionnez:'lapin'",
-            answer: "spoon",
+            answer: "rabbit",
+            answer_image: "lapin.jpg",
             suggestions:[
                            {
                               id: 1,
@@ -381,7 +384,7 @@ const lessons =
                                id: 3,
                                name: "zebra",
                                image:"zebre.jpg",
-                               media:"zebre.mp3"
+                               media:"zebra.mp3"
                             },
                             {
                                id: 4,
@@ -396,6 +399,7 @@ const lessons =
              type: "Switch",
              question: "Selectionnez:'tigre'",
              answer: "tiger",
+             answer_image: "tigre.jpg",
              suggestions:[
                             {
                                id: 1,
@@ -478,6 +482,7 @@ const lessons =
             type: "Switch",
             question: "Selectionnez:'zèbre'",
             answer: "zebra",
+            answer_image: "zebre.jpg",
             suggestions:[
                            {
                               id: 1,
@@ -489,7 +494,7 @@ const lessons =
                               id: 2,
                               name: "zebra",
                               image:"zebre.jpg",
-                              media:"zebre.mp3"
+                              media:"zebra.mp3"
                            }
                         ]
          },

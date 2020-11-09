@@ -62,7 +62,7 @@ export class QuestionnairesComponent implements OnInit {
         this.checked3.nativeElement.backgroundColor="#007bff";
         const arg = args.object as any;
         // arg.color = 'white';
-        arg.backgroundColor="red";
+        arg.backgroundColor="#013299";
         this.initPlayer(data.media);
         this._player.play();
         this.verify = true;
@@ -75,7 +75,7 @@ export class QuestionnairesComponent implements OnInit {
     sentResponse(id,title){
         this.routerExtensions.navigate(['home','resultat44',id,title,this.response,
         this.response_image,this.correct,this.correct_image]);
-        console.log(this.response,this.response_image, this.correct, this.correct_image);
+        console.log(this.response,this.response_image, this.correct, )
     }
 
     initPlayer(mp3){

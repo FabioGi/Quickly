@@ -1,5 +1,5 @@
 <GridLayout  id="main" actionBarHidden="true">
-    <StackLayout class="degrade" *ngIf="exercises">
+    <StackLayout class="degrade">
         <StackLayout>
             <Progress value="25" maxValue="100"   class="progress"></Progress>
         </StackLayout>
@@ -19,10 +19,12 @@
             <StackLayout>
                 <Label text="" ></Label>
             </StackLayout>
-            <GridLayout columns="*" rows="*,*" width="400" height="500" *ngIf="exercises.suggestions"
+            <GridLayout columns="*" rows="*,*" width="400" height="500"
             >
                 <StackLayout col="0" row="0"  width="220" height="270">
-                    <Label [text]="exercises.suggestions[0].name" class="quiz"></Label>
+                    <Label [text]="exercises.suggestions[0].name" class="quiz"
+                    (tap)="selectImage(exercises.suggestions[0],$event)"
+                    #checked></Label>
                     <Image [src]="imagePath(0,exercises.suggestions)"
                     stretch="aspectFit"
                     ></Image>
@@ -30,7 +32,9 @@
                 </StackLayout>
 
                 <StackLayout col="0" row="1" width="220" height="270">
-                    <Label [text]="exercises.suggestions[1].name" class="quiz"></Label>
+                    <Label [text]="exercises.suggestions[1].name" class="quiz"
+                    (tap)="selectImage(exercises.suggestions[1],$event)"
+                    #checked1></Label>
                     <Image [src]="imagePath(1,exercises.suggestions)"
                     stretch="aspectFit"
                     ></Image>
@@ -42,7 +46,7 @@
 
             <StackLayout>
                 <button   text="Vérifier"
-                (tap)="routerExtensions.navigate(['home','qcm',item,title])"></button>
+                (tap)="sentResponse(item,title)"></button>
             </StackLayout>
 
     </StackLayout>

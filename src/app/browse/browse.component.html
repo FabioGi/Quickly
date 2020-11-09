@@ -6,35 +6,39 @@
             <Label text="Cours"></Label>
             <Label text=""></Label>
         </FlexboxLayout>
-            <GridLayout backgroundColor ="#17a2b8" margin ="10" style="border-radius: 30;">
+            <GridLayout backgroundColor ="#17a2b8" margin ="10" style="border-radius: 30;" *ngIf="exercices">
                 <StackLayout>
-                    <FlexboxLayout style="margin: 15 ;">
-                        <Image class="logo" src=" https://d37sy4vufic209.cloudfront.net/images/quizzes/assistant-neutral-image-50x52@2x-f24e8c958592c4e8f3b73b63e852ea80.png"
-                       ></Image>
-                       <StackLayout class="info">
-                             <Label text='Bonjour' color ="white" style="margin-left: 30;"></Label>
+                    <StackLayout *ngFor="let item of exercices">
+                        <FlexboxLayout style="margin: 15 ;" >
+                            <Image class="logo" src="~/assets/quickly/logo.png"
+                           ></Image>
+                           <StackLayout class="info">
+                                 <Label [text]='item.title' color ="white" style="margin-left: 30;"></Label>
+                           </StackLayout>
+                        </FlexboxLayout>
+                        <StackLayout>
+                            <StackLayout height="650"  *ngFor="let element of item.Exercices" class="list-group" separatorColor="#1f3b61" >
+                              <!-- <ng-template let-item="item"> -->
+                                   <GridLayout>
+                                       <stackLayout  orientation="horizontal">
+                                       <Image src="~/assets/icon-exo.PNG"
+                                       width="25" height="25"></Image>
+                                       <Label [text]="element.type" class="info"></Label>
+                                       </stackLayout>
+                                       <FlexboxLayout justifyContent="space-between">
+                                           <Label text=""></Label>
+                                           <Label text="" ></Label>
+                                           <Label text="Démarrer" class="eval"
+                                            style="color: white; font-weight: bold; width: 100;
+                                             font-size: 15;padding: 10; text-align: center;"></Label>
+                                       </FlexboxLayout>
+                                   </GridLayout>
+                             <!-- </ng-template> -->
+                           </StackLayout>
                        </StackLayout>
-                    </FlexboxLayout>
-                <StackLayout>
-                     <ListView height="650" [items]="items" class="list-group" separatorColor="#1f3b61" row ="1">
-                       <ng-template let-item="item">
-                            <GridLayout height="45">
-                                <stackLayout  orientation="horizontal">
-                                <Image src="~/assets/icon-exo.PNG"
-                                width="25" height="25"></Image>
-                                <Label [text]="item" class="info"></Label>
-                                </stackLayout>
-                                <FlexboxLayout justifyContent="space-between">
-                                    <Label text=""></Label>
-                                    <Label text="" ></Label>
-                                    <Label text="Démarrer" class="eval"
-                                     style="color: white; font-weight: bold; width: 100;
-                                      font-size: 15;padding: 10; text-align: center;"></Label>
-                                </FlexboxLayout>
-                            </GridLayout>
-                      </ng-template>
-                    </ListView>
-                </StackLayout>
+                    </StackLayout>
+
+
             </StackLayout>
              </GridLayout>
     </StackLayout>
