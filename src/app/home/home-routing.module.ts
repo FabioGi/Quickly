@@ -15,6 +15,7 @@ import { SwitchBisComponent } from "./switch-bis/switch-bis.component";
 import { QcmBisComponent } from "./qcm-bis/qcm-bis.component";
 import { AppariementBisComponent } from "./appariement-bis/appariement-bis.component";
 import { ResultatSwitchComponent } from "./questionnaire-switch/resultat-switch/resultat-switch.component";
+import { QcmResponseComponent } from "./questionnaire-qcm/qcm-response/qcm-response.component";
 
 const routes: Routes = [
     { path: "", component: HomeComponent },
@@ -29,7 +30,8 @@ const routes: Routes = [
     { path: "switch-bis/:id1/:id2", component: SwitchBisComponent},
     { path: "qcm-bis/:id1/:id2", component: QcmBisComponent},
     { path: "apar-bis/:id1/:id2", component: AppariementBisComponent},
-    { path: "result-switch/:id1/:id2/:response/:image/:correct/:cimage",component: ResultatSwitchComponent}
+    { path: "result-switch/:id1/:id2/:response/:image/:correct/:cimage",component: ResultatSwitchComponent},
+    {path:  "response-qcm/:id1/:id2/:response/:correct", component: QcmResponseComponent}
 
 ];
 

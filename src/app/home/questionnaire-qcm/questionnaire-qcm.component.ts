@@ -23,6 +23,8 @@ export class QuestionnaireQcmComponent implements OnInit {
     @ViewChild('checked1', { static: true }) checked1: ElementRef;
     @ViewChild('checked2', { static: true }) checked2: ElementRef;
     @ViewChild('checked3', { static: true }) checked3: ElementRef;
+    response: any;
+    correct: any;
 
     constructor(private page: Page,
         public routerExtensions: RouterExtensions,
@@ -35,7 +37,7 @@ export class QuestionnaireQcmComponent implements OnInit {
         this.index =  +this.route.snapshot.params.id1;
         this.title = this.route.snapshot.params.id2;
         this.exercises = this.ds.getExerciseOrderById(this.index, this.title);
-        this.item = this.index + 1 ;
+        this.item = this.index  ;
         console.log(this.item)
      }
 
@@ -44,6 +46,8 @@ export class QuestionnaireQcmComponent implements OnInit {
         this.checked.nativeElement.backgroundColor="#007bff";
         this.checked2.nativeElement.backgroundColor="#007bff";
         this.checked3.nativeElement.backgroundColor="#007bff";
+        this.response = data;
+        this.correct = this.exercises.answer;
         const arg = args.object as any;
         // arg.color = 'white';
         arg.backgroundColor="#013299";
@@ -52,5 +56,9 @@ export class QuestionnaireQcmComponent implements OnInit {
         // this.response_image = data.image;
         // this.correct = this.exercises.answer;
         // this.correct_image = this.exercises.answer_image;
+    }
+
+    sentResponse(){
+        this.routerExtensions.navigate(['home','response-qcm',this.item,this.title,this.response,this.correct])
     }
 }

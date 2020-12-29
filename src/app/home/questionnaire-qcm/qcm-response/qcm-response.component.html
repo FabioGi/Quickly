@@ -1,0 +1,64 @@
+<GridLayout  id="main" actionBarHidden="true">
+    <StackLayout class="degrade">
+        <StackLayout>
+            <Progress value="25" maxValue="100"   class="progress"></Progress>
+        </StackLayout>
+        <header-layout></header-layout>
+            <StackLayout>
+                <FlexboxLayout>
+                    <Image class="logo" src="~/assets/quickly/logo.png"
+                   ></Image>
+                   <StackLayout class="info" *ngIf="isCorrect">
+                         <Label text="Bravo vous c'est correct" ></Label>
+                   </StackLayout>
+                   <StackLayout class="info" *ngIf="!isCorrect">
+                    <Label text="Desolé c'est faux" ></Label>
+                   </StackLayout>
+                </FlexboxLayout>
+            </StackLayout>
+            <StackLayout>
+                <Label text="" ></Label>
+            </StackLayout>
+            <StackLayout>
+                <Label text="" ></Label>
+            </StackLayout>
+            <StackLayout>
+                <!-- <Label [text]="exercises.statement" class="info" ></Label> -->
+            </StackLayout>
+            <StackLayout>
+                <Label text="" ></Label>
+            </StackLayout>
+            <StackLayout>
+                <Label text="" ></Label>
+            </StackLayout>
+            <ns-template *ngIf="!isCorrect">
+                <FlexboxLayout flexDirection="column">
+                    <Label [text]="response" class="qcm-label" style="background-color: red;"></Label>
+                    <Label text="" ></Label>
+                    <Label text="" ></Label>
+                    <Label [text]="correct" class="qcm-label" style="background-color: green;"></Label>
+                  </FlexboxLayout>
+            </ns-template>
+
+            <ns-template *ngIf="isCorrect">
+                <FlexboxLayout flexDirection="column" >
+                    <Label text=""></Label>
+                    <Label [text]="correct" class="qcm-label" style="background-color: green;"></Label>
+                    <Label text=""></Label>
+                    <Label text=""></Label>
+                  </FlexboxLayout>
+            </ns-template>
+
+            <StackLayout>
+                <Label text="" ></Label>
+            </StackLayout>
+
+            <StackLayout>
+                <button  text="continuer"
+                (tap)="routerExtensions.navigate(['home','appar',item,title])"></button>
+            </StackLayout>
+
+    </StackLayout>
+
+</GridLayout>
+

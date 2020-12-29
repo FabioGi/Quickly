@@ -1,8 +1,4 @@
-<ActionBar>
-    <Label text="Search"></Label>
-</ActionBar>
-
-<GridLayout class="page__content">
-    <Label class="page__content-icon fas" text="&#xf002;"></Label>
-    <Label class="page__content-placeholder" text="<!-- Search page content goes here -->"></Label>
+<GridLayout #container width="100%" height="400" backgroundColor="gray">
+    <Image #dragImage width="100" height="100" horizontalAlignment="left" verticalAlignment="top" (pan)="onPan($event)" src="~/assets/quickly/logo.png"
+    ></Image>
 </GridLayout>

@@ -31,27 +31,27 @@ export class BrowseComponent implements OnInit {
         // Use the "ngOnInit" handler to initialize data for the view.
     }
 
-    // routerGame(index){
-    //     switch(index){
-    //         case 0: this.routerExtensions.navigate(['home','questionnaire',+index,this.title]);
-    //         break;
-    //         case 1: this.routerExtensions.navigate(['home','switch',+index,this.title]);
-    //         break;
-    //         case 2: this.routerExtensions.navigate(['home','qcm',+index,this.title]);
-    //         break;
-    //         case 3: this.routerExtensions.navigate(['home','appar',+index,this.title]);
-    //         break;
-    //         case 4: this.routerExtensions.navigate(['home','quatre-bis',+index,this.title]);
-    //         break;
-    //         case 5: this.routerExtensions.navigate(['home','switch-bis',+index,this.title]);
-    //         break;
-    //         case 6: this.routerExtensions.navigate(['home','qcm-bis',+index,this.title]);
-    //         break;
-    //         case 7: this.routerExtensions.navigate(['home','apar-bis',+index,this.title]);
-    //         break;
-    //         default: this.routerExtensions.navigate(['home']);
+    routerGame(index,title){
+        switch(index){
+            case 0: this.routerExtensions.navigate(['home','questionnaire',+index,title]);
+            break;
+            case 1: this.routerExtensions.navigate(['home','switch',+index,title]);
+            break;
+            case 2: this.routerExtensions.navigate(['home','qcm',+index,title]);
+            break;
+            case 3: this.routerExtensions.navigate(['home','appar',+index,title]);
+            break;
+            case 4: this.routerExtensions.navigate(['home','quatre-bis',+index,title]);
+            break;
+            case 5: this.routerExtensions.navigate(['home','switch-bis',+index,title]);
+            break;
+            case 6: this.routerExtensions.navigate(['home','qcm-bis',+index,title]);
+            break;
+            case 7: this.routerExtensions.navigate(['home','apar-bis',+index,title]);
+            break;
+            default: this.routerExtensions.navigate(['home']);
 
-    //      }
-    // }
+         }
+    }
 
 }

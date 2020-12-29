@@ -22,10 +22,11 @@
                         <FlexboxLayout style="margin-left: 20;">
                             <Image src="~/assets/icon-exo.PNG"
                             width="25" height="25"></Image>
-                            <Label [text]="element.type" class="info" style="margin-bottom: 10;"></Label>
+                            <Label [text]="element.type" class="info" style="margin-top: 18;"></Label>
                             <Label text="Démarrer" class="eval"
                             style="color: white; font-weight: bold; width: 100;
-                             font-size: 15;padding: 10; text-align: center;" ></Label>
+                             font-size: 15;padding: 10; text-align: center;"
+                             (tap)="routerGame(index,item.title)" ></Label>
                         </FlexboxLayout>
 
                     </StackLayout>
