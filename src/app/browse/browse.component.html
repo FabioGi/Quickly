@@ -1,61 +1,92 @@
 <GridLayout id="main">
-    <StackLayout class="degrade">
+    <ScrollView id="myScroller" orientation="horizontal" >
+       <StackLayout id="container" orientation="horizontal">
+          <FlexboxLayout flexDirection="column" width="390" height="90%">
+            <StackLayout width="130" height="30%"  class="my-lbl">
+                <Label text= "A table" (tap)="routerExtensions.navigate(['home','exercice','A table'])" ></Label>
+                <FlexboxLayout justifyContent="space-between">
+                    <Label text=""></Label>
+                    <Label text="" ></Label>
+                    <Label text="0/9"  class="eval" ></Label>
+                </FlexboxLayout>
+             </StackLayout>
 
-        <FlexboxLayout justifyContent="space-between" class="info" style="margin-top: 30;">
-            <Label text=""></Label>
-            <Label text="Cours"></Label>
-            <Label text=""></Label>
-        </FlexboxLayout>
-            <GridLayout backgroundColor ="#17a2b8" margin ="10" style="border-radius: 30;">
-                <ScrollView id="myScroller" orientation="vertical" >
-                <StackLayout  id="container" orientation="vertical" *ngIf="lesson">
-                    <StackLayout *ngFor="let item of lesson">
-                        <FlexboxLayout style="margin: 15 ;">
-                            <Image class="logo" src="~/assets/quickly/logo.png"
-                           ></Image>
-                           <StackLayout class="info">
-                                 <Label [text]="item.title" color ="white" style="margin-left: 30;"></Label>
-                           </StackLayout>
-                        </FlexboxLayout>
-                    <StackLayout *ngFor="let element of item.Exercices;let index = index" >
-                    <StackLayout>
-                        <FlexboxLayout style="margin-left: 20;">
-                            <Image src="~/assets/icon-exo.PNG"
-                            width="25" height="25"></Image>
-                            <Label [text]="element.type" class="info" style="margin-top: 18;"></Label>
-                            <Label text="Démarrer" class="eval"
-                            style="color: white; font-weight: bold; width: 100;
-                             font-size: 15;padding: 10; text-align: center;"
-                             (tap)="routerGame(index,item.title)" ></Label>
-                        </FlexboxLayout>
+             <StackLayout width="130" height="30%"  class="my-lbl">
+                <Label text= "Animaux familiers" (tap)="routerExtensions.navigate(['home','exercice','Les animaux familiers'])"  ></Label>
+                <FlexboxLayout justifyContent="space-between">
+                    <Label text=""></Label>
+                    <Label text="" ></Label>
+                    <Label text="0/9" class="eval" ></Label>
+                </FlexboxLayout>
+             </StackLayout>
+             <StackLayout width="130" height="30%"  class="my-lbl">
+                <Label text= "Animaux sauvages" (tap)="routerExtensions.navigate(['home','exercice','Les animaux sauvages'])" ></Label>
+                <FlexboxLayout justifyContent="space-between">
+                    <Label text=""></Label>
+                    <Label text="" ></Label>
+                    <Label text="0/9" class="eval" ></Label>
+                </FlexboxLayout>
+             </StackLayout>
+          </FlexboxLayout>
 
-                    </StackLayout>
+          <FlexboxLayout flexDirection="column" width="390" height="90%">
+            <StackLayout width="130" height="30%"  class="my-lbl">
+                <Label text= "Bonjour" (tap)="routerExtensions.navigate(['home','exercice'])" ></Label>
+                <FlexboxLayout justifyContent="space-between">
+                    <Label text=""></Label>
+                    <Label text="" ></Label>
+                    <Label text="0/9"  class="eval" ></Label>
+                </FlexboxLayout>
+             </StackLayout>
 
+             <StackLayout width="130" height="30%"  class="my-lbl">
+                <Label text= "Amour" (tap)="routerExtensions.navigate(['home','questionnaire'])"   ></Label>
+                <FlexboxLayout justifyContent="space-between">
+                    <Label text=""></Label>
+                    <Label text="" ></Label>
+                    <Label text="0/9" class="eval" ></Label>
+                </FlexboxLayout>
+             </StackLayout>
 
-                     <!--  <ListView height="650" class="list-group" separatorColor="#1f3b61" row ="1">
-                          <ng-template *ngFor="let element of item.Exercices;let index  =index">
-                               <GridLayout height="45">
-                                   <stackLayout  orientation="horizontal">
-                                   <Image src="~/assets/icon-exo.PNG"
-                                   width="25" height="25"></Image>
-                                   <Label [text]="element.type" class="info"></Label>
-                                   </stackLayout>
-                                   <FlexboxLayout justifyContent="space-between">
-                                       <Label text=""></Label>
-                                       <Label text="" ></Label>
-                                       <Label text="Démarrer" class="eval"
-                                        style="color: white; font-weight: bold; width: 100;
-                                         font-size: 15;padding: 10; text-align: center;" ></Label>
-                                   </FlexboxLayout>
-                               </GridLayout>
-                         </ng-template>
-                       </ListView>-->
-                   </StackLayout>
-                   </StackLayout>
-                  </StackLayout>
-                  </ScrollView>
-             </GridLayout>
-    </StackLayout>
+             <StackLayout width="130" height="30%"  class="my-lbl">
+                <Label text= "Les saisons et le temps" ></Label>
+                <FlexboxLayout justifyContent="space-between">
+                    <Label text=""></Label>
+                    <Label text="" ></Label>
+                    <Label text="0/9" class="eval" ></Label>
+                </FlexboxLayout>
+             </StackLayout>
+          </FlexboxLayout>
+
+          <FlexboxLayout flexDirection="column" width="390" height="90%">
+            <StackLayout width="130" height="30%"  class="my-lbl">
+                <Label text= "Bonjour" (tap)="routerExtensions.navigate(['home','exercice'])" ></Label>
+                <FlexboxLayout justifyContent="space-between">
+                    <Label text=""></Label>
+                    <Label text="" ></Label>
+                    <Label text="0/9"  class="eval" ></Label>
+                </FlexboxLayout>
+             </StackLayout>
+
+             <StackLayout width="130" height="30%"  class="my-lbl">
+                <Label text= "Amour" (tap)="routerExtensions.navigate(['home','questionnaire'])"   ></Label>
+                <FlexboxLayout justifyContent="space-between">
+                    <Label text=""></Label>
+                    <Label text="" ></Label>
+                    <Label text="0/9" class="eval" ></Label>
+                </FlexboxLayout>
+             </StackLayout>
+
+             <StackLayout width="130" height="30%"  class="my-lbl">
+                <Label text= "Les saisons et le temps" ></Label>
+                <FlexboxLayout justifyContent="space-between">
+                    <Label text=""></Label>
+                    <Label text="" ></Label>
+                    <Label text="0/9" class="eval" ></Label>
+                </FlexboxLayout>
+             </StackLayout>
+          </FlexboxLayout>
+
+       </StackLayout>
+    </ScrollView>
 </GridLayout>
-
-
