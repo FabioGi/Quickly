@@ -10,8 +10,7 @@ import { DataService } from '~/app/shared/data.service';
 
 @Component({
 	selector: 'appariement',
-	templateUrl: './appariement.component.html',
-	styleUrls: ['./appariement.component.css']
+	templateUrl: './appariement.component.html'
 })
 
 export class AppariementComponent implements OnInit {
