@@ -45,7 +45,7 @@ export class SearchComponent implements OnInit {
           this.prevDeltaY = args.deltaY;
 
           // calculate the conversion from DP to pixels
-          let convFactor = this.dragImageItem.width / this.dragImageItem.getMeasuredWidth();
+          let convFactor = +this.dragImageItem.width / this.dragImageItem.getMeasuredWidth();
           let edgeX = (this.itemContainer.getMeasuredWidth() - this.dragImageItem.getMeasuredWidth()) * convFactor;
           let edgeY = (this.itemContainer.getMeasuredHeight() - this.dragImageItem.getMeasuredHeight()) * convFactor;
 
