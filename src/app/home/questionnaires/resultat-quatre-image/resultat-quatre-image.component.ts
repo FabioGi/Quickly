@@ -3,10 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { RouterExtensions } from '@nativescript/angular';
 import { Page } from 'tns-core-modules/ui/page';
 import { DataService } from '~/app/shared/data.service';
-//import { RouterExtensions } from 'nativescript-angular';
-//import { TextField } from 'ui/text-field';
-//import { EventData } from 'data/observable';
-//import { ActivatedRoute } from '@angular/router';
 
 @Component({
 	selector: 'resultat-quatre-image',
@@ -45,12 +41,5 @@ export class ResultatQuatreImageComponent implements OnInit {
          this.final_result = this.response == this.correct?true:false;
          this.correct_image_path = '~/assets/media/'+this.correct_image;
          this.bad_image_path =  '~/assets/media/'+this.image;
-        //  this.exercises = this.ds.getExerciseOrderById(this.id, this.title);
-
-        // this.exercises = this.ds.getExerciseOrderById(1, this.title);
-        // console.log(this.exercises)
-        // recuperer la reponse du candidat
-        // afficher l'image de la reponse correcte (uniquement en cas de bonne reponse)
-        // afficher l'image de la reponse du candidat et la bonne reponse en cas de mauvaise reponse
     }
 }
