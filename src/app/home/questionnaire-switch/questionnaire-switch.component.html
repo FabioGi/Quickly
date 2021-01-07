@@ -52,8 +52,8 @@
             </StackLayout>
 
             <StackLayout>
-                <button   text="Suivant"
-                (tap)="sentResponse(item,title)"></button>
+                <button   text="Suivant" *ngIf="verify"
+                (tap)="routerExtensions.navigate(['home','qcm',item,title])"></button>
             </StackLayout>
 
     </StackLayout>

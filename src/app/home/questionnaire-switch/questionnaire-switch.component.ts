@@ -68,7 +68,7 @@ export class QuestionnaireSwitchComponent implements OnInit {
         this.index =  +this.route.snapshot.params.id1;
         this.title = this.route.snapshot.params.id2;
         this.exercises = this.ds.getExerciseOrderById(this.index, this.title);
-        this.item = this.index ;
+        this.item = this.index + 1 ;
         this._player = new TNSPlayer();
         // console.log(this.item)
         // console.log(this.exercises) [5.712890625, 67.14146205357144
@@ -232,23 +232,23 @@ export class QuestionnaireSwitchComponent implements OnInit {
         // }
       }
 
-      onSwipe(args: SwipeGestureEventData) {
-        switch(args.direction) {
-            case 8:
-                setTimeout(() => {
-                    this.selectImage(this.exercises.suggestions[1]);
-                     console.log('swipe ', args.direction);
-                }, 0)
-               // this.animationTrigger = true;
-                break;
-            case 4:
-                setTimeout(() => {
-                     this.selectImage(this.exercises.suggestions[0]);
-                    console.log('swipe', args.direction);
-                 }, 0)
-                 // this.animationTrigger = true;
-                 break;
-        }
-    }
+    //   onSwipe(args: SwipeGestureEventData) {
+    //     switch(args.direction) {
+    //         case 8:
+    //             setTimeout(() => {
+    //                 this.selectImage(this.exercises.suggestions[1]);
+    //                  console.log('swipe ', args.direction);
+    //             }, 0)
+    //            // this.animationTrigger = true;
+    //             break;
+    //         case 4:
+    //             setTimeout(() => {
+    //                  this.selectImage(this.exercises.suggestions[0]);
+    //                 console.log('swipe', args.direction);
+    //              }, 0)
+    //              // this.animationTrigger = true;
+    //              break;
+    //     }
+    // }
 
 }
