@@ -3,6 +3,8 @@ import { PanGestureEventData } from "tns-core-modules/ui/gestures";
 import { Image } from "tns-core-modules/ui/image";
 import { GridLayout } from "tns-core-modules/ui/layouts/grid-layout";
 import { AnimationCurve } from "tns-core-modules/ui/enums";
+import { SwipeGestureEventData, GestureEventData } from "tns-core-modules/ui/gestures";
+// import { GestureEventData } from "tns-core-modules/ui/gestures";
 // import { Image } from "ui/image";
 
 @Component({
@@ -23,14 +25,18 @@ export class SearchComponent implements OnInit {
     ngOnInit(): void {
         this.itemContainer = <GridLayout>this.container.nativeElement;
         this.dragImageItem = <Image>this.dragImage.nativeElement;
-        this.dragImageItem.translateX = 0;
-        this.dragImageItem.translateY = 0;
+        this.dragImageItem.translateX =  0;
+        this.dragImageItem.translateY =  0;
         this.dragImageItem.scaleX = 1;
         this.dragImageItem.scaleY = 1
     }
 
     onPan(args: PanGestureEventData) {
-        //console.log("Pana: [" + args.deltaX + ", " + args.deltaY + "] state: " + args.state);
+        // console.log("Pana: [" + args.deltaX + ", " + args.deltaY + "] state: " + args.state);
+        // args.deltaX =  149.3333260672433;
+        // args.deltaY = 138.76426478794644
+        console.log(args.deltaX)
+        console.log(args.deltaY)
         if (args.state === 1) // down
         {
           this.prevDeltaX = 0;
@@ -65,14 +71,21 @@ export class SearchComponent implements OnInit {
             this.dragImageItem.translateY = edgeY;
           }
         }
-        else if (args.state === 3) // up
-        {
-          this.dragImageItem.animate({
-            translate: { x: 0, y: 0 },
-            duration: 1000,
-            curve: AnimationCurve.cubicBezier(0.1, 0.1, 0.1, 1)
-          });
-        }
       }
+
+      onSwipe(args: SwipeGestureEventData) {
+        console.log("Swipe!");
+        console.log("Object that triggered the event: " + args.object);
+        console.log("View that triggered the event: " + args.view);
+        console.log("Event name: " + args.eventName);
+        console.log("Swipe Direction: " + args.direction);
+    }
+
+
+    onLongPress(args: GestureEventData) {
+        console.log("Object that triggered the event: " + args.object);
+        console.log("View that triggered the event: " + args.view);
+        console.log("Event name: " + args.eventName);
+    }
 
 }

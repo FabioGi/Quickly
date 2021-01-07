@@ -51,9 +51,10 @@ const lessons =
           {
              id: 2,
              type: "Switch",
-             question: "Selectionnez:'verre'",
+             question: "Verre",
              answer: "glass",
              answer_image: "verre.jpg",
+             answer_media: "verre.mp3",
              suggestions:[
                             {
                                id: 1,
@@ -133,9 +134,10 @@ const lessons =
           {
             id: 6,
             type: "Switch",
-            question: "Selectionnez:'cuillère'",
+            question: "Cuillère'",
             answer: "spoon",
             answer_image: "cuillere.jpg",
+            answer_media: "cuillere.mp3",
             suggestions:[
                            {
                               id: 1,
@@ -224,9 +226,10 @@ const lessons =
           {
              id: 2,
              type: "Switch",
-             question: "Selectionnez:'chien'",
+             question: "Chien",
              answer: "dog",
              answer_image: "chien.jpg",
+             answer_media: "chien.mp3",
              suggestions:[
                             {
                                id: 1,
@@ -306,9 +309,10 @@ const lessons =
           {
             id: 6,
             type: "Switch",
-            question: "Selectionnez:'lapin'",
+            question: "Lapin",
             answer: "rabbit",
             answer_image: "lapin.jpg",
+            answer_media: "lapin.mp3",
             suggestions:[
                            {
                               id: 1,
@@ -397,9 +401,10 @@ const lessons =
           {
              id: 2,
              type: "Switch",
-             question: "Selectionnez:'tigre'",
+             question: "Tigre",
              answer: "tiger",
              answer_image: "tigre.jpg",
+             answer_media: "tigre.mp3",
              suggestions:[
                             {
                                id: 1,
@@ -480,9 +485,10 @@ const lessons =
           {
             id: 6,
             type: "Switch",
-            question: "Selectionnez:'zèbre'",
+            question: "Zèbre",
             answer: "zebra",
             answer_image: "zebre.jpg",
+            answer_media: "zebra.mp3",
             suggestions:[
                            {
                               id: 1,
