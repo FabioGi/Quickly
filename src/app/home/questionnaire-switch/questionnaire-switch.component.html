@@ -17,7 +17,8 @@
                 <Label class="info" [text]="message" ></Label>
             </StackLayout>
             <StackLayout>
-                <Label text="" ></Label>
+                <Image class="logo" src="~/assets/quickly/up.png" *ngIf="!verify"
+                   ></Image>
             </StackLayout>
 
             <StackLayout  >
@@ -34,7 +35,7 @@
                         ></Image>
                     </StackLayout>
                     <StackLayout>
-                        <Label class="switch" [text]="exercises.question"
+                        <Label class="switch" [text]="exercises.question" #checked3
                         (tap)="play_response()"></Label>
                     </StackLayout>
                     <StackLayout  width="200" height="225"
@@ -54,6 +55,8 @@
             <StackLayout>
                 <button   text="Suivant" *ngIf="verify"
                 (tap)="routerExtensions.navigate(['home','qcm',item,title])"></button>
+                <Image class="logo" src="~/assets/quickly/down.png" *ngIf="!verify"
+                   ></Image>
             </StackLayout>
 
     </StackLayout>

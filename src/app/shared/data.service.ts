@@ -158,7 +158,7 @@ const lessons =
              type: "QCM",
              question: "choisissez la traduction correcte",
              statement: "C'est un couteau",
-             answer: "It's coffee",
+             answer: "This is a knife",
              suggestions:[
                             "This is a knife",
                             "This is a fork",
@@ -335,10 +335,10 @@ const lessons =
              statement: "C'est un chat",
              answer: "It's a cat",
              suggestions:[
-                            "This is a dog",
-                            "This is a rabbit",
-                            "This is a bird",
-                            "This is a cat"
+                            "It's is a dog",
+                            "It's is a rabbit",
+                            "It's is a bird",
+                            "It's is a cat"
                          ]
           },
           {
@@ -509,12 +509,12 @@ const lessons =
              type: "QCM",
              question: "choisissez la traduction correcte",
              statement: "C'est un singe",
-             answer: "This is a monkey",
+             answer: "It's is a monkey",
              suggestions:[
-                            "This is a monkey",
-                            "This is a zebra",
-                            "This is an elephant",
-                            "This is a tiger"
+                            "It's is a monkey",
+                            "It's is a zebra",
+                            "It's is an elephant",
+                            "It's is a tiger"
                          ]
           },
           {

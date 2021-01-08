@@ -39,6 +39,7 @@ export class QuestionnaireSwitchComponent implements OnInit {
     args?: EventData
     @ViewChild('checked1', { static: true }) checked1: ElementRef;
     @ViewChild('checked2', { static: true }) checked2: ElementRef;
+    @ViewChild('checked3', { static: true }) checked3: ElementRef;
     private _player: TNSPlayer;
     verify: boolean = false;
     response: any;
@@ -94,7 +95,7 @@ export class QuestionnaireSwitchComponent implements OnInit {
     selectImage(data, args?: EventData){
         console.log(data.name)
         this.verify = true;
-
+        this.checked3.nativeElement.backgroundColor="#008000";
         if( data.name ==  this.exercises.answer){
             this.message = "    BRAVO C'EST CORRECT"
             switch(this.verifyResponse()){
@@ -168,68 +169,54 @@ export class QuestionnaireSwitchComponent implements OnInit {
       }
 
       onPan1(args: PanGestureEventData ) {
-        if (args.state === 1) // down
-        {
-          this.prevDeltaX = 0;
-          this.prevDeltaY = 0;
-        }
-        else if (args.state === 2) // panning
-        {
-          this.dragImageItem1.translateX += args.deltaX - this.prevDeltaX;
-          this.dragImageItem1.translateY += args.deltaY - this.prevDeltaY;
+          if(!this.verify){
+            if (args.state === 1) // down
+            {
+              this.prevDeltaX = 0;
+              this.prevDeltaY = 0;
+            }
+            else if (args.state === 2) // panning
+            {
+              this.dragImageItem1.translateX += args.deltaX - this.prevDeltaX;
+              this.dragImageItem1.translateY += args.deltaY - this.prevDeltaY;
 
-          this.prevDeltaX = args.deltaX;
-          this.prevDeltaY = args.deltaY;
+              this.prevDeltaX = args.deltaX;
+              this.prevDeltaY = args.deltaY;
 
-          // calculate the conversion from DP to pixels
-          let convFactor = +this.dragImageItem1.width / this.dragImageItem1.getMeasuredWidth();
-          let edgeX = (this.itemContainer.getMeasuredWidth() - this.dragImageItem1.getMeasuredWidth()) * convFactor;
-          let edgeY = (this.itemContainer.getMeasuredHeight() - this.dragImageItem1.getMeasuredHeight()) * convFactor;
+              // calculate the conversion from DP to pixels
+              let convFactor = +this.dragImageItem1.width / this.dragImageItem1.getMeasuredWidth();
+              let edgeX = (this.itemContainer.getMeasuredWidth() - this.dragImageItem1.getMeasuredWidth()) * convFactor;
+              let edgeY = (this.itemContainer.getMeasuredHeight() - this.dragImageItem1.getMeasuredHeight()) * convFactor;
 
-          // X border
-          if (this.dragImageItem1.translateX < 0) {
-            this.dragImageItem1.translateX = 0;
+              // X border
+              if (this.dragImageItem1.translateX < 0) {
+                this.dragImageItem1.translateX = 0;
+              }
+              else if (this.dragImageItem1.translateX > edgeX) {
+                this.dragImageItem1.translateX = edgeX;
+              }
+
+              // Y border
+              if (this.dragImageItem1.translateY < 0) {
+                this.dragImageItem1.translateY = 0;
+              }
+              else if (this.dragImageItem1.translateY > edgeY) {
+                this.dragImageItem1.translateY = edgeY;
+              }
+            }
+             else if (args.state === 3){
+                 if( this.dragImageItem1.translateY == 0 ) this.selectImage(this.exercises.suggestions[0]);
+                 else this.selectImage(this.exercises.suggestions[1]);
+
+
+            // this.dragImageItem1.animate({
+            //     translate: { x: 0, y: 0 },
+            //     duration: 1000,
+            //     curve: AnimationCurve.cubicBezier(0.1, 0.1, 0.1, 1)
+            //     });
+            // console.log(args.state)
+            }
           }
-          else if (this.dragImageItem1.translateX > edgeX) {
-            this.dragImageItem1.translateX = edgeX;
-          }
-
-          // Y border
-          if (this.dragImageItem1.translateY < 0) {
-            this.dragImageItem1.translateY = 0;
-          }
-          else if (this.dragImageItem1.translateY > edgeY) {
-            this.dragImageItem1.translateY = edgeY;
-          }
-        }
-         else if (args.state === 3){
-             if( this.dragImageItem1.translateY == 0 ) this.selectImage(this.exercises.suggestions[0]);
-             else this.selectImage(this.exercises.suggestions[1]);
-
-
-        // this.dragImageItem1.animate({
-        //     translate: { x: 0, y: 0 },
-        //     duration: 1000,
-        //     curve: AnimationCurve.cubicBezier(0.1, 0.1, 0.1, 1)
-        //     });
-        // console.log(args.state)
-        }
-        // switch(args.direction) {
-        //     case 8:
-        //         setTimeout(() => {
-        //             this.selectImage(this.exercises.suggestions[1]);
-        //            //console.log('swipe ', args.direction);
-        //         }, 300)
-        //        // this.animationTrigger = true;
-        //         break;
-        //     case 4:
-        //         setTimeout(() => {
-        //             this.selectImage(this.exercises.suggestions[0]);
-        //            // console.log('swipe', args.direction);
-        //          }, 300)
-        //          // this.animationTrigger = true;
-        //          break;
-        // }
       }
 
     //   onSwipe(args: SwipeGestureEventData) {
