@@ -4,9 +4,11 @@ import {  NativeScriptModule } from "@nativescript/angular";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 
+
 @NgModule({
     bootstrap: [
-        AppComponent
+        AppComponent,
+       
     ],
     imports: [
         NativeScriptModule,
@@ -15,7 +17,8 @@ import { AppComponent } from "./app.component";
         // BrowserModule
     ],
     declarations: [
-        AppComponent
+        AppComponent,
+        
     ],
     schemas: [
         NO_ERRORS_SCHEMA

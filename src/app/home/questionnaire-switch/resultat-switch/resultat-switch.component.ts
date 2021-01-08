@@ -11,7 +11,7 @@ import { DataService } from '~/app/shared/data.service';
 @Component({
 	selector: 'resultat-switch',
 	templateUrl: './resultat-switch.component.html',
-	styleUrls: ['./resultat-switch.component.css']
+	//styleUrls: ['./resultat-switch.component.css']
 })
 
 
