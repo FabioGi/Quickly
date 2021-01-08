@@ -14,7 +14,7 @@ const routes: Routes = [
     //     redirectTo: "home",
     //     pathMatch: "full"
     // },
-    { path: "", redirectTo: '/launch_screen', pathMatch: 'full' },
+    { path: "", redirectTo: 'auth', pathMatch: 'full' },
 
     {
         path: "launch_screen",

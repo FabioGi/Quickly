@@ -27,7 +27,7 @@ export class LaunchScreenComponent implements OnInit {
 							this.count++;
 						}
 					}else{
-						this.routerExtensions.navigate(['/auth'],{clearHistory:true});
+						this.routerExtensions.navigate(['/home'],{clearHistory:true});
 					}
 		}, 400)
 
