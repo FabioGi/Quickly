@@ -4,10 +4,6 @@ import { RouterExtensions } from '@nativescript/angular';
 import { EventData } from '@nativescript/core';
 import { Page } from 'tns-core-modules/ui/page';
 import { DataService } from '~/app/shared/data.service';
-//import { RouterExtensions } from 'nativescript-angular';
-//import { TextField } from 'ui/text-field';
-//import { EventData } from 'data/observable';
-//import { ActivatedRoute } from '@angular/router';
 
 @Component({
 	selector: 'questionnaire-qcm',
@@ -26,7 +22,7 @@ export class QuestionnaireQcmComponent implements OnInit {
     @ViewChild('checked4', { static: true }) checked4: ElementRef;
     response: any;
     correct: any;
-    message: string;
+    message = "";
 
     constructor(private page: Page,
         public routerExtensions: RouterExtensions,
@@ -40,25 +36,8 @@ export class QuestionnaireQcmComponent implements OnInit {
         this.title = this.route.snapshot.params.id2;
         this.exercises = this.ds.getExerciseOrderById(this.index, this.title);
         this.item = this.index + 1  ;
-       // console.log(this.item)
+        console.log(this.ds.getScore());
      }
-
-    //  selectImage(data, args: EventData){
-    //     this.checked1.nativeElement.backgroundColor="#007bff";
-    //     this.checked2.nativeElement.backgroundColor="#007bff";
-    //     this.checked3.nativeElement.backgroundColor="#007bff";
-    //     this.checked4.nativeElement.backgroundColor="#007bff";
-    //     this.response = data;
-    //     this.correct = this.exercises.answer;
-    //     const arg = args.object as any;
-    //     // arg.color = 'white';
-    //     arg.backgroundColor="#013299";
-    //     // this.verify = true;
-    //     // this.response = data.name;
-    //     // this.response_image = data.image;
-    //     // this.correct = this.exercises.answer;
-    //     // this.correct_image = this.exercises.answer_image;
-    // }
 
     sentResponse(){
         this.routerExtensions.navigate(['home','appar',this.item,this.title])
@@ -72,11 +51,14 @@ export class QuestionnaireQcmComponent implements OnInit {
             this.checked4.nativeElement.backgroundColor="#007bff";
             const arg = args.object as any;
             // arg.color = 'white' FF0000;
-            if( data.name ==  this.exercises.answer){
-                arg.backgroundColor="#008000"
-                this.message = "    BRAVO C'EST CORRECT"
+            console.log(data, this.exercises.answer)
+            if( data ==  this.exercises.answer){
+                this.message = "    BRAVO C'EST CORRECT";
+                 arg.backgroundColor="#008000";
+                 this.ds.setScore(10);
             }else{
-                this.message = "    REPONSE INCORRECT"
+                this.message = "    REPONSE INCORRECT";
+                // console.log("result", data.name ==  this.exercises.answer)
                 arg.backgroundColor="#FF0000";
                 switch(this.verifyResponse()){
                     case 1: this.checked1.nativeElement.backgroundColor="#008000";
@@ -89,7 +71,7 @@ export class QuestionnaireQcmComponent implements OnInit {
                     break;
                 }
             }
-            this.ischecked = true;
+             this.ischecked = true;
         }
 
     }

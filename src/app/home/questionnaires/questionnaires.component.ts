@@ -44,6 +44,7 @@ export class QuestionnairesComponent implements OnInit {
         this.id =  +this.route.snapshot.params.id1;
         this.title = this.route.snapshot.params.id2;
        this.exercises = this.ds.getExerciseOrderById(this.id, this.title);
+       console.log(this.ds.getScore());
     }
 
     imagePath(index,data){
@@ -61,6 +62,7 @@ export class QuestionnairesComponent implements OnInit {
             if( data.name ==  this.exercises.answer){
                 arg.backgroundColor="#008000"
                 this.message = "    BRAVO C'EST CORRECT"
+                this.ds.setScore(10);
             }else{
                 this.message = "    REPONSE INCORRECT"
                 arg.backgroundColor="#FF0000";

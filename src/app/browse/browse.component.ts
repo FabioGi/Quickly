@@ -29,7 +29,7 @@ export class BrowseComponent implements OnInit {
     ngOnInit(): void {
        // this.exercices =  this.ds.getAllLessons();
        this.lesson = this.ds.getAllLessons();
-       this.items = this._itemService.getItems();
+       // this.items = this._itemService.getItems();
        // console.log(this.exercices)
         // for (var i = 1; i < 20; i++) {
         //     this.items.push("Exercice " +  i);

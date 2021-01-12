@@ -2,6 +2,7 @@
 // import { CommonModule } from "@angular/common";
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptCommonModule } from "nativescript-angular";
+import { AppariementBisComponent } from "./appariement-bis/appariement-bis.component";
 import { AppariementComponent } from "./appariement/appariement.component";
 import { ExerciceComponent } from "./exercice/exercice.component";
 
@@ -42,7 +43,8 @@ import { HeaderLayoutComponent } from "./ui/header-layout/header-layout.componen
         QcmBisComponent,
         HeaderLayoutComponent,
         ResultatSwitchComponent,
-        QcmResponseComponent
+        QcmResponseComponent,
+        AppariementBisComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA

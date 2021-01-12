@@ -7,6 +7,7 @@ import {Label} from "tns-core-modules/ui/label"
 import { TabView } from "tns-core-modules/ui/tab-view";
 import { DataItem, DataService } from "~/app/shared/data.service";
 import { EventData } from "@nativescript/core";
+import { User } from "~/app/shared/user";
 
 
 // import { StackLayout } from "@nativescript/core/ui/layouts/stack-layout";
@@ -26,6 +27,11 @@ export class HomeComponent implements OnInit {
     public items: string[] = [];
     exercices:any;
     lesson:any;
+    user:User;
+    score1 : number;
+    score2 : number;
+    score3 : number;
+    score = [];
 
     constructor(
         public routerExtensions: RouterExtensions,
@@ -37,6 +43,10 @@ export class HomeComponent implements OnInit {
     ngOnInit(): void {
         // list
         this.lesson = this.ds.getAllLessons();
+        this.score1 = this.ds.score1?this.ds.score1:0
+        this.score2 = this.ds.score2?this.ds.score2:0
+        this.score3 = this.ds.score3?this.ds.score3:0
+        this.score = [ this.score1, this.score2, this.score3];
     }
 
     routerGame(index,title){

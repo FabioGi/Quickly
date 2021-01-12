@@ -4,10 +4,6 @@ import { RouterExtensions } from '@nativescript/angular';
 import { Page } from 'tns-core-modules/ui/page';
 import { DataService } from '~/app/shared/data.service';
 import { TNSPlayer } from 'nativescript-audio-player';
-//import { RouterExtensions } from 'nativescript-angular';
-//import { TextField } from 'ui/text-field';
-//import { EventData } from 'data/observable';
-//import { ActivatedRoute } from '@angular/router';
 
 @Component({
 	selector: 'appariement',
@@ -20,13 +16,13 @@ export class AppariementComponent implements OnInit {
     title: any;
     exercises: any;
     item:number;
-    // questionList = ["fourchette","une","c'est"];
     responseList = []
     @ViewChild('response', { static: true }) response: ElementRef;
     message: string;
     private _player: TNSPlayer;
     goodResponse: any;
     verify = false;
+
     constructor(private page: Page,
         public routerExtensions: RouterExtensions,
         private ds: DataService,
@@ -40,7 +36,7 @@ export class AppariementComponent implements OnInit {
         this.exercises = this.ds.getExerciseOrderById(this.index, this.title);
         this.item = this.index + 1;
         this._player = new TNSPlayer();
-        this.play_response()
+        this.play_response();
      }
 
      apparier(word){
@@ -59,18 +55,25 @@ export class AppariementComponent implements OnInit {
      }
 
      checkResponse(){
-         // console.log("yes")
-        //  if(!this.verify){
             const answer = this.exercises.answer ;
             if(answer === this.responseList.join(" ")){
                this.response.nativeElement.backgroundColor="green";
                this.message = "    Bravo c'est une bonne reponse"
+               this.ds.setScore(10);
             }else{
                this.response.nativeElement.backgroundColor="#FF0000";
                this.message = "    Reponse incorrect"
                this.goodResponse =  this.exercises.answer ;
             }
-        // }
+            console.log(this.item)
+            if(this.item === 8){
+                setTimeout(()=> this.routerExtensions.navigate(['scoring','score',this.title,this.ds.getScore()]),
+                2000);
+            } else{
+                setTimeout(()=> this.routerExtensions.navigate(['home','questionnaire',+this.item,this.title]),
+                2000);
+            }
+
      }
 
      play_response(){
@@ -117,3 +120,6 @@ export class AppariementComponent implements OnInit {
         console.log('extra info on the error:', args.extra);
       }
 }
+
+
+// (tap)="routerExtensions.navigate(['home','exercice','Les animaux familiers'])"

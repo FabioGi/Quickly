@@ -71,8 +71,6 @@ export class QuestionnaireSwitchComponent implements OnInit {
         this.exercises = this.ds.getExerciseOrderById(this.index, this.title);
         this.item = this.index + 1 ;
         this._player = new TNSPlayer();
-        // console.log(this.item)
-        // console.log(this.exercises) [5.712890625, 67.14146205357144
         this.itemContainer = <StackLayout>this.container.nativeElement;
         this.dragImageItem1 = <Image>this.dragImage1.nativeElement;
         this.dragImageItem1.translateX =  0;
@@ -81,6 +79,7 @@ export class QuestionnaireSwitchComponent implements OnInit {
         this.dragImageItem1.scaleY = 1
 
         this.play_response();
+        console.log(this.ds.getScore());
     }
 
     imagePath(index,data){
@@ -98,6 +97,7 @@ export class QuestionnaireSwitchComponent implements OnInit {
         this.checked3.nativeElement.backgroundColor="#008000";
         if( data.name ==  this.exercises.answer){
             this.message = "    BRAVO C'EST CORRECT"
+            this.ds.setScore(10);
             switch(this.verifyResponse()){
                 case 1: this.checked1.nativeElement.backgroundColor="#008000";
                 break;

@@ -50,10 +50,6 @@
     <BottomNavigation class="bottom-nav">
         <TabStrip>
             <TabStripItem class="navigation__item" [nsRouterLink]="['../home']">
-                <!--
-                    Note TabStripItem will only accept single Label and/or single Image elements that it
-                    will "adopt"; any other layout elements you try to specify will be ignored
-                -->
                 <Label text="Home"></Label>
                 <Image src="font://&#xf015;" class="fas t-36"></Image>
             </TabStripItem>
@@ -61,10 +57,6 @@
                 <Label text="Browse"></Label>
                 <Image src="font://&#xf1ea;" class="far t-36"></Image>
             </TabStripItem>
-            <!-- <TabStripItem class="navigation__item" [nsRouterLink]="['auth/register']">
-                <Label text="register"></Label>
-                <Image src="font://&#xf002;" class="fas t-36"></Image>
-            </TabStripItem> -->
             <TabStripItem class="navigation__item" [nsRouterLink]="['../auth']">
                 <Label text="Auth"></Label>
                 <Image src="font://&#xf002;" class="fas t-36"></Image>
@@ -83,7 +75,7 @@
                         <GridLayout backgroundColor ="#17a2b8" margin ="10" style="border-radius: 30;">
                             <ScrollView id="myScroller" orientation="vertical" >
                             <StackLayout  id="container" orientation="vertical" *ngIf="lesson">
-                                <StackLayout *ngFor="let item of lesson">
+                                <StackLayout *ngFor="let item of lesson;let index = index">
                                     <FlexboxLayout style="margin: 15 ;">
                                         <Image class="logo" src="~/assets/quickly/logo.png"
                                        ></Image>
@@ -91,6 +83,9 @@
                                              <Label [text]="item.title" color ="white" style="margin-left: 30;"></Label>
                                        </StackLayout>
                                     </FlexboxLayout>
+                                    <StackLayout class="info">
+                                        <Label [text]="'SCORE: '+score[index]+'/'+80" color ="white" style="text-align: center;"></Label>
+                                        </StackLayout>
                                 <StackLayout *ngFor="let element of item.Exercices;let index = index" >
                                 <StackLayout>
                                     <FlexboxLayout style="margin-left: 20;">
