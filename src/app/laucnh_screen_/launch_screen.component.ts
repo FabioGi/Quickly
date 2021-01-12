@@ -16,20 +16,14 @@ export class LaunchScreenComponent implements OnInit {
 	constructor(public routerExtensions: RouterExtensions) { }
 
 	ngOnInit() {
-		setInterval (() =>{
-					if(this.timeScreen < 8000) {
-						this.timeScreen +=400;
-						if(this.count===3){
-							this.count = 0;
-							this.loadingText = 'Loading'
-						}else {
-							this.loadingText +='.';
-							this.count++;
-						}
-					}else{
-						this.routerExtensions.navigate(['/home'],{clearHistory:true});
-					}
-		}, 400)
-
+			this.timeScreen +=400;
+			if(this.count===3){
+				this.count = 0;
+				this.loadingText = 'Loading'
+			}else {
+				this.loadingText +='...';
+				this.count++;
+			}
+			this.routerExtensions.navigate(['home'],{clearHistory:true});
 	 }
 }
