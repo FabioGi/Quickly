@@ -8,7 +8,7 @@ import { RouterExtensions } from '@nativescript/angular';
 @Component({
 	selector: 'header-layout',
 	templateUrl: './header-layout.component.html',
-	styleUrls: ['./header-layout.component.css']
+	//styleUrls: ['./header-layout.component.css']
 })
 
 export class HeaderLayoutComponent implements OnInit {
