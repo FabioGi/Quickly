@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterExtensions } from '@nativescript/angular';
+import { Page } from '@nativescript/core';
 //import { RouterExtensions } from 'nativescript-angular';
 //import { TextField } from 'ui/text-field';
 //import { EventData } from 'data/observable';
@@ -12,7 +13,10 @@ import { RouterExtensions } from '@nativescript/angular';
 
 export class AuthenticationComponent implements OnInit {
 
-	constructor(public routerExtensions: RouterExtensions) { }
+    constructor(public routerExtensions: RouterExtensions,
+        private page: Page) {
+           // this.page.actionBarHidden = true;
+         }
 
 	ngOnInit() { }
 }

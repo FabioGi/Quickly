@@ -68,10 +68,10 @@ export class AppariementComponent implements OnInit {
             console.log(this.item)
             if(this.item === 8){
                 setTimeout(()=> this.routerExtensions.navigate(['scoring','score',this.title,this.ds.getScore()]),
-                2000);
+                5000);
             } else{
                 setTimeout(()=> this.routerExtensions.navigate(['home','questionnaire',+this.item,this.title]),
-                2000);
+                5000);
             }
 
      }
