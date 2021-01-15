@@ -1,6 +1,6 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" android:gravity="fill">
-    <item android:drawable="@color/ns_quicly" />
+    <item android:drawable="@color/ns_quicly"/>
     <item>
-        <bitmap android:gravity="center" android:src="@drawable/test"   android:layout_gravity="center"/>
+        <bitmap android:gravity="center" android:src="@drawable/icon" />
     </item>
 </layer-list>

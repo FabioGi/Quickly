@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterExtensions } from '@nativescript/angular';
-
+import { Page } from '@nativescript/core';
 
 @Component({
 	selector: 'ns-splash-screen',
@@ -14,7 +14,11 @@ export class LaunchScreenComponent implements OnInit {
 	private timeScreen = 0;
 	private count = 0;
 	private id ;
-	constructor(public routerExtensions: RouterExtensions) { }
+	
+	constructor(public routerExtensions: RouterExtensions, private page: Page ) { 
+		this.page.actionBarHidden = true;
+		
+	}
 
 	ngOnInit() {
 
@@ -33,6 +37,8 @@ export class LaunchScreenComponent implements OnInit {
 			this.routerExtensions.navigate(['home'],{clearHistory:true});
 			}
 		},400)
+		
+
 		
 	 }
 
