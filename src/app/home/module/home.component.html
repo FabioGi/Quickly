@@ -64,48 +64,140 @@
         </TabStrip>
 
         <TabContentItem>
-            <GridLayout id="main">
+            <GridLayout  id="main" actionBarHidden="true">
                 <StackLayout class="degrade">
-
-                    <FlexboxLayout justifyContent="space-between" class="info" style="margin-top: 30;">
+                    <StackLayout>
+                      <Label text=""></Label>
+                    </StackLayout>
+                    <StackLayout>
                         <Label text=""></Label>
-                        <Label text="Cours"></Label>
-                        <Label text=""></Label>
-                    </FlexboxLayout>
-                        <GridLayout backgroundColor ="#17a2b8" margin ="10" style="border-radius: 30;">
-                            <ScrollView id="myScroller" orientation="vertical" >
-                            <StackLayout  id="container" orientation="vertical" *ngIf="lesson">
-                                <StackLayout *ngFor="let item of lesson;let index = index">
-                                    <FlexboxLayout style="margin: 15 ;">
-                                        <Image class="logo" src="~/assets/quickly/logo.png"
-                                       ></Image>
-                                       <StackLayout class="info">
-                                             <Label [text]="item.title" color ="white" style="margin-left: 30;"></Label>
-                                       </StackLayout>
-                                    </FlexboxLayout>
-                                    <StackLayout class="info">
-                                        <Label [text]="'SCORE: '+score[index]+'/'+80" color ="white" style="text-align: center;"></Label>
-                                        </StackLayout>
-                                <StackLayout *ngFor="let element of item.Exercices;let index = index" >
-                                <StackLayout>
-                                    <FlexboxLayout style="margin-left: 20;">
-                                        <Image src="~/assets/icon-exo.PNG"
-                                        width="25" height="25"></Image>
-                                        <Label [text]="element.type" class="info" style="margin-top: 18;"></Label>
-                                        <Label text="Démarrer" class="eval"
-                                        style="color: white; font-weight: bold; width: 100;
-                                         font-size: 15;padding: 10; text-align: center;"
-                                         (tap)="routerGame(index,item.title)" ></Label>
-                                    </FlexboxLayout>
+                    </StackLayout>
+                        <!-- <header-layout></header-layout> -->
+                        <StackLayout>
+                            <FlexboxLayout>
+                                <!-- <Image class="logo" src=" ~/assets/quickly/logo.png"
+                               ></Image> -->
+                               <StackLayout class="info" style="text-align: center;">
+                                     <Label text= "Cours" style="margin-top: 10;"></Label>
+                               </StackLayout>
+                            </FlexboxLayout>
+                        </StackLayout>
+                        <!-- <StackLayout class="info">
+                            <Label [text]="message" ></Label>
+                        </StackLayout> -->
+                        <StackLayout>
+                            <Label text="" ></Label>
+                        </StackLayout>
+                        <GridLayout columns="*,*,*" rows="*,*,*" width="400" height="500" *ngIf="lesson">
+                            <StackLayout  col="0" row="0" style="margin: 5;" (tap)="navigate(0, lesson[0].title)">
+                                <Image src="~/assets/icon-exo.PNG"
+                                stretch="aspectFit"
+                                ></Image>
+                                <Label [text]="lesson[0].title"  style="color: white; text-align: center;
+                                font-size: 15; font-weight: bold;"
+                                ></Label>
+                                <Label [text]="'SCORE : '+score[0]+'/'+80"  style="color: white; text-align: center;
+                                   font-size: 15; font-weight: bold;"></Label>
+                            </StackLayout>
 
-                                </StackLayout>
-                               </StackLayout>
-                               </StackLayout>
-                              </StackLayout>
-                              </ScrollView>
-                         </GridLayout>
+                            <StackLayout  col="1" row="0" style="margin: 5;"(tap)="navigate(0, lesson[1].title)">
+                                <Image src="~/assets/icon-exo.PNG"
+                                stretch="aspectFit"
+                                ></Image>
+                                <Label [text]="lesson[1].title" style="color: white; text-align: center;
+                                font-size: 15; font-weight: bold;"
+                                ></Label>
+                                <Label [text]="'SCORE : '+score[1]+'/'+80" color ="white"  style="color: white; text-align: center;
+                                font-size: 15; font-weight: bold;"></Label>
+                            </StackLayout>
+
+                            <StackLayout  col="2" row="0" style="margin: 5;" (tap)="navigate(0, lesson[2].title)">
+                                <Image src="~/assets/icon-exo.PNG"
+                                stretch="aspectFit"
+                                ></Image>
+                                <Label [text]="lesson[2].title"  style="color: white; text-align: center;
+                                font-size: 15; font-weight: bold;"
+                                ></Label>
+                                <Label [text]="'SCORE : '+score[1]+'/'+80" style="color: white; text-align: center;
+                                font-size: 15; font-weight: bold;"></Label>
+                            </StackLayout>
+
+                            <StackLayout  col="0" row="1" style="margin: 5; border-radius: 20;">
+                                <Image src="~/assets/icon-exo.PNG"
+                                stretch="aspectFit"
+                                ></Image>
+                                <Label [text]="lesson[2].title"  style="color: white; text-align: center;
+                                font-size: 15; font-weight: bold;"
+                                ></Label>
+                                <Label [text]="'SCORE : '+score[2]+'/'+80"  style="color: white; text-align: center;
+                                    font-size: 15; font-weight: bold;"></Label>
+                            </StackLayout>
+
+                            <StackLayout  col="1" row="1" style="margin: 5; border-radius: 20;">
+                                <Image src="~/assets/icon-exo.PNG"
+                                stretch="aspectFit"
+                                ></Image>
+                                <Label text="Voyage"  style="color: white; text-align: center;
+                                font-size: 15; font-weight: bold;"
+                                ></Label>
+                                <Label text="SCORE : 0/80" color ="white" style="text-align: center;"  style="color: white; text-align: center;
+                                font-size: 15; font-weight: bold;"></Label>
+                            </StackLayout>
+                            <StackLayout  col="2" row="1" style="margin: 5; border-radius: 20;">
+                                <Image src="~/assets/icon-exo.PNG"
+                                stretch="aspectFit"
+                                ></Image>
+                                <Label text="Voyage"  style="color: white; text-align: center;
+                                font-size: 15; font-weight: bold;"
+                                ></Label>
+                                <Label text="SCORE : 0/80"  style="color: white; text-align: center;
+                                font-size: 15; font-weight: bold;"></Label>
+                            </StackLayout>
+
+                            <StackLayout  col="0" row="2" style="margin: 5; border-radius: 20;">
+                                <Image src="~/assets/icon-exo.PNG"
+                                stretch="aspectFit"
+                                ></Image>
+                                <Label text="Voyage" style="color: white; text-align: center;
+                                font-size: 15; font-weight: bold;"
+                                ></Label>
+                                <Label text="SCORE : 0/80"  style="color: white; text-align: center;
+                                font-size: 15; font-weight: bold;"></Label>
+                            </StackLayout>
+
+                            <StackLayout  col="1" row="2" style="margin: 5; border-radius: 20;">
+                                <Image src="~/assets/icon-exo.PNG"
+                                stretch="aspectFit"
+                                ></Image>
+                                <Label text="Voyage"  style="color: white; text-align: center;
+                                font-size: 15; font-weight: bold;"
+                                ></Label>
+                                <Label text="SCORE : 0/80"  style="color: white; text-align: center;
+                                font-size: 15; font-weight: bold;"></Label>
+                            </StackLayout>
+                            <StackLayout  col="2" row="2" style="margin: 5; border-radius: 20;">
+                                <Image src="~/assets/icon-exo.PNG"
+                                stretch="aspectFit"
+                                ></Image>
+                                <Label text="Voyage"  style="color: white; text-align: center;
+                                font-size: 15; font-weight: bold;"
+                                ></Label>
+                                <Label text="SCORE : 0/80"  style="color: white; text-align: center;
+                                font-size: 15; font-weight: bold;"></Label>
+                            </StackLayout>
+
+                          </GridLayout>
+                        <StackLayout>
+                            <Label text="" ></Label>
+                        </StackLayout>
+
+                        <!-- <StackLayout>
+                            <button text="Suivant" (tap)="sentResponse()"
+                            *ngIf="verify"></button>
+                        </StackLayout> -->
                 </StackLayout>
             </GridLayout>
+
 
         </TabContentItem>
 
@@ -116,3 +208,8 @@
     </BottomNavigation>
 
 </StackLayout>
+
+
+
+
+
