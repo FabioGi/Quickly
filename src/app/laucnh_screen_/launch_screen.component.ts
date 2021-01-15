@@ -24,7 +24,7 @@ export class LaunchScreenComponent implements OnInit {
 
 		this.id = setInterval(()=>{
 			//burg sur le setInterval pour corriger 
-			if(this.timeScreen < 8000){ 	
+			if(this.timeScreen < 3000){ 	
 			this.timeScreen +=400;
 			if(this.count===3){
 				this.count = 0;
@@ -36,7 +36,7 @@ export class LaunchScreenComponent implements OnInit {
 			}else{
 			this.routerExtensions.navigate(['home'],{clearHistory:true});
 			}
-		},400)
+		},100)
 		
 
 		

@@ -1,10 +1,13 @@
 <StackLayout class="page" orientation="vertical" >
-<div class="fond"  >
-    <image class="imagefont" style="width: 40%;"   src="~/assets/logo.png"></image>
-    <label class="loading" text="{{loadingText}}"></label>
-    <ActivityIndicator busy="true" color="red" width="60" height="60"></ActivityIndicator>
+    <GridLayout background="transparent">
+        <div class="fond"   >
+            <image class="imagefont" style="width: 60%;"   src="~/assets/logo.png"  ></image>
+            <label class="loading" text="{{loadingText}}"></label>
+            <ActivityIndicator busy="true" color="red" width="60" height="60"></ActivityIndicator>
+        
+        </div>
+    </GridLayout>
 
-</div>
    
 
 </StackLayout>
