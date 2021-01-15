@@ -34,13 +34,17 @@
             </StackLayout>
              <GridLayout columns="*" rows="*,*"  width="97%" height="400" class="degrade2" style="border-radius: 20;"
              horizontalAlignment="center" verticalAlignment="center"  >
-                <StackLayout col="0" row="0" style="background-color: honeydew;  border-radius: 20;" #response
+                <StackLayout col="0" row="0" style="background-color: honeydew;  border-radius: 20;"
                height="200" >
                     <FlexboxLayout style="margin-top: 40%;">
                         <v-template *ngFor="let item of responseList">
-                            <Label [text]="item" class="appr-label"
+                            <Label [text]="item" class="appr-label"  style="color: white;"
+                            [ngClass]="{'good':verifyResponse, 'bad':!verifyResponse}" *ngIf="showResponse"
                             (tap)="removeResponse(item)"></Label>
-                           </v-template>
+
+                            <Label [text]="item" class="appr-label"  style="color: white;" *ngIf="!showResponse"
+                            (tap)="removeResponse(item)"></Label>
+                        </v-template>
                     </FlexboxLayout>
                 </StackLayout>
 

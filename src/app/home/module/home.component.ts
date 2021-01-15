@@ -72,5 +72,9 @@ export class HomeComponent implements OnInit {
          }
     }
 
+    navigate(index, title){
+        this.routerExtensions.navigate(['home','questionnaire',+index,title]);
+    }
+
 
 }

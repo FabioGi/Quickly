@@ -16,12 +16,14 @@ export class AppariementComponent implements OnInit {
     title: any;
     exercises: any;
     item:number;
-    responseList = []
+    responseList = [];
+    verifyResponse: boolean;
     @ViewChild('response', { static: true }) response: ElementRef;
     message: string;
     private _player: TNSPlayer;
     goodResponse: any;
     verify = false;
+    showResponse = false;
 
     constructor(private page: Page,
         public routerExtensions: RouterExtensions,
@@ -55,13 +57,15 @@ export class AppariementComponent implements OnInit {
      }
 
      checkResponse(){
+            this.showResponse = true;
             const answer = this.exercises.answer ;
+            this.verifyResponse = this.exercises.answer === this.responseList.join(" ");
             if(answer === this.responseList.join(" ")){
-               this.response.nativeElement.backgroundColor="green";
+               //this.response.nativeElement.backgroundColor="green";
                this.message = "    Bravo c'est une bonne reponse"
                this.ds.setScore(10);
             }else{
-               this.response.nativeElement.backgroundColor="#FF0000";
+               // this.response.nativeElement.backgroundColor="#FF0000";
                this.message = "    Reponse incorrect"
                this.goodResponse =  this.exercises.answer ;
             }
