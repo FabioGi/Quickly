@@ -299,8 +299,27 @@ button {
     padding: 10px;
     width: 350;
 }
+.loading{
+        color: red;
+        font-size: 25px;
+        margin-top: 63%;
+        font-weight: bold;
+        margin-left: 35%;
 
-.appr-label{
+}
+
+.fond{
+    display: block;
+    margin-left: 50;
+    margin-right: 50;
+   // width: 50%;
+   
+
+}
+.page{
+    background-color: #87B3C8;
+   
+}.appr-label{
     padding: 10;
     margin: 2;
     background-color: #17a2b8;

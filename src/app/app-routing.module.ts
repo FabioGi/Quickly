@@ -12,6 +12,11 @@ const routes: Routes = [
     { path: "", redirectTo: 'auth', pathMatch: 'full' },
 
     {
+        path: "launch_screen",
+        loadChildren: () => import("~/app/laucnh_screen_/launch_screen.module").then((m) => m.LaunchScreenModule)
+        // outlet: "homeTab"
+    },
+    {
         path: "home",
         loadChildren: () => import("~/app/home/home.module").then((m) => m.HomeModule)
         // outlet: "homeTab"
