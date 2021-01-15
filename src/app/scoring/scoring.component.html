@@ -1,0 +1,48 @@
+
+
+<GridLayout  id="main">
+    <StackLayout class="degrade">
+            <StackLayout>
+                <FlexboxLayout justifyContent="space-between" style="margin-top: 30;">
+                    <Image class="img" src="~/assets/quickly/cross.png"
+                     style="margin: 10;"
+                     (tap)="routerExtensions.navigate(['home']);"></Image>
+                     <FlexboxLayout  style="margin: 10;">
+                        <Image class="star" src="~/assets/quickly/star.png"
+                        style="margin: 10;"></Image>
+
+                        <Image class="star" src="~/assets/quickly/star.png"
+                        stretch="aspectFill" style="margin: 10;"></Image>
+
+                        <Image class="star" src="~/assets/quickly/star.png"
+                        stretch="aspectFill" style="margin: 10;"></Image>
+                     </FlexboxLayout>
+                     <Image class="star" src="~/assets/quickly/beaf.png"
+                     style="margin: 10;"></Image>
+                </FlexboxLayout>
+            </StackLayout>
+
+            <StackLayout>
+                <Label text="Leçon terminée!" style="text-align: center; font-style: inherit;" class="info" ></Label>
+            </StackLayout>
+            <StackLayout >
+                <Image class="logo" src=" ~/assets/quickly/trophe.png" width="200" height="200" style="margin: 30;"
+                ></Image>
+            </StackLayout>
+            <StackLayout  width="200" height="200" style="text-align: center;">
+                <Label text="Ton score" class="info" style="text-align: center;"
+                ></Label>
+                <Label [text]="score + '/'+  80" class="info" style="font-size: 50; text-align: center;"
+                ></Label>
+            </StackLayout>
+
+            <StackLayout>
+                <button (tap)="getPage()" text="Leçon suivante" ></button>
+            </StackLayout>
+            <StackLayout>
+                <Label text="" ></Label>
+            </StackLayout>
+    </StackLayout>
+</GridLayout>
+
+

@@ -3,24 +3,6 @@
         <StackLayout>
             <Progress value="25" maxValue="100"   class="progress"></Progress>
         </StackLayout>
-            <!-- <StackLayout>
-                <FlexboxLayout justifyContent="space-between">
-                    <Image class="img" src="~/assets/quickly/cross.png"
-                     style="margin: 10;"></Image>
-                     <FlexboxLayout  style="margin: 10;">
-                        <Image class="star" src="~/assets/quickly/star.png"
- style="margin: 10;"></Image>
-
-                        <Image class="star" src="~/assets/quickly/star.png"
-                        stretch="aspectFill" style="margin: 10;"></Image>
-
-                        <Image class="star" src="~/assets/quickly/star.png"
-                        stretch="aspectFill" style="margin: 10;"></Image>
-                     </FlexboxLayout>
-                     <Image class="star" src="~/assets/quickly/beaf.png"
-                     style="margin: 10;"></Image>
-                </FlexboxLayout>
-            </StackLayout> -->
             <header-layout></header-layout>
             <StackLayout>
                 <FlexboxLayout>
@@ -29,13 +11,10 @@
                    <StackLayout class="info">
                          <Label [text]= "exercises.question"></Label>
                    </StackLayout>
-                    <!-- <Label text="Label 1" ></Label>
-                    <Label text="Label 2" ></Label>
-                    <Label text="Label 3" ></Labe> -->
                 </FlexboxLayout>
             </StackLayout>
-            <StackLayout>
-                <Label text="" ></Label>
+            <StackLayout class="info">
+                <Label [text]="message" ></Label>
             </StackLayout>
             <StackLayout>
                 <Label text="" ></Label>
@@ -47,7 +26,7 @@
                     ></Image>
                     <Label [text]="exercises.suggestions[0].name" class="quiz"
                     (tap)="selectImage(exercises.suggestions[0], $event)"
-                    #checked
+                    #checked1
                     ></Label>
                 </StackLayout>
 
@@ -75,7 +54,7 @@
                     ></Image>
                     <Label [text]="exercises.suggestions[3].name" class="quiz"
                     (tap)="selectImage(exercises.suggestions[3], $event)"
-                    #checked1></Label>
+                    #checked4></Label>
                 </StackLayout>
               </GridLayout>
             <StackLayout>
@@ -83,7 +62,7 @@
             </StackLayout>
 
             <StackLayout>
-                <button text="Vérifier" (tap)="sentResponse(id,title)"
+                <button text="Suivant" (tap)="sentResponse()"
                 *ngIf="verify"></button>
             </StackLayout>
     </StackLayout>

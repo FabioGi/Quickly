@@ -51,9 +51,10 @@ const lessons =
           {
              id: 2,
              type: "Switch",
-             question: "Selectionnez:'verre'",
+             question: "Verre",
              answer: "glass",
              answer_image: "verre.jpg",
+             answer_media: "verre.mp3",
              suggestions:[
                             {
                                id: 1,
@@ -133,9 +134,10 @@ const lessons =
           {
             id: 6,
             type: "Switch",
-            question: "Selectionnez:'cuillère'",
+            question: "Cuillère'",
             answer: "spoon",
             answer_image: "cuillere.jpg",
+            answer_media: "cuillere.mp3",
             suggestions:[
                            {
                               id: 1,
@@ -156,7 +158,7 @@ const lessons =
              type: "QCM",
              question: "choisissez la traduction correcte",
              statement: "C'est un couteau",
-             answer: "It's coffee",
+             answer: "This is a knife",
              suggestions:[
                             "This is a knife",
                             "This is a fork",
@@ -224,9 +226,10 @@ const lessons =
           {
              id: 2,
              type: "Switch",
-             question: "Selectionnez:'chien'",
+             question: "Chien",
              answer: "dog",
              answer_image: "chien.jpg",
+             answer_media: "chien.mp3",
              suggestions:[
                             {
                                id: 1,
@@ -306,9 +309,10 @@ const lessons =
           {
             id: 6,
             type: "Switch",
-            question: "Selectionnez:'lapin'",
+            question: "Lapin",
             answer: "rabbit",
             answer_image: "lapin.jpg",
+            answer_media: "lapin.mp3",
             suggestions:[
                            {
                               id: 1,
@@ -331,10 +335,10 @@ const lessons =
              statement: "C'est un chat",
              answer: "It's a cat",
              suggestions:[
-                            "This is a dog",
-                            "This is a rabbit",
-                            "This is a bird",
-                            "This is a cat"
+                            "It's a dog",
+                            "It's a rabbit",
+                            "It's a bird",
+                            "It's a cat"
                          ]
           },
           {
@@ -349,7 +353,7 @@ const lessons =
                            "c'est",
                            "verre",
                            "un",
-                           "cuillère",
+                           "oiseau",
                         ]
          }
 
@@ -397,9 +401,10 @@ const lessons =
           {
              id: 2,
              type: "Switch",
-             question: "Selectionnez:'tigre'",
+             question: "Tigre",
              answer: "tiger",
              answer_image: "tigre.jpg",
+             answer_media: "tigre.mp3",
              suggestions:[
                             {
                                id: 1,
@@ -440,7 +445,6 @@ const lessons =
                             "c'est",
                             "lapin",
                             "un",
-                            "fourchette",
                             "zèbre"
                          ]
           },
@@ -480,9 +484,10 @@ const lessons =
           {
             id: 6,
             type: "Switch",
-            question: "Selectionnez:'zèbre'",
+            question: "Zèbre",
             answer: "zebra",
             answer_image: "zebre.jpg",
+            answer_media: "zebra.mp3",
             suggestions:[
                            {
                               id: 1,
@@ -503,12 +508,12 @@ const lessons =
              type: "QCM",
              question: "choisissez la traduction correcte",
              statement: "C'est un singe",
-             answer: "This is a monkey",
+             answer: "It's is a monkey",
              suggestions:[
-                            "This is a monkey",
-                            "This is a zebra",
-                            "This is an elephant",
-                            "This is a tiger"
+                            "It's is a monkey",
+                            "It's is a zebra",
+                            "It's is an elephant",
+                            "It's is a tiger"
                          ]
           },
           {
@@ -538,117 +543,20 @@ export class DataService {
 
     public globalData: any ;
     public currentLesson: any;
-    private items = new Array<DataItem>(
-        {
-            id: 1,
-            name: "Item 1",
-            description: "Description for Item 1"
-        },
-        {
-            id: 2,
-            name: "Item 2",
-            description: "Description for Item 2"
-        },
-        {
-            id: 3,
-            name: "Item 3",
-            description: "Description for Item 3"
-        },
-        {
-            id: 4,
-            name: "Item 4",
-            description: "Description for Item 4"
-        },
-        {
-            id: 5,
-            name: "Item 5",
-            description: "Description for Item 5"
-        },
-        {
-            id: 6,
-            name: "Item 6",
-            description: "Description for Item 6"
-        },
-        {
-            id: 7,
-            name: "Item 7",
-            description: "Description for Item 7"
-        },
-        {
-            id: 8,
-            name: "Item 8",
-            description: "Description for Item 8"
-        },
-        {
-            id: 9,
-            name: "Item 9",
-            description: "Description for Item 9"
-        },
-        {
-            id: 10,
-            name: "Item 10",
-            description: "Description for Item 10"
-        },
-        {
-            id: 11,
-            name: "Item 11",
-            description: "Description for Item 11"
-        },
-        {
-            id: 12,
-            name: "Item 12",
-            description: "Description for Item 12"
-        },
-        {
-            id: 13,
-            name: "Item 13",
-            description: "Description for Item 13"
-        },
-        {
-            id: 14,
-            name: "Item 14",
-            description: "Description for Item 14"
-        },
-        {
-            id: 15,
-            name: "Item 15",
-            description: "Description for Item 15"
-        },
-        {
-            id: 16,
-            name: "Item 16",
-            description: "Description for Item 16"
-        },
-        {
-            id: 17,
-            name: "Item 17",
-            description: "Description for Item 17"
-        },
-        {
-            id: 18,
-            name: "Item 18",
-            description: "Description for Item 18"
-        },
-        {
-            id: 19,
-            name: "Item 19",
-            description: "Description for Item 19"
-        },
-        {
-            id: 20,
-            name: "Item 20",
-            description: "Description for Item 20"
-        }
-    );
+    private score: number = 0;
+    public score1 = 0;
+    public score2 = 0;
+    public score3 = 0;
+
     // currentLesson: { id: number; name: string; title: string; Exercices: ({ id: number; type: string; question: string; answer: string; suggestions: { id: number; name: string; image: string; media: string; }[]; statement?: undefined; media?: undefined; } | { ...; } | { ...; })[]; Categorie?: undefined; } | { ...; };
 
-    getItems(): Array<DataItem> {
-        return this.items;
-    }
+    // getItems(): Array<DataItem> {
+    //     return this.items;
+    // }
 
-    getItem(id: number): DataItem {
-        return this.items.filter((item) => item.id === id)[0];
-    }
+    // getItem(id: number): DataItem {
+    //     return this.items.filter((item) => item.id === id)[0];
+    // }
     /**
      * Quickly service
      */
@@ -667,6 +575,15 @@ export class DataService {
 
     imagePath(index,data){
         return '~/assets/media/'+data[index].image;
+    }
+    getScore(){
+        return this.score ;
+    }
+    setScore(score){
+        this.score += score;
+    }
+    initScore(){
+        this.score = 0;
     }
 
 }

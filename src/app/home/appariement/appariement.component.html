@@ -1,5 +1,5 @@
 <GridLayout  id="main" actionBarHidden="true">
-    <StackLayout class="degrade" *ngIf="exercises">
+    <StackLayout class="degrade">
         <StackLayout>
             <Progress value="25" maxValue="100"   class="progress"></Progress>
         </StackLayout>
@@ -11,14 +11,14 @@
                    <StackLayout class="info">
                          <Label text='Traduisez cette phrase' ></Label>
                    </StackLayout>
-                    <!-- <Label text="Label 1" ></Label>
-                    <Label text="Label 2" ></Label>
-                    <Label text="Label 3" ></Label> -->
                 </FlexboxLayout>
             </StackLayout>
-            <StackLayout>
-                <Label text="" ></Label>
+            <StackLayout class="info">
+                <Label [text]="message" ></Label>
             </StackLayout>
+            <!-- <StackLayout class="info">
+                <Label [text]="goodResponse" ></Label>
+            </StackLayout> -->
             <StackLayout>
                 <FlexboxLayout justifyContent="space-between">
                     <Image class="img2" src="~/assets/quickly/speaker.png"
@@ -26,28 +26,41 @@
                     <Label [text]="exercises.statement" class="info"></Label>
                 </FlexboxLayout>
             </StackLayout>
-             <GridLayout  width="80%" height="200"
-             horizontalAlignment="center" verticalAlignment="center"  >
-                <TextView hint="Enter some text..."
-                     [text]="tvtext"
-                     class="info" style="background-color: whitesmoke;">
-                </TextView>
-                <!-- (textChange)="onTextChange($event) -->
-              </GridLayout>
-              <!-- <StackLayout> -->
-                <!-- <FlexboxLayout style="margin: 5;" orientation="horizontal">
-                    <v-template *ngFor="let item of exercises.suggestions">
-                        <Label [text]="item" class="appr-label" ></Label>
-                       </v-template>
-                </FlexboxLayout> -->
-              <!-- </StackLayout> -->
+            <StackLayout class="info">
+                <Label [text]="goodResponse" ></Label>
+            </StackLayout>
             <StackLayout>
                 <Label text="" ></Label>
             </StackLayout>
+             <GridLayout columns="*" rows="*,*"  width="97%" height="400" class="degrade2" style="border-radius: 20;"
+             horizontalAlignment="center" verticalAlignment="center"  >
+                <StackLayout col="0" row="0" style="background-color: honeydew;  border-radius: 20;" #response
+               height="200" >
+                    <FlexboxLayout style="margin-top: 40%;">
+                        <v-template *ngFor="let item of responseList">
+                            <Label [text]="item" class="appr-label"
+                            (tap)="removeResponse(item)"></Label>
+                           </v-template>
+                    </FlexboxLayout>
+                </StackLayout>
+
+                <StackLayout  col="0" row="1">
+                    <FlexboxLayout style="margin: 5;" orientation="horizontal" style="margin-top: 40%;">
+                        <v-template *ngFor="let item of exercises.suggestions">
+                            <Label [text]="item" class="appr-label"
+                            (tap)="apparier(item)" ></Label>
+                           </v-template>
+                    </FlexboxLayout>
+                  </StackLayout>
+              </GridLayout>
 
             <StackLayout>
-                <button text="Vérifier"
-                (tap)="routerExtensions.navigate(['home','quatre-bis',4,title])"></button>
+                <Label text=""></Label>
+            </StackLayout>
+
+            <StackLayout>
+                <button text="Vérifier" *ngIf="verify"
+                (tap)="checkResponse()"></button>
             </StackLayout>
 
     </StackLayout>

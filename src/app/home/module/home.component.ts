@@ -7,6 +7,7 @@ import {Label} from "tns-core-modules/ui/label"
 import { TabView } from "tns-core-modules/ui/tab-view";
 import { DataItem, DataService } from "~/app/shared/data.service";
 import { EventData } from "@nativescript/core";
+import { User } from "~/app/shared/user";
 
 
 // import { StackLayout } from "@nativescript/core/ui/layouts/stack-layout";
@@ -22,100 +23,54 @@ const numLabel = 50 ;
     templateUrl: "./home.component.html"
 })
 export class HomeComponent implements OnInit {
-    items: Array<DataItem>;
-    scrollLayout: ScrollView = null ;
-    contentContainer: StackLayout  = null ;
-    result = false;
-    module:any;
+    // list
+    public items: string[] = [];
+    exercices:any;
+    lesson:any;
+    user:User;
+    score1 : number;
+    score2 : number;
+    score3 : number;
+    score = [];
 
-    constructor(private _itemService: DataService,
+    constructor(
         public routerExtensions: RouterExtensions,
         public page: Page,
-        public ds: DataService) { }
-        // onScroll(args: ScrollEventData) {
-        //     const scrollView = args.object as ScrollView;
-
-        //     console.log("scrollX: " + args.scrollX);
-        //     console.log("scrollY: " + args.scrollY);
-        // }
-
-        amount: number;
-
-        // libelle des mois depuis le html
-        @ViewChild('mois12', { static: true }) mois12: ElementRef;
-        @ViewChild('mois3', { static: true }) mois3: ElementRef;
-        @ViewChild('mois1', { static: true }) mois1: ElementRef;
-
-        // les containers des abonnements
-        @ViewChild('cont12', { static: true }) cont12: ElementRef;
-        @ViewChild('cont3', { static: true }) cont3: ElementRef;
-        @ViewChild('cont1', { static: true }) cont1: ElementRef;
-
-        // bouton continer
-        @ViewChild('continuer', { static: true }) continuer: ElementRef;
-
-        // stripe checkout zone
-        cc : any;
-        cardNumber = null;
-        cardExpiryMonth = null;
-        cardExpiryYear = null;
-        cardCVC = null
-
-        // l'utilisateur
-        // currentUser: User;
-        age: number;
+        public ds: DataService) {
+            this.page.actionBarHidden = true;
+        }
 
     ngOnInit(): void {
-        this.items = this._itemService.getItems();
-      //  this.module = this.ds.currentLesson;
-        // this.scrollLayout = this.page.getViewById("myScroller") as ScrollView;
-        // this.contentContainer = this.page.getViewById("contentContainer") as StackLayout;
-        // for (let index = 0; index <= numLabel; index++) {
-        //     const lbl = new Label();
-        //     lbl.className = 'my-lbl';
-        //     lbl.text = index.toString();
-        //     this.contentContainer.addChild(lbl);
-        // }
+        // list
+        this.lesson = this.ds.getAllLessons();
+        this.score1 = this.ds.score1?this.ds.score1:0
+        this.score2 = this.ds.score2?this.ds.score2:0
+        this.score3 = this.ds.score3?this.ds.score3:0
+        this.score = [ this.score1, this.score2, this.score3];
     }
 
-    selectAbonnement(args: EventData, mois: number) {
+    routerGame(index,title){
+        switch(index){
+            case 0: this.routerExtensions.navigate(['home','questionnaire',+index,title]);
+            break;
+            case 1: this.routerExtensions.navigate(['home','switch',+index,title]);
+            break;
+            case 2: this.routerExtensions.navigate(['home','qcm',+index,title]);
+            break;
+            case 3: this.routerExtensions.navigate(['home','appar',+index,title]);
+            break;
+            case 4: this.routerExtensions.navigate(['home','quatre-bis',+index,title]);
+            break;
+            case 5: this.routerExtensions.navigate(['home','switch-bis',+index,title]);
+            break;
+            case 6: this.routerExtensions.navigate(['home','qcm-bis',+index,title]);
+            break;
+            case 7: this.routerExtensions.navigate(['home','apar-bis',+index,title]);
+            break;
+            default: this.routerExtensions.navigate(['home']);
 
-        // l'abonnement : montant - mois
-        this.amount = mois*100;
-       //  this.currentUser.abonnement = mois;
-
-        this.resetCss();
-        const arg = args.object as any;
-        arg.color = 'white';
-        arg.backgroundColor="#FE5000";
-        this.continuer.nativeElement.backgroundColor = '#FE5000';
-
-
-        switch(mois) {
-            case 1:
-                this.mois1.nativeElement.color='white';
-                break;
-            case 3:
-                this.mois3.nativeElement.color='white';
-                break;
-            case 12:
-                this.mois12.nativeElement.color='white';
-                break;
-            default:
-        }
+         }
     }
 
-    resetCss() {
-        this.cont12.nativeElement.backgroundColor = 'white';
-        this.cont3.nativeElement.backgroundColor = 'white';
-        this.cont1.nativeElement.backgroundColor = 'white';
 
-        this.cont12.nativeElement.color = 'black';
-        this.cont3.nativeElement.color = 'black';
-        this.cont1.nativeElement.color = 'black';
-
-        this.mois12.nativeElement.color='#FE5000';
-        this.mois3.nativeElement.color='#FE5000';
-        this.mois1.nativeElement.color='#FE5000';
-    }
 }

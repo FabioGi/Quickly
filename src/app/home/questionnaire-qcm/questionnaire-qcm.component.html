@@ -14,8 +14,9 @@
                 </FlexboxLayout>
             </StackLayout>
             <StackLayout>
-                <Label text="" ></Label>
+                <Label [text]="message" class="info" ></Label>
             </StackLayout>
+
             <StackLayout>
                 <Label text="" ></Label>
             </StackLayout>
@@ -50,16 +51,16 @@
               <FlexboxLayout flexDirection="column">
                 <Label [text]="exercises.suggestions[0]" class="qcm-label"
                 (tap)="selectImage(exercises.suggestions[0], $event)"
-                #checked></Label>
+                #checked1></Label>
                 <Label [text]="exercises.suggestions[1]" class="qcm-label"
                 (tap)="selectImage(exercises.suggestions[1], $event)"
-                #checked1></Label>
+                #checked2></Label>
                 <Label [text]="exercises.suggestions[2]" class="qcm-label"
                 (tap)="selectImage(exercises.suggestions[2], $event)"
-                #checked2></Label>
+                #checked3></Label>
                 <Label [text]="exercises.suggestions[3]" class="qcm-label"
                 (tap)="selectImage(exercises.suggestions[3], $event)"
-                #checked3></Label>
+                #checked4></Label>
                 <!-- <Label text="It's tea" class="qcm-label"></Label>
                 <Label text="It's bread" class="qcm-label"></Label>
                 <Label text="It's water" class="qcm-label"></Label> -->
@@ -69,7 +70,7 @@
             </StackLayout>
 
             <StackLayout>
-                <button  text="Vérifier"
+                <button  text="Suivant"
                 (tap)="sentResponse()"></button>
             </StackLayout>
 

@@ -6,11 +6,6 @@ import { TNSPlayer } from 'nativescript-audio-player';
 import { Page } from 'tns-core-modules/ui/page';
 import { DataService } from '~/app/shared/data.service';
 
-//import { RouterExtensions } from 'nativescript-angular';
-//import { TextField } from 'ui/text-field';
-//import { EventData } from 'data/observable';
-//import { ActivatedRoute } from '@angular/router';
-
 @Component({
 	selector: 'questionnaires',
 	templateUrl: './questionnaires.component.html',
@@ -23,18 +18,18 @@ export class QuestionnairesComponent implements OnInit {
     id: number;
     title: number;
     col: string;
-    @ViewChild('checked', { static: true }) checked: ElementRef;
     @ViewChild('checked1', { static: true }) checked1: ElementRef;
     @ViewChild('checked2', { static: true }) checked2: ElementRef;
     @ViewChild('checked3', { static: true }) checked3: ElementRef;
-
-   // checker = this.page.getViewById("checker");
+    @ViewChild('checked4', { static: true }) checked4: ElementRef;
+    message = "";
     private _player: TNSPlayer;
     verify: boolean = false;
     response: any;
     response_image: any;
     correct: any;
     correct_image: any;
+    ischecked = false;
 
     constructor(private page: Page,
                public routerExtensions: RouterExtensions,
@@ -49,6 +44,7 @@ export class QuestionnairesComponent implements OnInit {
         this.id =  +this.route.snapshot.params.id1;
         this.title = this.route.snapshot.params.id2;
        this.exercises = this.ds.getExerciseOrderById(this.id, this.title);
+       console.log(this.ds.getScore());
     }
 
     imagePath(index,data){
@@ -56,26 +52,50 @@ export class QuestionnairesComponent implements OnInit {
     }
 
     selectImage(data, args: EventData){
-        this.checked1.nativeElement.backgroundColor="#007bff";
-        this.checked.nativeElement.backgroundColor="#007bff";
-        this.checked2.nativeElement.backgroundColor="#007bff";
-        this.checked3.nativeElement.backgroundColor="#007bff";
-        const arg = args.object as any;
-        // arg.color = 'white';
-        arg.backgroundColor="#013299";
-        this.initPlayer(data.media);
-        this._player.play();
-        this.verify = true;
-        this.response = data.name;
-        this.response_image = data.image;
-        this.correct = this.exercises.answer;
-        this.correct_image = this.exercises.answer_image;
+        if(!this.ischecked){
+            this.checked1.nativeElement.backgroundColor="#007bff";
+            this.checked2.nativeElement.backgroundColor="#007bff";
+            this.checked3.nativeElement.backgroundColor="#007bff";
+            this.checked4.nativeElement.backgroundColor="#007bff";
+            const arg = args.object as any;
+            // arg.color = 'white' FF0000;
+            if( data.name ==  this.exercises.answer){
+                arg.backgroundColor="#008000"
+                this.message = "    BRAVO C'EST CORRECT"
+                this.ds.setScore(10);
+            }else{
+                this.message = "    REPONSE INCORRECT"
+                arg.backgroundColor="#FF0000";
+                switch(this.verifyResponse()){
+                    case 1: this.checked1.nativeElement.backgroundColor="#008000";
+                    break;
+                    case 2: this.checked2.nativeElement.backgroundColor="#008000";
+                    break;
+                    case 3: this.checked3.nativeElement.backgroundColor="#008000";
+                    break;
+                    case 4: this.checked4.nativeElement.backgroundColor="#008000";
+                    break;
+                }
+            }
+            this.initPlayer(data.media);
+            this._player.play();
+            this.verify = true;
+            this.response = data.name;
+            this.response_image = data.image;
+            this.correct = this.exercises.answer;
+            this.correct_image = this.exercises.answer_image;
+            this.ischecked = true;
+        }
+
     }
 
-    sentResponse(id,title){
-        this.routerExtensions.navigate(['home','resultat44',id,title,this.response,
-        this.response_image,this.correct,this.correct_image]);
-        console.log(this.response,this.response_image, this.correct, )
+    verifyResponse(){
+       var response =  this.exercises.suggestions.filter((data) => data.name == this.exercises.answer);
+       return response[0].id ;
+    }
+
+    sentResponse(){
+        this.routerExtensions.navigate(['home','switch',this.id+1,this.title]);
     }
 
     initPlayer(mp3){

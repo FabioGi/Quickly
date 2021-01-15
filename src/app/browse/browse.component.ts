@@ -1,57 +1,41 @@
 import { Component, OnInit } from "@angular/core";
 import { RouterExtensions } from '@nativescript/angular';
-import { Page } from "@nativescript/core";
-import { DataService } from "../shared/data.service";
+import { Page, ScrollView, StackLayout } from "@nativescript/core";
+import { DataItem, DataService } from "../shared/data.service";
 
 @Component({
-    selector: "Browse",
+    selector: "app-browse",
     templateUrl: "./browse.component.html"
 })
 
 export class BrowseComponent implements OnInit {
 
-    public items: string[] = [];
-    exercices:any;
-    lesson:any;
+    // public items: string[] = [];
+    // exercices:any;
+     lesson:any;
+    items: Array<DataItem>;
+    scrollLayout: ScrollView = null ;
+    contentContainer: StackLayout  = null ;
+    result = false;
+    module:any;
     constructor(public routerExtensions: RouterExtensions,
                 public page: Page,
-                private ds: DataService) {
-        this.page.actionBarHidden = true;
+                private ds: DataService,
+                private _itemService: DataService) {
+        // this.page.actionBarHidden = true;
         // Use the component constructor to inject providers.
     }
 
     ngOnInit(): void {
        // this.exercices =  this.ds.getAllLessons();
        this.lesson = this.ds.getAllLessons();
+       // this.items = this._itemService.getItems();
        // console.log(this.exercices)
         // for (var i = 1; i < 20; i++) {
         //     this.items.push("Exercice " +  i);
         // }
 
         // Use the "ngOnInit" handler to initialize data for the view.
-    }
-
-    routerGame(index,title){
-        switch(index){
-            case 0: this.routerExtensions.navigate(['home','questionnaire',+index,title]);
-            break;
-            case 1: this.routerExtensions.navigate(['home','switch',+index,title]);
-            break;
-            case 2: this.routerExtensions.navigate(['home','qcm',+index,title]);
-            break;
-            case 3: this.routerExtensions.navigate(['home','appar',+index,title]);
-            break;
-            case 4: this.routerExtensions.navigate(['home','quatre-bis',+index,title]);
-            break;
-            case 5: this.routerExtensions.navigate(['home','switch-bis',+index,title]);
-            break;
-            case 6: this.routerExtensions.navigate(['home','qcm-bis',+index,title]);
-            break;
-            case 7: this.routerExtensions.navigate(['home','apar-bis',+index,title]);
-            break;
-            default: this.routerExtensions.navigate(['home']);
-
-         }
     }
 
 }
