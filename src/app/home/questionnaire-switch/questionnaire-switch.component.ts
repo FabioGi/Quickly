@@ -5,17 +5,11 @@ import { ActivatedRoute } from '@angular/router';
 import { DataService } from '~/app/shared/data.service';
 import { TNSPlayer } from 'nativescript-audio-player';
 import { EventData } from '@nativescript/core';
-//import { TextField } from 'ui/text-field';
-//import { EventData } from 'data/observable';
-//import { ActivatedRoute } from '@angular/router';
 import { PanGestureEventData } from "tns-core-modules/ui/gestures";
 // import { SwipeGestureEventData } from '@nativescript/core/ui/gestures';
-import { SwipeGestureEventData } from "tns-core-modules/ui/gestures";
 import { Image } from "tns-core-modules/ui/image";
-import { GridLayout } from "tns-core-modules/ui/layouts/grid-layout";
 import { trigger, transition, animate, style, state, keyframes, AnimationEvent } from '@angular/animations';
 import { StackLayout } from 'tns-core-modules/ui/layouts/stack-layout';
-import { AnimationCurve } from "tns-core-modules/ui/enums";
 
 @Component({
 	selector: 'questionnaire-switch',
@@ -46,6 +40,8 @@ export class QuestionnaireSwitchComponent implements OnInit {
     response_image: any;
     correct: any;
     correct_image: any;
+    showResponse: boolean;
+    checkIt: boolean;
     // drag
     @ViewChild('dragImage1', { static: true }) dragImage1: ElementRef;
     @ViewChild('dragImage2', { static: true }) dragImage2: ElementRef;
@@ -94,9 +90,11 @@ export class QuestionnaireSwitchComponent implements OnInit {
     selectImage(data, args?: EventData){
         console.log(data.name)
         this.verify = true;
+        this.showResponse = true;
         this.checked3.nativeElement.backgroundColor="#008000";
         if( data.name ==  this.exercises.answer){
             this.message = "    BRAVO C'EST CORRECT"
+            this.checkIt = true;
             this.ds.setScore(10);
             switch(this.verifyResponse()){
                 case 1: this.checked1.nativeElement.backgroundColor="#008000";
@@ -106,6 +104,7 @@ export class QuestionnaireSwitchComponent implements OnInit {
             }
         }else{
             this.message = "    REPONSE INCORRECT"
+            this.checkIt = false;
             switch(this.verifyResponse()){
                 case 1: this.checked1.nativeElement.backgroundColor="#008000";
                         this.checked2.nativeElement.backgroundColor="#FF0000";
@@ -207,35 +206,8 @@ export class QuestionnaireSwitchComponent implements OnInit {
              else if (args.state === 3){
                  if( this.dragImageItem1.translateY == 0 ) this.selectImage(this.exercises.suggestions[0]);
                  else this.selectImage(this.exercises.suggestions[1]);
-
-
-            // this.dragImageItem1.animate({
-            //     translate: { x: 0, y: 0 },
-            //     duration: 1000,
-            //     curve: AnimationCurve.cubicBezier(0.1, 0.1, 0.1, 1)
-            //     });
-            // console.log(args.state)
             }
           }
       }
-
-    //   onSwipe(args: SwipeGestureEventData) {
-    //     switch(args.direction) {
-    //         case 8:
-    //             setTimeout(() => {
-    //                 this.selectImage(this.exercises.suggestions[1]);
-    //                  console.log('swipe ', args.direction);
-    //             }, 0)
-    //            // this.animationTrigger = true;
-    //             break;
-    //         case 4:
-    //             setTimeout(() => {
-    //                  this.selectImage(this.exercises.suggestions[0]);
-    //                 console.log('swipe', args.direction);
-    //              }, 0)
-    //              // this.animationTrigger = true;
-    //              break;
-    //     }
-    // }
 
 }

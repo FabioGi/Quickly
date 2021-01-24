@@ -14,7 +14,8 @@
                 </FlexboxLayout>
             </StackLayout>
             <StackLayout>
-                <Label class="info" [text]="message" ></Label>
+                <Label class="info" [text]="message"
+                [ngClass]="{'goodmsg':checkIt, 'badmsg':!checkIt}" *ngIf="showResponse" ></Label>
             </StackLayout>
             <StackLayout>
                 <Image class="logo" src="~/assets/quickly/up.png" *ngIf="!verify"

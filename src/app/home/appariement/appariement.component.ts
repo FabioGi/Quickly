@@ -39,6 +39,9 @@ export class AppariementComponent implements OnInit {
         this.item = this.index + 1;
         this._player = new TNSPlayer();
         this.play_response();
+        if(this.responseList.length){
+            this.initData();
+        }
      }
 
      apparier(word){
@@ -46,6 +49,13 @@ export class AppariementComponent implements OnInit {
         this.responseList.push(word)
         this.exercises.suggestions.splice(index, 1);
         this.verify = true;
+     }
+
+     initData(){
+        this.responseList.forEach((data)=>{
+            this.exercises.suggestions.push(data);
+        })
+        this.responseList = [];
      }
 
      removeResponse(word){
@@ -57,6 +67,7 @@ export class AppariementComponent implements OnInit {
      }
 
      checkResponse(){
+         this.verify = false;
             this.showResponse = true;
             const answer = this.exercises.answer ;
             this.verifyResponse = this.exercises.answer === this.responseList.join(" ");
@@ -71,13 +82,18 @@ export class AppariementComponent implements OnInit {
             }
             console.log(this.item)
             if(this.item === 8){
-                setTimeout(()=> this.routerExtensions.navigate(['scoring','score',this.title,this.ds.getScore()]),
+                setTimeout(()=> {
+                    this.routerExtensions.navigate(['scoring','score',this.title,this.ds.getScore()]);
+                    this.initData();
+                },
                 5000);
             } else{
-                setTimeout(()=> this.routerExtensions.navigate(['home','questionnaire',+this.item,this.title]),
+                setTimeout(()=> {
+                    this.routerExtensions.navigate(['home','questionnaire',+this.item,this.title]);
+                    this.initData();
+                },
                 5000);
             }
-
      }
 
      play_response(){
@@ -124,6 +140,3 @@ export class AppariementComponent implements OnInit {
         console.log('extra info on the error:', args.extra);
       }
 }
-
-
-// (tap)="routerExtensions.navigate(['home','exercice','Les animaux familiers'])"

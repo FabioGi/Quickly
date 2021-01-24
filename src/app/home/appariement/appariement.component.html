@@ -1,8 +1,8 @@
-<GridLayout  id="main" actionBarHidden="true">
+<GridLayout  id="main" actionBarHidden="true" *ngIf="exercises">
     <StackLayout class="degrade">
-        <StackLayout>
+        <!-- <StackLayout>
             <Progress value="25" maxValue="100"   class="progress"></Progress>
-        </StackLayout>
+        </StackLayout> -->
          <header-layout></header-layout>
             <StackLayout>
                 <FlexboxLayout>
@@ -14,11 +14,9 @@
                 </FlexboxLayout>
             </StackLayout>
             <StackLayout class="info">
-                <Label [text]="message" ></Label>
+                <Label [text]="message"
+                [ngClass]="{'goodmsg':verifyResponse, 'badmsg':!verifyResponse}" *ngIf="showResponse"></Label>
             </StackLayout>
-            <!-- <StackLayout class="info">
-                <Label [text]="goodResponse" ></Label>
-            </StackLayout> -->
             <StackLayout>
                 <FlexboxLayout justifyContent="space-between">
                     <Image class="img2" src="~/assets/quickly/speaker.png"
@@ -51,7 +49,7 @@
                 <StackLayout  col="0" row="1">
                     <FlexboxLayout style="margin: 5;" orientation="horizontal" style="margin-top: 40%;">
                         <v-template *ngFor="let item of exercises.suggestions">
-                            <Label [text]="item" class="appr-label"
+                            <Label [text]="item" class="appr-label" style="color: white;"
                             (tap)="apparier(item)" ></Label>
                            </v-template>
                     </FlexboxLayout>

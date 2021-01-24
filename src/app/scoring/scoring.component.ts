@@ -52,8 +52,10 @@ export class ScoringComponent implements OnInit {
     }
 
     getPage(){
-        if(this.checkTitle(this.title ) === 'home') return this.routerExtensions.navigate(['home']);
-        else return this.routerExtensions.navigate(['home','exercice', this.checkTitle(this.title)]);
+        this.checkTitle(this.title)
+        this.routerExtensions.navigate(['home']);
+        // if(this.checkTitle(this.title ) === 'home') return this.routerExtensions.navigate(['home']);
+        // else return this.routerExtensions.navigate(['home','exercice', this.checkTitle(this.title)]);
     }
 
 }

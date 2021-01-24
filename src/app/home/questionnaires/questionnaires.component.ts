@@ -30,6 +30,8 @@ export class QuestionnairesComponent implements OnInit {
     correct: any;
     correct_image: any;
     ischecked = false;
+    showResponse: boolean;
+    checkIt: boolean;
 
     constructor(private page: Page,
                public routerExtensions: RouterExtensions,
@@ -53,6 +55,7 @@ export class QuestionnairesComponent implements OnInit {
 
     selectImage(data, args: EventData){
         if(!this.ischecked){
+            this.showResponse = true;
             this.checked1.nativeElement.backgroundColor="#007bff";
             this.checked2.nativeElement.backgroundColor="#007bff";
             this.checked3.nativeElement.backgroundColor="#007bff";
@@ -63,9 +66,11 @@ export class QuestionnairesComponent implements OnInit {
                 arg.backgroundColor="#008000"
                 this.message = "    BRAVO C'EST CORRECT"
                 this.ds.setScore(10);
+                this.checkIt = true;
             }else{
                 this.message = "    REPONSE INCORRECT"
                 arg.backgroundColor="#FF0000";
+                this.checkIt = false;
                 switch(this.verifyResponse()){
                     case 1: this.checked1.nativeElement.backgroundColor="#008000";
                     break;

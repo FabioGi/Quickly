@@ -23,6 +23,8 @@ export class QuestionnaireQcmComponent implements OnInit {
     response: any;
     correct: any;
     message = "";
+    showResponse: boolean;
+    checkIt: boolean;
 
     constructor(private page: Page,
         public routerExtensions: RouterExtensions,
@@ -44,6 +46,7 @@ export class QuestionnaireQcmComponent implements OnInit {
     }
 
     selectImage(data, args: EventData){
+        this.showResponse = true;
         if(!this.ischecked){
             this.checked1.nativeElement.backgroundColor="#007bff";
             this.checked2.nativeElement.backgroundColor="#007bff";
@@ -53,11 +56,15 @@ export class QuestionnaireQcmComponent implements OnInit {
             // arg.color = 'white' FF0000;
             console.log(data, this.exercises.answer)
             if( data ==  this.exercises.answer){
+                this.checkIt = true;
+               // this.showResponse = true;
                 this.message = "    BRAVO C'EST CORRECT";
                  arg.backgroundColor="#008000";
                  this.ds.setScore(10);
             }else{
                 this.message = "    REPONSE INCORRECT";
+                this.checkIt = false;
+                 //this.showResponse = false;
                 // console.log("result", data.name ==  this.exercises.answer)
                 arg.backgroundColor="#FF0000";
                 switch(this.verifyResponse()){

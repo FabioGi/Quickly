@@ -14,7 +14,8 @@
                 </FlexboxLayout>
             </StackLayout>
             <StackLayout class="info">
-                <Label [text]="message" ></Label>
+                <Label [text]="message"
+                [ngClass]="{'goodmsg':checkIt, 'badmsg':!checkIt}" *ngIf="showResponse" ></Label>
             </StackLayout>
             <StackLayout>
                 <Label text="" ></Label>

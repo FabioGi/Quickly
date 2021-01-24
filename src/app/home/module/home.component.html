@@ -48,7 +48,7 @@
 </GridLayout> -->
 <StackLayout>
     <BottomNavigation class="bottom-nav">
-        <TabStrip>
+        <TabStrip style="margin-bottom: 50 ;">
             <TabStripItem class="navigation__item" [nsRouterLink]="['../home']">
                 <Label text="Home"></Label>
                 <Image src="font://&#xf015;" class="fas t-36"></Image>
@@ -90,7 +90,7 @@
                         </StackLayout>
                         <GridLayout columns="*,*,*" rows="*,*,*" width="400" height="500" *ngIf="lesson">
                             <StackLayout  col="0" row="0" style="margin: 5;" (tap)="navigate(0, lesson[0].title)">
-                                <Image src="~/assets/icon-exo.PNG"
+                                <Image src="~/assets/media/cafe.jpg"
                                 stretch="aspectFit"
                                 ></Image>
                                 <Label [text]="lesson[0].title"  style="color: white; text-align: center;
@@ -101,7 +101,7 @@
                             </StackLayout>
 
                             <StackLayout  col="1" row="0" style="margin: 5;"(tap)="navigate(0, lesson[1].title)">
-                                <Image src="~/assets/icon-exo.PNG"
+                                <Image src="~/assets/media/cat.jpg"
                                 stretch="aspectFit"
                                 ></Image>
                                 <Label [text]="lesson[1].title" style="color: white; text-align: center;
@@ -112,18 +112,18 @@
                             </StackLayout>
 
                             <StackLayout  col="2" row="0" style="margin: 5;" (tap)="navigate(0, lesson[2].title)">
-                                <Image src="~/assets/icon-exo.PNG"
+                                <Image src="~/assets/media/tigre.jpg"
                                 stretch="aspectFit"
                                 ></Image>
                                 <Label [text]="lesson[2].title"  style="color: white; text-align: center;
                                 font-size: 15; font-weight: bold;"
                                 ></Label>
-                                <Label [text]="'SCORE : '+score[1]+'/'+80" style="color: white; text-align: center;
+                                <Label [text]="'SCORE : '+score[2]+'/'+80" style="color: white; text-align: center;
                                 font-size: 15; font-weight: bold;"></Label>
                             </StackLayout>
 
                             <StackLayout  col="0" row="1" style="margin: 5; border-radius: 20;">
-                                <Image src="~/assets/icon-exo.PNG"
+                                <Image src="~/assets/media/tigre.jpg"
                                 stretch="aspectFit"
                                 ></Image>
                                 <Label [text]="lesson[2].title"  style="color: white; text-align: center;
@@ -134,7 +134,7 @@
                             </StackLayout>
 
                             <StackLayout  col="1" row="1" style="margin: 5; border-radius: 20;">
-                                <Image src="~/assets/icon-exo.PNG"
+                                <Image src="~/assets/quickly/logo_transparent.png" style="background-color: black;"
                                 stretch="aspectFit"
                                 ></Image>
                                 <Label text="Voyage"  style="color: white; text-align: center;
@@ -144,7 +144,7 @@
                                 font-size: 15; font-weight: bold;"></Label>
                             </StackLayout>
                             <StackLayout  col="2" row="1" style="margin: 5; border-radius: 20;">
-                                <Image src="~/assets/icon-exo.PNG"
+                                <Image src="~/assets/quickly/logo_transparent.png" style="background-color: black;"
                                 stretch="aspectFit"
                                 ></Image>
                                 <Label text="Voyage"  style="color: white; text-align: center;
@@ -155,7 +155,7 @@
                             </StackLayout>
 
                             <StackLayout  col="0" row="2" style="margin: 5; border-radius: 20;">
-                                <Image src="~/assets/icon-exo.PNG"
+                                <Image src="~/assets/quickly/logo_transparent.png" style="background-color: black;"
                                 stretch="aspectFit"
                                 ></Image>
                                 <Label text="Voyage" style="color: white; text-align: center;
@@ -166,7 +166,7 @@
                             </StackLayout>
 
                             <StackLayout  col="1" row="2" style="margin: 5; border-radius: 20;">
-                                <Image src="~/assets/icon-exo.PNG"
+                                <Image src="~/assets/quickly/logo_transparent.png" style="background-color: black;"
                                 stretch="aspectFit"
                                 ></Image>
                                 <Label text="Voyage"  style="color: white; text-align: center;
@@ -176,7 +176,7 @@
                                 font-size: 15; font-weight: bold;"></Label>
                             </StackLayout>
                             <StackLayout  col="2" row="2" style="margin: 5; border-radius: 20;">
-                                <Image src="~/assets/icon-exo.PNG"
+                                <Image src="~/assets/quickly/logo_transparent.png" style="background-color: black;"
                                 stretch="aspectFit"
                                 ></Image>
                                 <Label text="Voyage"  style="color: white; text-align: center;
