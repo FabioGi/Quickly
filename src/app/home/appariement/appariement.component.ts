@@ -78,7 +78,7 @@ export class AppariementComponent implements OnInit {
                this.ds.setScore(10);
             }else{
                // this.response.nativeElement.backgroundColor="#FF0000";
-               this.message = "    Reponse incorrect"
+               this.message = "    Reponse incorrecte"
                this.goodResponse =  this.exercises.answer ;
             }
             console.log(this.item)

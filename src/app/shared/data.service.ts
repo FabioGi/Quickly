@@ -19,7 +19,7 @@ const lessons =
           {
              id: 1,
              type: "4x4",
-             question: "Selectionnez:'couteau'",
+             question: "Selectionnez: couteau",
              answer: "knife",
              answer_image: "couteau.jpg",
              suggestions:[
@@ -74,7 +74,7 @@ const lessons =
           {
              id: 3,
              type: "QCM",
-             question: "choisissez la traduction correcte",
+             question: "Choisissez la traduction correcte",
              statement: "c'est du cafe",
              answer: "It's coffee",
              suggestions:[
@@ -102,7 +102,7 @@ const lessons =
           {
              id: 5,
              type: "4x4",
-             question: "Selectionnez:'pain'",
+             question: "Selectionnez: pain",
              answer: "bread",
              answer_image: "eau.jpg",
              suggestions:[
@@ -194,7 +194,7 @@ const lessons =
           {
              id: 1,
              type: "4x4",
-             question: "Selectionnez:'oiseau'",
+             question: "Selectionnez: oiseau",
              answer: "bird",
              answer_image: "oiseau.jpg",
              suggestions:[
@@ -277,7 +277,7 @@ const lessons =
           {
              id: 5,
              type: "4x4",
-             question: "Selectionnez:'thé'",
+             question: "Selectionnez: thé",
              answer: "tea",
              answer_image: "the.jpg",
              suggestions:[
@@ -369,7 +369,7 @@ const lessons =
           {
              id: 1,
              type: "4x4",
-             question: "Selectionnez:'singe'",
+             question: "Selectionnez: singe",
              answer: "monkey",
              answer_image: "singe.jpg",
              suggestions:[
@@ -452,7 +452,7 @@ const lessons =
           {
              id: 5,
              type: "4x4",
-             question: "Selectionnez:'café'",
+             question: "Selectionnez: café",
              answer: "coffee",
              answer_image: "cafe.jpg",
              suggestions:[

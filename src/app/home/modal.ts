@@ -12,7 +12,7 @@ export class SpeedPub {
                     "Une formation en anglais par visioconférence 100% prise en charge",
                     "Cours d'anglais par visioconférence En immersion avec un professeur natif, en direct de Londres"+
                     "disponible sous 24h, 7 jours sur 7, de 7h à 23h !",
-                    "Rester 1h de cours gratuit sur live london",
+                    "Tester 1h de cours gratuit sur live london",
                     "Tarifs de nos cours individuels d'anglais par visioconférence A partir de 29,90€/heure"]
     constructor() {
     }
