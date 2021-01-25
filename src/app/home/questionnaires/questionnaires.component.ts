@@ -46,7 +46,8 @@ export class QuestionnairesComponent implements OnInit {
         this.id =  +this.route.snapshot.params.id1;
         this.title = this.route.snapshot.params.id2;
        this.exercises = this.ds.getExerciseOrderById(this.id, this.title);
-       console.log(this.ds.getScore());
+       this.ds.displayPub()
+       // console.log(this.ds.getScore());
     }
 
     imagePath(index,data){

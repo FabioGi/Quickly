@@ -27,6 +27,7 @@ export class ScoringComponent implements OnInit {
 
     ngOnInit(): void {
        this.ds.initScore();
+       this.ds.displayPub()
     }
 
     checkTitle(title){

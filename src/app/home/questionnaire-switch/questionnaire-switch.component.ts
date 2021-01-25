@@ -75,7 +75,8 @@ export class QuestionnaireSwitchComponent implements OnInit {
         this.dragImageItem1.scaleY = 1
 
         this.play_response();
-        console.log(this.ds.getScore());
+        this.ds.displayPub()
+        // console.log(this.ds.getScore());
     }
 
     imagePath(index,data){

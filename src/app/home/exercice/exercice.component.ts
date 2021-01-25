@@ -24,6 +24,7 @@ export class ExerciceComponent implements OnInit {
 	ngOnInit() {
          this.title = this.router.snapshot.params.title;
          this.exercises = this.ds.getLessonOrderbyTitle(this.title).Exercices;
+         this.ds.displayPub()
         // console.log(this.ds.getLessonOrderbyTitle(this.title).Exercices);
     }
 

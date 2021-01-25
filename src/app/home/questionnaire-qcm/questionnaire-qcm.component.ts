@@ -38,7 +38,8 @@ export class QuestionnaireQcmComponent implements OnInit {
         this.title = this.route.snapshot.params.id2;
         this.exercises = this.ds.getExerciseOrderById(this.index, this.title);
         this.item = this.index + 1  ;
-        console.log(this.ds.getScore());
+        this.ds.displayPub()
+        // console.log(this.ds.getScore());
      }
 
     sentResponse(){

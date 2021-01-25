@@ -44,7 +44,8 @@ import { HeaderLayoutComponent } from "./ui/header-layout/header-layout.componen
         HeaderLayoutComponent,
         ResultatSwitchComponent,
         QcmResponseComponent,
-        AppariementBisComponent
+        AppariementBisComponent,
+       // SpeedTest
     ],
     schemas: [
         NO_ERRORS_SCHEMA

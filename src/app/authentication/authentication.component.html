@@ -8,17 +8,17 @@
                 <StackLayout verticalAlignment="center">
                     <StackLayout class="form">
                         <StackLayout class="input-field">
-                            <TextField  class="-rounded-sm" hint="Email" backgroundColor="lightcyan"></TextField>
+                            <TextField  class="-rounded-sm" hint="Pseudo" backgroundColor="lightcyan" [(ngModel)]="pseudo"></TextField>
                             <StackLayout class="hr-light"></StackLayout>
                         </StackLayout>
                         <StackLayout class="input-field">
-                            <TextField  class="-rounded-sm" secure="true" hint="Mot de passe" backgroundColor="lightcyan" color ="white"></TextField>
+                            <TextField  class="-rounded-sm" secure="true" hint="Mot de passe" backgroundColor="lightcyan" [(ngModel)]="password"></TextField>
                             <StackLayout class="hr-light"></StackLayout>
                         </StackLayout>
                         <StackLayout>
                             <Label text="" ></Label>
                         </StackLayout>
-                        <Button class="bold" text="connexion" (tap)="routerExtensions.navigate(['/launch_screen'])"></Button>
+                        <Button class="bold" text="connexion" (tap)="connexion()"></Button>
                             <!-- <Button class="bold" text="connexion2" (tap)="routerExtensions.navigate(['scoring'])"></Button> -->
                         <StackLayout>
                             <StackLayout class="btn-img"  orientation="horizontal">

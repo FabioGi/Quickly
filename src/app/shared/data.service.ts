@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { SpeedPub } from "../home/modal";
 
 export interface DataItem {
     id: number;
@@ -547,6 +548,10 @@ export class DataService {
     public score1 = 0;
     public score2 = 0;
     public score3 = 0;
+    speedPub: SpeedPub;
+    constructor(){
+        this.speedPub = new SpeedPub()
+    }
 
     // currentLesson: { id: number; name: string; title: string; Exercices: ({ id: number; type: string; question: string; answer: string; suggestions: { id: number; name: string; image: string; media: string; }[]; statement?: undefined; media?: undefined; } | { ...; } | { ...; })[]; Categorie?: undefined; } | { ...; };
 
@@ -586,12 +591,13 @@ export class DataService {
         this.score = 0;
     }
 
+    displayPub(){
+        setTimeout(()=> {
+            this.speedPub.publicite();
+        },
+        5000);
+    }
 }
-
-
-// getLessonOrderbyTitle(title)
-// getExerciceListeOrderByLessonTitle()
-// getExerciceDetailsOrderByType
 
 
 

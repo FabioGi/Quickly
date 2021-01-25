@@ -8,6 +8,7 @@ import { TabView } from "tns-core-modules/ui/tab-view";
 import { DataItem, DataService } from "~/app/shared/data.service";
 import { EventData } from "@nativescript/core";
 import { User } from "~/app/shared/user";
+import { SpeedPub } from "../modal";
 
 
 // import { StackLayout } from "@nativescript/core/ui/layouts/stack-layout";
@@ -32,6 +33,7 @@ export class HomeComponent implements OnInit {
     score2 : number;
     score3 : number;
     score = [];
+    speedPub: SpeedPub;
 
     constructor(
         public routerExtensions: RouterExtensions,
@@ -47,7 +49,12 @@ export class HomeComponent implements OnInit {
         this.score2 = this.ds.score2?this.ds.score2:0
         this.score3 = this.ds.score3?this.ds.score3:0
         this.score = [ this.score1, this.score2, this.score3];
+        this.speedPub = new SpeedPub();
+        this.ds.displayPub()
     }
+
+
+
 
     routerGame(index,title){
         switch(index){

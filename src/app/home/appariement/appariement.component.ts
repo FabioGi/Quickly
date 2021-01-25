@@ -42,6 +42,7 @@ export class AppariementComponent implements OnInit {
         if(this.responseList.length){
             this.initData();
         }
+        this.ds.displayPub()
      }
 
      apparier(word){
