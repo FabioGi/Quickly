@@ -104,7 +104,7 @@ export class QuestionnaireSwitchComponent implements OnInit {
                 break;
             }
         }else{
-            this.message = "    REPONSE INCORRECT"
+            this.message = "    REPONSE INCORRECTE"
             this.checkIt = false;
             switch(this.verifyResponse()){
                 case 1: this.checked1.nativeElement.backgroundColor="#008000";

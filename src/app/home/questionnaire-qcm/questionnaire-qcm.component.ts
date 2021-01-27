@@ -63,7 +63,7 @@ export class QuestionnaireQcmComponent implements OnInit {
                  arg.backgroundColor="#008000";
                  this.ds.setScore(10);
             }else{
-                this.message = "    REPONSE INCORRECT";
+                this.message = "    REPONSE INCORRECTE";
                 this.checkIt = false;
                  //this.showResponse = false;
                 // console.log("result", data.name ==  this.exercises.answer)

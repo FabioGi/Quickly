@@ -313,13 +313,16 @@ button {
     margin-left: 50;
     margin-right: 50;
    // width: 50%;
-
-
 }
-.page{
-    background-color: blue;
+#page{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url("~/assets/quickly/quickly.png");
+   // background-color: blue;
+}
 
-}.appr-label{
+.appr-label{
     padding: 10;
     margin: 2;
     background-color: #17a2b8;

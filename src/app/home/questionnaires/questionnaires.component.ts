@@ -69,7 +69,7 @@ export class QuestionnairesComponent implements OnInit {
                 this.ds.setScore(10);
                 this.checkIt = true;
             }else{
-                this.message = "    REPONSE INCORRECT"
+                this.message = "    REPONSE INCORRECTE"
                 arg.backgroundColor="#FF0000";
                 this.checkIt = false;
                 switch(this.verifyResponse()){
